@@ -1,7 +1,7 @@
 // scripts
-
+ 
 window.addEventListener('DOMContentLoaded', event => {
-
+ 
     // on active le Bootstrap scrollspy dans l'élement nav principal
     const sideNav = document.body.querySelector('#sideNav');
     if (sideNav) {
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', event => {
             rootMargin: '0px',
         });
     };
-
+ 
     // collapse responsive navbar quand le toggler est visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
-
+ 
 // scroll-up
 document.addEventListener('DOMContentLoaded', () => {
     const scrollUpButton = document.getElementById('scrollUp');
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
+ 
 // initialise tous les tooltips présents sur la page
 document.addEventListener('DOMContentLoaded', function () {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return new bootstrap.Tooltip(tooltipTriggerEl);
     });
 });
-
+ 
 // gestion des tooltips sur mobile
 document.addEventListener("DOMContentLoaded", () => {
     if (matchMedia("(hover: none)").matches) {
@@ -64,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("no-tooltips");
     }
 });
+ 
