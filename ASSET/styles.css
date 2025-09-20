@@ -872,3 +872,15 @@ white-space: nowrap;
 .hvr-underline-from-left:active {
   text-decoration: none !important;
 }
+
+/* Forçage minuscules sur citations */
+.citation {
+  text-transform: lowercase;
+  font-size: 1.25rem;
+}
+
+/* Forçage majuscule sur certaines lettres */
+.majuscule {
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
