@@ -1,864 +1,878 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <!-- base -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <!-- version 1 - site créé from scratch le samedi 15 mars 2025, mis à jour le 18 septembre 2025 -->
-        <meta name="version" content="1.1" />
-        <meta name="description" content="Mon CV en ligne, avec mes compétences, expériences et projets. Une page est dédiée à ma recherche d'alternance en tant qu'administrateur des systèmes, réseaux et cybersécurité. Je serais très heureux de pouvoir postuler auprès de groupes prestigieux comme Thalès, Safran et Dassault." />
-        <meta name="author" content="Marc Lupi" />
+<head>
+    <!-- ================================
+         META TAGS & CONFIGURATION
+         ================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="version" content="2.0">
+    <meta name="description" content="Marc Lupi - Technicien Supérieur des Systèmes et Réseaux. CV en ligne avec compétences, parcours et formation.">
+    <meta name="author" content="Marc Lupi">
 
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W75W7H7SV"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W75W7H7SV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-            gtag('config', 'G-0W75W7H7SV');
-        </script>
+        gtag('config', 'G-0W75W7H7SV');
+    </script>
 
-        <title>Marc Lupi | TSSR</title>
-        <link rel="icon" type="image/x-icon" href="./IMG/favicon.ico"/>
-        <!-- Font Awesome icons -->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- core theme CSS, includes Bootstrap -->
-        <link href="./ASSET/styles.css" rel="stylesheet" />
-        <link href="./HOVER_CSS/css/hover.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark darker fixed-top" id="sideNav">
-        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="sideNav"> -->
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">MARC LUPI</span>
-                <!-- <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.png" alt="see you, folks !" /></span> -->
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#apropos">à propos</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#competences">compétences</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#certifications">certifications</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experiences">expériences</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#formations">formations</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#qualites">qualités</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#langues">langues</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#passions">passions</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#coordonnees">coordonnées</a></li>
-                </ul>
+    <title>Marc Lupi | TSSR</title>
+    <link rel="icon" type="image/x-icon" href="./IMG/favicon.ico"/>
+    
+    <!-- ================================
+         EXTERNAL LIBRARIES & FONTS
+         ================================ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ================================
+         CSS INTERNAL LINK
+         ================================ -->
+    <link href="./ASSET/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- ================================
+         HEADER À DEUX NIVEAUX
+         ================================ -->
+    <header class="main-header">
+        <!-- NIVEAU 1 - Bande fine avec contact et social -->
+        <div class="header-top">
+            <div class="header-top-content">
+                <!-- Contact info à gauche -->
+                <div class="header-contact">
+                    <div class="header-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:marc.lupi@protonmail.com">marc.lupi@protonmail.com</a>
+                    </div>
+                    <div class="header-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+33782108037">(33) 7 82 10 80 37</a>
+                    </div>
+                    <div class="header-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Auch, 32000</span>
+                    </div>
+                </div>
+                
+                <!-- Social icons à droite -->
+                <div class="header-top-social">
+                    <a href="https://www.linkedin.com/in/marc-lupi" class="header-top-social-icon" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/piluprior/" class="header-top-social-icon" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc" class="header-top-social-icon" target="_blank" title="CV pdf">
+                        <i class="fa fa-file"></i>
+                    </a>
+                </div>
             </div>
-        </nav>
-        <!-- contenus -->
-        <div class="container-fluid ps-4">
-            <!-- À PROPOS -->
-            <section class="resume-section" id="apropos">
-                <div class="resume-section-content">
-                    <h1 class="mb-5"><span class="redder">Marc Lupi</span></h1>
-                    <!-- <h1 class="mb-0"><span class="text-secondary">marc lupi</span></h1> -->
-                    <h2 class="mb-5">Technicien Supérieur des Systèmes et Réseaux</h2>
-                    <p class="lead catchphrase mb-3">
-                        Technicien des systèmes et réseaux, fort d’une expérience variée au sein d'environnements techniques et informatiques,
-                        je suis passionné par l’administration et l’interopérabilité des systèmes, la gestion des réseaux et la virtualisation. 
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Afin d'augmenter ma visibilité sur Internet et de maximiser mes chances de décrocher un emploi, j'ai créé ce site onepage en quelques heures.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Travailleur archarné, la rigueur et l'autonomie sont au cœur de mon travail, me permettant d'être très vite opérationnel et d’aborder chaque mission avec confiance.
-                        J'apporte avec moi ces qualités que je considère comme une vraie plus-value pour l'entreprise.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Curieux et inventif, je cherche sans cesse des solutions innovantes et de nouvelles perspectives.
-                        Ma capacité d'organisation me permet d'assurer la gestion efficace des projets, tandis que mon esprit d’équipe favorise la cohésion autour d’objectifs communs.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Mon objectif ?
-                        Poursuivre ma formation de technicien informatique tout en mettant mes compétences relationnelles et techniques au service d’une entreprise ou d'une institution.
-                    </p>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- COMPÉTENCES -->
-            <section class="resume-section" id="competences">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Mes compétences en systèmes et réseaux</h2>
-                    <div class="subheading mb-2">assurer le support utilisateur en centre de services</div>
-                    <p class="lead catchphrase mb3">
-                        J’assure la gestion des parcs informatiques et le suivi des incidents avec GLPI, en appliquant les SLA et en garantissant une résolution rapide et efficace.
-                        Chaque ticket est traité avec rigueur, avec un suivi structuré et des priorités clairement définies.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Je rédige et mets à jour les procédures dans des formats adaptés (Markdown, Wiki, Word) pour assurer une documentation claire et exploitable par les équipes.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Une parfaite maîtrise des architectures matérielles me permet d’intervenir sur l’ensemble des composants, des processeurs multicœurs aux périphériques.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Windows et Linux sont exploités de manière égale, selon les besoins.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        L’usage d’outils collaboratifs tels que Microsoft Teams et Slack me permet de fluidifier les échanges et de maximiser l’efficacité en équipe.
-                    </p>
-                    <div class="subheading mb-2">exploiter des serveurs windows et un domaine active directory</div>
-                    <p class="lead catchphrase mb-3">
-                        L’installation, la configuration et l’exploitation des serveurs Windows ne posent aucun problème.
-                        Je maîtrise les rôles et fonctionnalités intégrées ainsi que l’intégration de solutions tierces comme XWiki et Nagios.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        La gestion des objets Active Directory est assurée avec précision :
-                        création et administration des utilisateurs, groupes et unités d’organisation avec une automatisation efficace via PowerShell et les outils RSAT.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’intégration des postes clients au domaine s’accompagne d’une gestion fine des GPO pour appliquer les stratégies de sécurité adéquates.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Je gère les mises à jour via WSUS et exploite Hyper-V pour la création et l’administration des machines virtuelles sous Windows.
-                    </p>
-                    <div class="subheading mb-2">exploiter des serveurs linux</div>
-                    <p class="lead catchphrase mb-3">
-                        J’installe, configure et exploite les serveurs Debian ainsi que des services comme GLPI, FOG, XiVO et bien d'autres encore.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’automatisation des tâches est optimisée grâce à des scripts Bash adaptés aux besoins et aux contextes d’exploitation.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’identification et la correction des vulnérabilités passent par l’analyse des CVE et l’application de correctifs de sécurité ciblés.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Je gère les permissions et utilisateurs avec chmod, chown et sudo et exploite des services réseau comme SSH, Apache, NGINX et SAMBA.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Les systèmes de fichiers ext4, ZFS et XFS sont exploités pour garantir un stockage performant et sécurisé.
-                    </p>
-                    <div class="subheading mb-2">exploiter un réseau ip</div>
-                    <p class="lead catchphrase mb-3">
-                        La sécurisation du réseau est garantie par l’application des recommandations de l’ANSSI, la gestion des pare-feu et l’administration des VLAN.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Les ACL sont configurées pour un contrôle précis des flux de données.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Afin d'assurer une vision claire de l’architecture, je conçois des schémas réseau sous Visio ou Draw.io.
-                        Une maîtrise avancée du modèle OSI et de l’architecture TCP/IP permet d’optimiser la gestion des protocoles et l’adressage IP avec les CIDR VLSM et FLSM.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Les équipements d’interconnexion sous Cisco IOS sont configurés pour garantir la stabilité et la sécurité du réseau.
-                    </p>
-                    <div class="subheading mb-2">maintenir des serveurs dans une infrastructure virtualisée</div>
-                    <p class="lead catchphrase mb-3">
-                        La création et l’exploitation de machines virtuelles sous VMware, Hyper-V et Proxmox sont assurées avec efficacité.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Je supervise les performances des VM et des hôtes via les outils de supervision intégrés ou des solutions de supervision tierces comme Nagios ou Zabbix.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’optimisation des ressources CPU, RAM et stockage garantit une infrastructure réactive et disponible.
-                        Les mises à jour et correctifs de sécurité sont appliqués sur l’ensemble des environnements.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Active Directory est exploité en environnement virtualisé avec gestion avancée des GPO et des identités.
-                        La haute disponibilité et la répartition de charge sont gérées avec vSphere HA, DRS et les clusters Proxmox, selon les environnements.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Une surveillance continue des alertes et journaux d’événements permet d’anticiper les incidents et d’assurer la stabilité des services.
-                    </p>
-                    <div class="subheading mb-2">automatiser des tâches à l’aide de scripts</div>
-                    <p class="lead catchphrase mb-3">
-                        J’adapte et déploie des scripts en PowerShell et Bash pour automatiser la gestion des serveurs Windows et Linux.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’optimisation des processus inclut l’automatisation de la création d’utilisateurs, la gestion des permissions et le déploiement d’applications.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Task Scheduler sous Windows et Cron sous Linux sont utilisés pour exécuter les scripts et les tâches de manière autonome.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Chaque script est testé, corrigé et documenté pour garantir son efficacité et sa pérennité.
-                    </p>
-                    <div class="subheading mb-2">maintenir et sécuriser les accès à internet et les interconnexions des réseaux</div>
-                    <p class="lead catchphrase mb-3">
-                        L’installation et le déploiement de pare-feu, notamment avec pfSense, permettent un filtrage et un contrôle strict des accès réseau.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        La configuration et la maintenance des VPN sécurisent les accès distants via IPsec pour les connexions site à site et OpenVPN pour les connexions client à site.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’authentification sécurisée est mise en place avec gestion des certificats SSL/TLS pour chiffrer les communications.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Les meilleures pratiques en cybersécurité sont appliquées pour sécuriser les interconnexions entre sites.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        La configuration et la surveillance des DMZ garantissent l’isolation et la protection des services exposés sur Internet.
-                    </p>
-                    <div class="subheading mb-2">mettre en place, assurer et tester les sauvegardes et les restaurations des éléments de l’infrastructure</div>
-                    <p class="lead catchphrase mb-3">
-                        L’exploitation de Veeam Server permet d’assurer une politique de sauvegarde fiable et performante.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Les stratégies de sauvegarde sont adaptées aux besoins de l’entreprise avec des sauvegardes complètes, incrémentales et différentielles.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’intégrité des sauvegardes est vérifiée régulièrement et des tests de restauration sont effectués pour garantir la disponibilité des données.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Le suivi des performances des espaces de stockage optimise les cycles de rétention.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Chaque procédure de restauration est documentée et mise à jour pour garantir une intervention rapide en cas d’incident.
-                    </p>
-                    <div class="subheading mb-2">exploiter et maintenir les services de déploiement des postes de travail</div>
-                    <p class="lead catchphrase mb-3">
-                        Le déploiement des postes de travail est assuré via WDS, MDT et FOG.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Les masters sont créés et mis à jour pour garantir une installation standardisée et conforme aux exigences de l’entreprise.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Les mises à jour sont centralisées et automatisées via WSUS ou SCCM pour assurer la sécurité et la stabilité des postes clients.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        L’exploitation de Proxmox permet de gérer les environnements VDI et de proposer des postes de travail virtualisés accessibles via des clients légers.
-                    </p>
-                    <p class="lead catchphrase mb-3">
-                        Le suivi des performances et le dépannage des clients légers et des sessions virtuelles sont assurés avec réactivité.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Des procédures détaillées et des guides utilisateurs sont rédigés pour optimiser la prise en main des outils mis à disposition des collaborateurs.
-                    </p>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- CERTIFICATIONS -->
-            <section class="resume-section" id="certifications">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Mes certifications</h2>
-                    <!-- certificat voltaire-->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Certificat Voltaire</h3>
-                            <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
-                            <div class="subheading mb-5">Le Certificat Voltaire</div>
-                            <p>QU'EST-CE QUE LE CERTIFICAT VOLTAIRE ?</p>
-                            <p class="lead catchphrase mb-5">
-                                Le Certificat Voltaire est une certification de référence en langue française, qui valide les compétences en orthographe, grammaire, syntaxe et expression écrite.
-                                Elle mesure de façon objective le niveau du candidat grâce à un examen — en centre ou en ligne — avec vérification d’identité.
-                                Le résultat est attesté par un score qui reflète la maîtrise réelle de la langue.
-                            </p>
-                            <p>PRÉPARATION ET OUTILS PÉDAGOGIQUES (PROJET VOLTAIRE)</p>
-                            <p class="lead catchphrase mb-5">
-                                Le Projet Voltaire met à disposition des outils pour se préparer : modules personnalisés, entraînements en ligne, fiches, quiz, avec l’Ancrage Mémoriel®, méthode garantissant durablement les progrès.
-                                Adaptés aux niveaux variés (étudiants, professionnels), ces parcours sont éligibles au CPF, avec un accompagnement possible par un formateur.
-                            </p>
-                            <p>VALORISATION PROFESSIONNELLE ET ACADÉMIQUE</p>
-                            <p class="lead catchphrase mb-5">
-                                Posséder le Certificat Voltaire apporte un atout sérieux : sur un CV, une candidature, ou Parcoursup, il témoigne d’une maîtrise de la langue écrite — critère très prisé par les employeurs.
-                                92 % estiment que les fautes nuisent à l’image de l’entreprise.
-                                Il permet de se distinguer, d’être crédible, de renforcer la confiance et l’efficacité dans les écrits professionnels.
-                            </p>
-                            <p>ACCESSIBILITÉ, RECONNAISSANCE ET FINANCEMENT</p>
-                            <p class="lead catchphrase mb-5">
-                                Le certificat est accessible à tous : de nombreux centres d’examen, des dispositions spéciales pour les personnes en situation de handicap, des modalités adaptées pour les troubles (dys, non voyants, etc.).
-                                De plus, l’examen et sa préparation peuvent être financés via le CPF pour salariés ou demandeurs d’emploi, ce qui le rend abordable et reconnu.
-                            </p>
-                            <div class="subheading mb-5">Atouts du Certificat Voltaire en informatique</div>
-                            <p>DOCUMENTATION TECHNIQUE FIABLE</p>
-                            <p class="lead catchphrase mb-5">
-                                Dans les métiers systèmes et réseaux, rédiger des procédures claires (installation, sauvegarde, PRA, configuration réseau) est essentiel.
-                                Une faute ou une ambiguïté peut entraîner une mauvaise interprétation et provoquer des incidents.
-                                Le Certificat Voltaire garantit la précision de l’expression, sécurisant ainsi la transmission des informations techniques.
-                            </p>
-                            <p>COMMUNICATION AVEC LES CLIENTS ET LA DIRECTION</p>
-                            <p class="lead catchphrase mb-5">
-                                Un administrateur ou technicien doit souvent produire des rapports clairs et synthétiques pour la hiérarchie, les clients ou les partenaires.
-                                Un français irréprochable crédibilise le discours, montre le sérieux et rassure sur la rigueur professionnelle.
-                                Le certificat devient un gage de fiabilité et de professionnalisme auprès des décideurs.
-                            </p>
-                            <p>GESTION DES TICKETS ET SUPPORT UTILISATEUR</p>
-                            <p class="lead catchphrase mb-5">
-                                Dans la gestion de parc ou le support, la qualité rédactionnelle est primordiale.
-                                Les réponses écrites dans GLPI, Intune, ou par mail doivent être compréhensibles et pédagogiques.
-                                Le Certificat Voltaire renforce les compétences de vulgarisation technique, rendant l’assistance plus efficace et améliorant la satisfaction des utilisateurs.
-                            </p>
-                            <p>ÉVOLUTION ET MANAGEMENT</p>
-                            <p class="lead catchphrase mb-5">
-                                Pour un futur rôle d’Administrateur d’Infrastructures Sécurisées (AIS) ou de responsable d’équipe, la communication écrite devient stratégique : cahiers des charges, comptes rendus de réunions, procédures de sécurité.
-                                Détenir le Certificat Voltaire atteste d’un haut niveau de rédactionnel professionnel, ouvrant des perspectives vers des postes à responsabilités.
-                            </p>
-                            <div class="mb-3 linker"><a href="https://www.certificat-voltaire.fr/" class="hvr-underline-from-left" target="_blank">certificat voltaire</a></div>
-                            <div class="mb-5 linker"><a href="https://www.projet-voltaire.fr/" class="hvr-underline-from-left" target="_blank">projet voltaire</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">05 septembre 2025 - 04 janvier 2026</span></div>
-                    </div>
-                    <!-- certification cisco ccna 200-301 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Certification Cisco CCNA 200-301</h3>
-                            <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
-                            <div class="subheading mb-5">La certification Cisco CCNA 200-301</div>
-                            <p>QU’EST-CE QUE LA CERTIFICATION CCNA ?</p>
-                            <p class="lead catchphrase mb-5">
-                                Le CCNA atteste de compétences pratiques : configuration d’équipements Cisco, mise en œuvre de protocoles de routage (RIP, OSPF), création et gestion de VLANs, sécurisation des accès, diagnostic d’incidents.
-                                Il aborde aussi l’automatisation, le cloud et les principes de cybersécurité.
-                                Cette certification prépare aux environnements hybrides actuels et garantit une vision complète des réseaux.
-                            </p>
-                            <p>CONTENU ET COMPÉTENCES VALIDÉES</p>
-                            <p class="lead catchphrase mb-5">
-                                Intégration de solutions logicielles au sein du Pôle Documentaire.
-                                Rédaction de documentations et de procédures adaptées aux utilisateurs et aux équipes techniques.
-                                Création et gestion de sites Internet en fonction des besoins des projets.
-                            </p>
-                            <p>RECONNAISSANCE ET VALEUR PROFESSIONNELLE</p>
-                            <p class="lead catchphrase mb-5">
-                                Très recherché par les recruteurs, le CCNA est reconnu comme un gage de compétences techniques et de rigueur.
-                                Il valorise le CV, facilite l’accès aux postes en administration systèmes et réseaux, et ouvre la voie vers des spécialisations (CCNP, sécurité, automatisation).
-                                Les employeurs y voient la preuve d’une formation structurée, validée par un leader du secteur.
-                            </p>
-                            <p>ACCESSIBILITÉ ET PRÉPARATION</p>
-                            <p class="lead catchphrase mb-5">
-                                Le CCNA est accessible aux étudiants comme aux professionnels.
-                                Cisco propose des formations en ligne (NetAcad), complétées par des labos pratiques avec Packet Tracer ou GNS3.
-                                Les centres agréés organisent l’examen, disponible mondialement.
-                                Le contenu est mis à jour pour refléter les besoins du marché, garantissant une certification pertinente et actuelle.
-                            </p>
-                            <div class="subheading mb-5">apports du ccna dans les métiers IT</div>
-                            <p>DÉPLOIEMENT ET MAINTENANCE DE RÉSEAUX</p>
-                            <p class="lead catchphrase mb-5">
-                                Dans un rôle de technicien systèmes et réseaux, le CCNA permet d’installer et configurer des routeurs, switches et VLANs en respectant les bonnes pratiques.
-                                Cette expertise réduit les erreurs, améliore la performance et sécurise l’infrastructure.
-                                C’est un atout concret pour les entreprises recherchant une mise en place fiable et évolutive de leurs environnements.
-                            </p>
-                            <p>DIAGNOSTIC ET RÉSOLUTION D’INCIDENTS</p>
-                            <p class="lead catchphrase mb-5">
-                                Un professionnel certifié CCNA maîtrise les outils et méthodes de troubleshooting réseau.
-                                En entreprise, cela signifie une résolution rapide des pannes, minimisant l’impact sur la production.
-                                Le diagnostic précis des problèmes (adressage, routage, sécurité) renforce la stabilité des services et démontre une compétence immédiatement opérationnelle sur le terrain.
-                            </p>
-                            <p>COMMUNICATION AVEC LES ÉQUIPES ET CLIENTS</p>
-                            <p class="lead catchphrase mb-5">
-                                Le CCNA ne se limite pas à la technique : il développe aussi une capacité à communiquer clairement sur la structure et le fonctionnement d’un réseau.
-                                Cette compétence facilite la rédaction de procédures, de schémas ou de rapports, et renforce la crédibilité du technicien auprès des clients, des managers et des équipes pluridisciplinaires.
-                            </p>
-                            <p>ÉVOLUTION DE CARRIÈRE ET SPÉCIALISATIONS</p>
-                            <p class="lead catchphrase mb-5">
-                                Le CCNA ouvre la voie vers des certifications plus avancées comme le CCNP, ou vers des spécialisations en cybersécurité, cloud et automatisation.
-                                Pour un futur administrateur d’infrastructures sécurisées (AIS), c’est une étape incontournable, attestant d’un socle solide et reconnu, indispensable pour évoluer vers des responsabilités techniques ou managériales.
-                            </p>
-                            <div class="mb-5 linker"><a href="https://www.formademia.fr/" class="hvr-underline-from-left" target="_blank">formademia</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Juin 2025</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">1er août 2019 - 31 mai 2020</span></div> -->
-                    </div>
-                    <!-- technicien méthodes -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Certification Opquast</h3>
-                            <h6 class="text-center expired mb-5">Certification expirée</h6>
-                            <div class="subheading mb-5">La Certification Opquast</div>
-                            <p>QU’EST-CE QUE LA CERTIFICATION OPQUAST ?</p>
-                            <p class="lead catchphrase mb-5">
-                                La certification Opquast est une référence internationale de la qualité web.
-                                Elle atteste de la maîtrise des bonnes pratiques garantissant accessibilité, performance, sécurité et expérience utilisateur.
-                                Basée sur un référentiel de 240 règles, elle est reconnue dans l’ensemble de l’écosystème numérique et constitue un standard pour concevoir des sites fiables et inclusifs.
-                            </p>
-                            <p>CONTENU ET COMPÉTENCES VALIDÉES</p>
-                            <p class="lead catchphrase mb-5">
-                                Opquast valide des compétences transverses : conception ergonomique, compatibilité multi-supports, respect des standards, accessibilité pour les personnes en situation de handicap, et prise en compte de la cybersécurité.
-                                Les candidats acquièrent une culture qualité web solide, applicable aussi bien au développement, à l’intégration qu’à la gestion de projets numériques complexes.
-                            </p>
-                            <p>RECONNAISSANCE ET VALEUR PROFESSIONNELLE</p>
-                            <p class="lead catchphrase mb-5">
-                                La certification Opquast est un gage de sérieux et de professionnalisme.
-                                Elle figure dans les critères recherchés par les agences, ESN, services numériques et collectivités.
-                                Elle améliore l’employabilité en démontrant une attention particulière à la conformité, à l’accessibilité et à la satisfaction des utilisateurs.
-                                Elle valorise le CV et crédibilise les compétences numériques.
-                            </p>
-                            <p>ACCESSIBILITÉ ET PRÉPARATION</p>
-                            <p class="lead catchphrase mb-5">
-                                La certification est accessible en ligne, avec une préparation via des modules e-learning, des quiz et des cas pratiques.
-                                Les contenus sont régulièrement mis à jour pour suivre les évolutions technologiques et légales.
-                                L’examen est ouvert aux étudiants, professionnels et demandeurs d’emploi, garantissant un socle de compétences pérennes et certifiées en qualité web.
-                            </p>
-                            <div class="subheading mb-5">La Certification Opquast</div>
-                            <p>AMÉLIORATION DE L’EXPÉRIENCE UTILISATEUR</p>
-                            <p class="lead catchphrase mb-5">
-                                Grâce à Opquast, un professionnel sait appliquer les règles garantissant un site simple, rapide et accessible.
-                                Dans une DSI ou un service web, cela réduit les erreurs d’ergonomie, améliore la satisfaction des usagers et optimise le référencement naturel (SEO).
-                                L’impact direct est une meilleure image numérique de l’entreprise et une augmentation de la confiance des clients.
-                            </p>
-                            <p>RÉDUCTION DES RISQUES JURIDIQUES ET TECHNIQUES</p>
-                            <p class="lead catchphrase mb-5">
-                                Opquast aide à anticiper les problèmes liés aux standards, à l’accessibilité et aux obligations légales.
-                                Pour une entreprise, c’est une protection contre les risques de non-conformité.
-                                Dans un projet web, un certifié Opquast identifie rapidement les incohérences et applique les solutions adaptées, renforçant la sécurité et la robustesse des plateformes numériques.
-                            </p>
-                            <p>COLLABORATION INTER-ÉQUIPES FACILITÉE</p>
-                            <p class="lead catchphrase mb-5">
-                                La certification apporte un vocabulaire commun et une culture partagée de la qualité web.
-                                Développeurs, designers, administrateurs réseaux et chefs de projets gagnent en efficacité car ils parlent le même langage autour de la performance et de l’accessibilité.
-                                Cette transversalité rend les projets plus fluides et limite les frictions entre métiers.
-                            </p>
-                            <p>ÉVOLUTION PROFESSIONNELLE ET DIFFÉRENCIATION</p>
-                            <p class="lead catchphrase mb-5">
-                                Opquast valorise un profil en lui donnant une dimension supplémentaire : celle de la qualité numérique.
-                                Elle ouvre des portes dans la gestion de projets, l’UX design, la conformité ou la cybersécurité.
-                                Dans un CV, elle distingue un candidat en prouvant son engagement à produire des services numériques fiables, inclusifs et orientés utilisateurs.
-                            </p>
-                            <div class="mb-3 linker"><a href="https://www.opquast.com/" class="hvr-underline-from-left" target="_blank">opquast</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Janvier 2019</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">06 février 2006 - 13 octobre 2006</span></div> -->
-                    </div>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- EXPÉRIENCES -->
-            <section class="resume-section" id="experiences">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Expériences</h2>
-                    <!-- esn soften-it -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Création d'une entreprise de services numériques</h3>
-                            <div class="subheading mb-5">soften-it</div>
-                            <p class="mb-3">CONCEPTION ET DÉVELOPPEMENT WEB</p>
-                            <p class="lead catchphrase mb-5">
-                                Conception et développement front-end et back-end de sites Internet et de CMS.
-                                Maintenance et refonte de sites existants. Optimisation du référencement naturel (SEO) et analyse des performances avec Google Analytics 4.
-                                Création et gestion des pages Google My Business.
-                                Mise en place de stratégies de marketing digital adaptées aux besoins des projets.
-                            </p>
-                            <p>GESTION ADMINISTRATIVE ET FINANCIÈRE</p>
-                            <p class="lead catchphrase mb-5">
-                                Élaboration et suivi des devis et factures.
-                                Gestion de la relation client avec un suivi structuré et réactif.
-                                Prospection commerciale et développement du portefeuille client. Gestion comptable, suivi des charges et respect des obligations fiscales.
-                                Administration des contrats, des documents légaux et des ressources nécessaires au bon fonctionnement de l’activité.
-                                Planification et gestion efficace des projets pour assurer leur viabilité et leur réussite.
-                            </p>
-                            <p>DÉVELOPPEMENT COMMERCIAL ET STRATÉGIE</p>
-                            <p class="lead catchphrase mb-5">
-                                Développement et entretien du réseau professionnel.
-                                Gestion des relations clients avec une approche orientée fidélisation.
-                                Analyse de la concurrence et détection des opportunités de marché.
-                                Optimisation de la présence en ligne et du personal branding.
-                                Prospection active et création de relations commerciales solides.
-                            </p>
-                            <p>FORMATION ET DÉVELOPPEMENT PERSONNEL</p>
-                            <p class="lead catchphrase mb-5">
-                                Acquisition continue de nouvelles compétences pour s’adapter aux évolutions du secteur.
-                                Veille technologique et montée en compétence sur les outils et pratiques émergents.
-                            </p>
-                            <p>Auch, 32000</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Juillet 2019 - Juillet 2023</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Juillet 2019 - Juillet 2023</span></div> -->
-                    </div>
-                    <!-- cd32 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">technicien support, technicien d'intégration</h3>
-                            <div class="subheading mb-5">conseil départemental du gers</div>
-                            <p>SUPPORT UTILISATEUR ET ASSISTANCE TECHNIQUE</p>
-                            <p class="lead catchphrase mb-5">
-                                Assistance aux utilisateurs en centre de services en tant que technicien helpdesk et technicien de proximité au sein du Pôle Utilisateurs.
-                                Support par téléphone, messagerie électronique et en kiosque avec une gestion rigoureuse du ticketing.
-                                Réception, installation et déploiement du matériel neuf, avec configuration du système d’exploitation via PXE.
-                                Déplacements et interventions sur site pour le dépannage des équipements informatiques, des copieurs et des imprimantes.
-                                Gestion et maintenance de la téléphonie mobile et fixe. Supervision et suivi des infrastructures utilisateurs.
-                            </p>
-                            <p>INTÉGRATION DE SOLUTIONS ET DOCUMENTATION</p>
-                            <p class="lead catchphrase mb-5">
-                                Intégration de solutions logicielles au sein du Pôle Documentaire.
-                                Rédaction de documentations et de procédures adaptées aux utilisateurs et aux équipes techniques.
-                                Création et gestion de sites Internet en fonction des besoins des projets.
-                            </p>
-                            <p>Auch, 32000</p>
-                            <div class="mb-5 linker"><a href="https://www.gers.fr/" class="hvr-underline-from-left" target="_blank">département du gers</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">1er août 2019 - 31 mai 2020</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">1er août 2019 - 31 mai 2020</span></div> -->
-                    </div>
-                    <!-- technicien méthodes -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">technicien méthodes</h3>
-                            <div class="subheading mb-5">éclair documentation technique - sogeclair</div>
-                            <p>CONTRÔLE ET VALIDATION DES HARNAIS ÉLECTRIQUES</p>
-                            <p class="lead catchphrase mb-5">
-                                Contrôle des harnais électriques de l’Airbus A380 sur plans en collaboration directe avec les dessinateurs et les bureaux d’études d'Airbus.
-                                Vérification et ajustement des supports de fixation (brackets) sous CADDS5 en respectant les contraintes mécaniques et les normes aéronautiques.
-                                Détection, analyse et résolution des conflits d’implantation des harnais électriques au sein de la maquette numérique (Digital Mock-Up) sous ENOVIA, dans un contexte de co-développement international impliquant plusieurs sites de production.
-                                Coordination avec les équipes de conception et d’industrialisation pour assurer l’intégration conforme des faisceaux dans la structure de l’aéronef.
-                            </p>
-                            <p>GESTION DOCUMENTAIRE ET FORMATION</p>
-                            <p class="lead catchphrase mb-5">
-                                Gestion et mise à jour de la documentation technique sous SAP, avec traçabilité des modifications et respect des processus qualité.
-                                Suivi et reporting des contrôles effectués, avec remontée des écarts et proposition d’actions correctives.
-                                Rédaction de procédures et de guides techniques pour standardiser les méthodes de contrôle et optimiser l’efficacité des équipes.
-                                Formation des techniciens et des ingénieurs à l’utilisation des outils de conception et de validation, ainsi qu’aux bonnes pratiques de contrôle des harnais électriques en environnement aéronautique.
-                            </p>
-                            <p>Cornebarrieu, 31700</p>
-                            <div class="mb-5 linker"><a href="https://sogeclair.com/fr" class="hvr-underline-from-left" target="_blank">sogeclair</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">06 février 2006 - 13 octobre 2006</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">06 février 2006 - 13 octobre 2006</span></div> -->
-                    </div>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- FORMATIONS -->
-            <section class="resume-section" id="formations">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Formations</h2>
-                    <!-- formation tssr -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Technicien Supérieur des Systèmes et Réseaux</h3>
-                            <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
-                            <div class="mb-3">Châtellerault, 86100</div>
-                            <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
-                            <!-- <h6 class="text-center en-cours-tssr mb-3">Formation en cours</h6> -->
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">09 septembre 2024 - 13 juin 2025</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">09 septembre 2024 - 13 juin 2025</span></div> -->
-                    </div>
-                    <!-- formation licence -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Licence première année d'études japonaises</h3>
-                            <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
-                            <div class="mb-3">Toulouse, 31000</div>
-                            <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left" target="_blank">université jean-jaurès</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Septembre 2023</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Septembre 2023</span></div> -->
-                    </div>
-                    <!-- formation wordpress -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Wordpress 5 - perfectionnement</h3>
-                            <div class="subheading mb-3">Openska</div>
-                            <div class="mb-3">En ligne</div>
-                            <div class="mb-5 linker"><a href="https://www.openska.com/" class="hvr-underline-from-left" target="_blank">openska</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">19 juillet 2022 - 22 juillet 2022</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">19 juillet 2022 - 22 juillet 2022</span></div> -->
-                    </div>
-                    <!-- formation catia v5 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">CATIA v5 - perfectionnement</h3>
-                            <div class="subheading mb-3">3DIS</div>
-                            <div class="mb-3">En ligne</div>
-                            <div class="mb-5 linker"><a href="https://www.3dis-formation.fr/" class="hvr-underline-from-left" target="_blank">3dis</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">13 septembre 2021 - 17 septembre 2021</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">13 septembre 2021 - 17 septembre 2021</span></div> -->
-                    </div>
-                    <!-- caces -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">CACES R489 1A, 3, 5</h3>
-                            <div class="subheading mb-3">Icone Formation</div>
-                            <div class="mb-3">Auch, 32000</div>
-                            <div class="mb-5 linker"><a href="https://icone-formation.fr/" class="hvr-underline-from-left" target="_blank">icone</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Juin 2020</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Juin 2020</span></div> -->
-                    </div>
-                    <!-- php -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">PHP - perfectionnement</h3>
-                            <div class="subheading mb-3">Weecast</div>
-                            <div class="mb-3">En ligne</div>
-                            <div class="mb-5 linker"><a href="https://fr.tuto.com/" class="hvr-underline-from-left" target="_blank">tuto</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">02 septembre 2019 - 10 janvier 2020</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">02 septembre 2019 - 10 janvier 2020</span></div> -->
-                    </div>
-                    <!-- opquast -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Opquast</h3>
-                            <div class="subheading mb-3">Opquast</div>
-                            <div class="mb-3">En ligne</div>
-                            <div class="mb-5 linker"><a href="https://www.opquast.com/" class="hvr-underline-from-left" target="_blank">opquast</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Janvier 2019</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Janvier 2019</span></div> -->
-                    </div>
-                    <!-- développement web -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Développeur Web et Web Mobile</h3>
-                            <div class="subheading mb-3">Simplon</div>
-                            <div class="mb-3">Auch, 32000</div>
-                            <div class="mb-5 linker"><a href="https://www.simplon.co/" class="hvr-underline-from-left" target="_blank">simplon</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Mai 2018</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Mai 2018</span></div> -->
-                    </div>
-                    <!-- daeu-a -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Diplôme d'Accès aux Études Universitaires</h3>
-                            <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
-                            <div class="mb-3">Toulouse, 31000</div>
-                            <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left" target="_blank">université jean-jaurès</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Septembre 2017</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Septembre 2017</span></div> -->
-                    </div>
-                    <!-- bilan de compétence 2 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Bilan de compétences</h3>
-                            <div class="subheading mb-3">Cabinet Conseil Dac</div>
-                            <div class="mb-3">Auch, 32000</div>
-                            <div class="mb-5 linker"><a href="https://cabinetdac.com/" class="hvr-underline-from-left" target="_blank">cabinet dac</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">15 décembre 2016 - 1er mars 2017</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">15 décembre 2016 - 1er mars 2017</span></div> -->
-                    </div>
-                    <!-- tsci-sm -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Technicien Supérieur en Conception Industrielle de Systèmes Mécaniques</h3>
-                            <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
-                            <div class="mb-3">Limoges, 87000</div>
-                            <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Décembre 2011</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Décembre 2011</span></div> -->
-                    </div>
-                    <!-- cadds 5 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">CADDS v5 - perfectionnement</h3>
-                            <div class="subheading mb-3">Ajilon</div>
-                            <div class="mb-5">Blagnac, 31700</div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">21 avril 2006 - 28 avril 2006</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">21 avril 2006 - 28 avril 2006</span></div> -->
-                    </div>
-                    <!-- tmp-mg -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Technicien Méthodes et Préparation en Mécanique Générale</h3>
-                            <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
-                            <div class="mb-3">Belfort, 90000</div>
-                            <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Avril 2005</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Avril 2005</span></div> -->
-                    </div>
-                    <!-- bilan de compétence 1 -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Bilan de compétences</h3>
-                            <div class="subheading mb-3">Centre Interinstitutionnel de Bilans de Compétences</div>
-                            <div class="mb-3">Auch, 32000</div>
-                            <div class="mb-5 linker"><a href="https://www.cibcoccitanie.com/" class="hvr-underline-from-left" target="_blank">cibc</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">08 décembre 2004 - 18 janvier 2005</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">08 décembre 2004 - 18 janvier 2005</span></div> -->
-                    </div>
-                    <!-- catia v5, solidworks -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">CATIA v5, Solidworks</h3>
-                            <div class="subheading mb-3">Greta</div>
-                            <div class="mb-3">Bagnères-de-Bigorre, 65200</div>
-                            <div class="mb-5 linker"><a href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest" class="hvr-underline-from-left" target="_blank">greta</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">16 décembre 2002 - 10 janvier 2003</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">16 décembre 2002 - 10 janvier 2003</span></div> -->
-                    </div>
-                    <!-- ajusteur cellule avion -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Ajusteur-monteur de structures aéronefs</h3>
-                            <div class="subheading mb-3">Greta</div>
-                            <div class="mb-3">Tarbes, 65000</div>
-                            <div class="mb-5 linker"><a href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest" class="hvr-underline-from-left" target="_blank">greta</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">15 septembre 2002 - 13 février 2003</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">15 septembre 2002 - 13 février 2003</span></div> -->
-                    </div>
-                    <!-- mocn -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Tourneur sur machine-outil à commande numérique</h3>
-                            <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
-                            <div class="mb-3">Toulouse, 31000</div>
-                            <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Septembre 1993</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Septembre 1993</span></div> -->
-                    </div>
-                    <!-- ajustage mécanique -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Ajusteur mécanicien</h3>
-                            <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
-                            <div class="mb-3">Toulouse, 31000</div>
-                            <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Septembre 1992</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Septembre 1992</span></div> -->
-                    </div>
-                    <!-- cuisine -->
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-5">Cuisinier</h3>
-                            <div class="subheading mb-3">Lycée Hôtelier Pardailhan</div>
-                            <div class="mb-3">Auch, 32000</div>
-                            <div class="mb-5 linker"><a href="https://pardailhan.mon-ent-occitanie.fr/espace-pedagogique/pole-professionnel/hotellerie-restauration/" class="hvr-underline-from-left" target="_blank">lycée hôtellier pardailhan</a></div>
-                        </div>
-                        <div class="flex-shrink-0"><span class="custom-text">Septembre 1985 - Juin 1987</span></div>
-                        <!-- <div class="flex-shrink-0"><span class="text-primary">Septembre 1985 - Juin 1987</span></div> -->
-                    </div>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- QUALITÉS -->
-            <section class="resume-section" id="qualites">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Qualités</h2>
-                    <div class="subheading mb-3">Il n'y a pas de résultats sans travail et pas de travail sans effort.</div>
-                    <footer class="blockquote-footer mb-5">Alain Leblay</footer>
-                    <p class="lead catchphrase">
-                        Fort de mes compétences techniques et de mes qualités personnelles, je m'engage pleinement dans le domaine de l'informatique. Rigueur, autonomie, créativité et sens de l'organisation sont au cœur de mon approche professionnelle.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Passionné par la technologie, je relève avec enthousiasme les défis de ce secteur tout en cultivant une sensibilité particulière pour l'art, la musique et les spectacles vivants.
-                        Ces influences nourrissent ma vision du travail, apportant à la fois créativité et humanité dans chaque projet que j’entreprends.</p>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- LANGUES -->
-            <section class="resume-section" id="langues">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Langues</h2>
-                    <div class="subheading mb-5">je maîtrise le français - I understand English more than I speak it - <span data-bs-toggle="tooltip" title="J'étudie le japonais">日本語を勉強しています</span></div>
-                    <p class="lead catchphrase">
-                        Le français, ma langue maternelle, coule naturellement dans ma plume comme dans mes paroles, empreint d’une maîtrise assurée.
-                    </p>
-                    <p class="lead catchphrase">
-                        En anglais, je navigue avec aisance à un niveau intermédiaire (B1), tandis que l’anglais technique, outil précieux dans le cadre professionnel me permet d’évoluer avec une expertise reconnue (C1).
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Enfin, le japonais dont je découvre les subtilités, marque le début d’un voyage linguistique prometteur à un niveau élémentaire (A1).
-                    </p>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- PASSIONS -->
-            <section class="resume-section" id="passions">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Passions</h2>
-                    <div class="subheading blockquote mb-3">
-                        "choisis un travail que tu aimes et tu n'auras pas à travailler un seul jour de ta vie."
-                    </div>
-                    <footer class="blockquote-footer mb-5">Confucius</footer>
-                    <p class="lead catchphrase">
-                        L'informatique n'est pas seulement un métier, c'est une passion qui m'ouvre les portes des nouvelles technologies, toujours fascinantes et pleines de défis, qui émerveillent autant qu'elles questionnent.
-                    </p>
-                    <p class="lead catchphrase">
-                        En tant que musicien amateur, je trouve dans la musique et le spectacle vivant une source d'inspiration et une façon d'enrichir mon quotidien.
-                    </p>
-                    <p class="lead catchphrase">
-                        Cinéphile curieux, j'explore les salles obscures à la recherche d'émotions fortes, tandis que l'Histoire me permet de mieux comprendre le monde qui m'entoure.
-                    </p>
-                    <p class="lead catchphrase mb-5">
-                        Enfin, l'aviation nourrit un rêve d'enfant et la mécanique dans laquelle j'ai grandi, reste une activité qui m'anime.
-                    </p>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-             <!-- COORDONNÉES -->
-             <section class="resume-section" id="coordonnees">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Coordonnées</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <p class="lead catchphrase mb-3">
-                                Vous êtes intéressé·e par mon profil et mes compétences ?
-                            </p>
-                            <p class="lead catchphrase mb-3">
-                                N'hésitez pas à me contacter, je me ferai un plaisir d'échanger avec vous.
-                            </p>
-                            <p class="lead catchphrase mb-3">
-                                Vous pouvez me joindre par téléphone et par e-mail.
-                            </p>
-                            <p class="lead catchphrase mb-5">
-                                Nous pourrons discuter ensemble de la manière dont je pourrai contribuer à vos projets et apporter de la valeur à vos équipes.
-                            </p>
-                            <h3 class="mt-5 mb-5">Marc Lupi</h3>
-                            <p class="mb-2"><a href="mailto:marc.lupi@protonmail.com" class="hvr-underline-from-left">marc.lupi@protonmail.com</a></p>
-                            <p class="mb-5"><a class="hvr-underline-from-left" href="tel:+33782108037">(33) 7 82 10 80 37</a></p>
-                        </div>
-                    </div>
-                    <div class="social-icons">
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Ma page LinkedIn" href="https://www.linkedin.com/in/marc-lupi" target="_blank"><i class="fab fa-linkedin-in hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon dépôt GitHub" href="https://github.com/piluprior/" target="_blank"><i class="fab fa-github hvr-icon"></i></a>
-                        <a class="social-icon hvr-icon-pulse mt-5 mb-5" data-bs-toggle="tooltip" title="Mon CV en ligne" target="_blank" download="document.pdf" href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc"><i class="fa fa-file hvr-icon" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-            </section>
         </div>
-        <!-- bouton scroll-up -->
-        <button id="scrollUp" class="scroll-up" data-bs-toggle="tooltip" title="Scroll up !">↾</button>
-        <!-- bootstrap core js -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- core theme js -->
-        <script src="./ASSET/scripts.js"></script>
-    </body>
+
+        <!-- NIVEAU 2 - Navigation principale -->
+        <div class="header-bottom">
+            <div class="header-bottom-content">
+                <!-- Logo MARC LUPI -->
+                <a href="#page-top" class="logo js-scroll-trigger">
+                    Marc <span class="accent">Lupi</span>
+                </a>
+
+                <!-- Navigation desktop -->
+                <nav class="main-navigation">
+                    <ul class="main-nav">
+                        <li><a href="#apropos" class="nav-link active js-scroll-trigger">À propos</a></li>
+                        <li><a href="#competences" class="nav-link js-scroll-trigger">Compétences</a></li>
+                        <li><a href="#parcours" class="nav-link js-scroll-trigger">Parcours</a></li>
+                        <li><a href="#formation" class="nav-link js-scroll-trigger">Formation</a></li>
+                        <li><a href="#profil" class="nav-link js-scroll-trigger">Profil</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Bouton CTA -->
+                <a href="mailto:marc.lupi@protonmail.com" class="header-cta">Me contacter</a>
+
+                <!-- Bouton hamburger mobile -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================
+         MENU MOBILE
+         ================================ -->
+    <!-- Overlay mobile -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Sidebar mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo" style="font-size: 1.3rem;">
+                Marc <span class="accent">Lupi</span>
+            </div>
+            <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Fermer menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Navigation mobile -->
+        <ul class="mobile-nav">
+            <li><a href="#apropos" onclick="closeMobileMenu()" class="js-scroll-trigger">À propos</a></li>
+            <li><a href="#competences" onclick="closeMobileMenu()" class="js-scroll-trigger">Compétences</a></li>
+            <li><a href="#parcours" onclick="closeMobileMenu()" class="js-scroll-trigger">Parcours</a></li>
+            <li><a href="#formation" onclick="closeMobileMenu()" class="js-scroll-trigger">Formation</a></li>
+            <li><a href="#profil" onclick="closeMobileMenu()" class="js-scroll-trigger">Profil</a></li>
+        </ul>
+
+        <!-- Contact mobile -->
+        <div class="mobile-contact">
+            <div class="mobile-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>marc.lupi@protonmail.com</span>
+            </div>
+            <div class="mobile-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>(33) 7 82 10 80 37</span>
+            </div>
+            <div class="mobile-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Auch, 32000</span>
+            </div>
+
+            <!-- Social mobile -->
+            <div class="mobile-social">
+                <a href="https://www.linkedin.com/in/marc-lupi" class="mobile-social-icon" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/piluprior/" class="mobile-social-icon" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://drive.proton.me/urls/7GVPMC4BYW#bTuTlJ6cwBXc" class="mobile-social-icon" target="_blank">
+                    <i class="fa fa-file"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================
+         CONTENU PRINCIPAL - 6 SECTIONS
+         ================================ -->
+    <div class="container-fluid ps-4">
+        
+        <!-- SECTION 1 - ACCUEIL -->
+        <section class="resume-section" id="page-top">
+            <div class="resume-section-content">
+                <!-- Insérez ici votre contenu À PROPOS -->
+                <h1 class="hero-text mb-5"><span class="redder">Marc Lupi</span></h1>
+                <h2 class="mb-5">Technicien Supérieur des Systèmes et Réseaux</h2>
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- SECTION 2 - À PROPOS -->
+        <section class="resume-section" id="apropos">
+            <div class="resume-section-content">
+                <!-- Insérez ici votre contenu À PROPOS -->
+                <h2 class="section-title mb-5">à propos...</h2>
+                <p class="lead catchphrase mb-3">
+                    Technicien des systèmes et réseaux, fort d’une expérience variée au sein d'environnements techniques et informatiques,
+                    je suis passionné par l’administration et l’interopérabilité des systèmes, la gestion des réseaux et la virtualisation. 
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Afin d'augmenter ma visibilité sur Internet et de maximiser mes chances de décrocher un emploi, j'ai créé ce site onepage en quelques heures.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Travailleur archarné, la rigueur et l'autonomie sont au cœur de mon travail, me permettant d'être très vite opérationnel et d’aborder chaque mission avec confiance.
+                    J'apporte avec moi ces qualités que je considère comme une vraie plus-value pour l'entreprise.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Curieux et inventif, je cherche sans cesse des solutions innovantes et de nouvelles perspectives.
+                    Ma capacité d'organisation me permet d'assurer la gestion efficace des projets, tandis que mon esprit d’équipe favorise la cohésion autour d’objectifs communs.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Mon objectif ?
+                    Poursuivre ma formation de technicien informatique tout en mettant mes compétences relationnelles et techniques au service d’une entreprise ou d'une institution.
+                </p>
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- SECTION 3 - COMPÉTENCES -->
+        <section class="resume-section" id="competences">
+            <div class="resume-section-content">
+                <h2 class="section-title mb-5">mes compétences en systèmes et réseaux</h2>
+                <div class="subheading mb-3">assurer le support utilisateur en centre de services</div>
+                <p class="lead catchphrase mb3">
+                    J’assure la gestion des parcs informatiques et le suivi des incidents avec GLPI, en appliquant les SLA et en garantissant une résolution rapide et efficace.
+                    Chaque ticket est traité avec rigueur, avec un suivi structuré et des priorités clairement définies.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Je rédige et mets à jour les procédures dans des formats adaptés (Markdown, Wiki, Word) pour assurer une documentation claire et exploitable par les équipes.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Une parfaite maîtrise des architectures matérielles me permet d’intervenir sur l’ensemble des composants, des processeurs multicœurs aux périphériques.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Windows et Linux sont exploités de manière égale, selon les besoins.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    L’usage d’outils collaboratifs tels que Microsoft Teams et Slack me permet de fluidifier les échanges et de maximiser l’efficacité en équipe.
+                </p>
+                <div class="subheading mb-3">exploiter des serveurs windows et un domaine active directory</div>
+                <p class="lead catchphrase mb-3">
+                    L’installation, la configuration et l’exploitation des serveurs Windows ne posent aucun problème.
+                    Je maîtrise les rôles et fonctionnalités intégrées ainsi que l’intégration de solutions tierces comme XWiki et Nagios.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    La gestion des objets Active Directory est assurée avec précision :
+                    création et administration des utilisateurs, groupes et unités d’organisation avec une automatisation efficace via PowerShell et les outils RSAT.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’intégration des postes clients au domaine s’accompagne d’une gestion fine des GPO pour appliquer les stratégies de sécurité adéquates.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Je gère les mises à jour via WSUS et exploite Hyper-V pour la création et l’administration des machines virtuelles sous Windows.
+                </p>
+                <div class="subheading mb-3">exploiter des serveurs linux</div>
+                <p class="lead catchphrase mb-3">
+                    J’installe, configure et exploite les serveurs Debian ainsi que des services comme GLPI, FOG, XiVO et bien d'autres encore.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’automatisation des tâches est optimisée grâce à des scripts Bash adaptés aux besoins et aux contextes d’exploitation.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’identification et la correction des vulnérabilités passent par l’analyse des CVE et l’application de correctifs de sécurité ciblés.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Je gère les permissions et utilisateurs avec chmod, chown et sudo et exploite des services réseau comme SSH, Apache, NGINX et SAMBA.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Les systèmes de fichiers ext4, ZFS et XFS sont exploités pour garantir un stockage performant et sécurisé.
+                </p>
+                <div class="subheading mb-3">exploiter un réseau ip</div>
+                <p class="lead catchphrase mb-3">
+                    La sécurisation du réseau est garantie par l’application des recommandations de l’ANSSI, la gestion des pare-feu et l’administration des VLAN.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Les ACL sont configurées pour un contrôle précis des flux de données.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Afin d'assurer une vision claire de l’architecture, je conçois des schémas réseau sous Visio ou Draw.io.
+                    Une maîtrise avancée du modèle OSI et de l’architecture TCP/IP permet d’optimiser la gestion des protocoles et l’adressage IP avec les CIDR VLSM et FLSM.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Les équipements d’interconnexion sous Cisco IOS sont configurés pour garantir la stabilité et la sécurité du réseau.
+                </p>
+                <div class="subheading mb-3">maintenir des serveurs dans une infrastructure virtualisée</div>
+                <p class="lead catchphrase mb-3">
+                    La création et l’exploitation de machines virtuelles sous VMware, Hyper-V et Proxmox sont assurées avec efficacité.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Je supervise les performances des VM et des hôtes via les outils de supervision intégrés ou des solutions de supervision tierces comme Nagios ou Zabbix.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’optimisation des ressources CPU, RAM et stockage garantit une infrastructure réactive et disponible.
+                    Les mises à jour et correctifs de sécurité sont appliqués sur l’ensemble des environnements.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Active Directory est exploité en environnement virtualisé avec gestion avancée des GPO et des identités.
+                    La haute disponibilité et la répartition de charge sont gérées avec vSphere HA, DRS et les clusters Proxmox, selon les environnements.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Une surveillance continue des alertes et journaux d’événements permet d’anticiper les incidents et d’assurer la stabilité des services.
+                </p>
+                <div class="subheading mb-3">automatiser des tâches à l’aide de scripts</div>
+                <p class="lead catchphrase mb-3">
+                    J’adapte et déploie des scripts en PowerShell et Bash pour automatiser la gestion des serveurs Windows et Linux.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’optimisation des processus inclut l’automatisation de la création d’utilisateurs, la gestion des permissions et le déploiement d’applications.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Task Scheduler sous Windows et Cron sous Linux sont utilisés pour exécuter les scripts et les tâches de manière autonome.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Chaque script est testé, corrigé et documenté pour garantir son efficacité et sa pérennité.
+                </p>
+                <div class="subheading mb-3">maintenir et sécuriser les accès à internet et les interconnexions des réseaux</div>
+                <p class="lead catchphrase mb-3">
+                    L’installation et le déploiement de pare-feu, notamment avec pfSense, permettent un filtrage et un contrôle strict des accès réseau.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    La configuration et la maintenance des VPN sécurisent les accès distants via IPsec pour les connexions site à site et OpenVPN pour les connexions client à site.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’authentification sécurisée est mise en place avec gestion des certificats SSL/TLS pour chiffrer les communications.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Les meilleures pratiques en cybersécurité sont appliquées pour sécuriser les interconnexions entre sites.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    La configuration et la surveillance des DMZ garantissent l’isolation et la protection des services exposés sur Internet.
+                </p>
+                <div class="subheading mb-3">mettre en place, assurer et tester les sauvegardes et les restaurations des éléments de l’infrastructure</div>
+                <p class="lead catchphrase mb-3">
+                    L’exploitation de Veeam Server permet d’assurer une politique de sauvegarde fiable et performante.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Les stratégies de sauvegarde sont adaptées aux besoins de l’entreprise avec des sauvegardes complètes, incrémentales et différentielles.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’intégrité des sauvegardes est vérifiée régulièrement et des tests de restauration sont effectués pour garantir la disponibilité des données.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Le suivi des performances des espaces de stockage optimise les cycles de rétention.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Chaque procédure de restauration est documentée et mise à jour pour garantir une intervention rapide en cas d’incident.
+                </p>
+                <div class="subheading mb-3">exploiter et maintenir les services de déploiement des postes de travail</div>
+                <p class="lead catchphrase mb-3">
+                    Le déploiement des postes de travail est assuré via WDS, MDT et FOG.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Les masters sont créés et mis à jour pour garantir une installation standardisée et conforme aux exigences de l’entreprise.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Les mises à jour sont centralisées et automatisées via WSUS ou SCCM pour assurer la sécurité et la stabilité des postes clients.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    L’exploitation de Proxmox permet de gérer les environnements VDI et de proposer des postes de travail virtualisés accessibles via des clients légers.
+                </p>
+                <p class="lead catchphrase mb-3">
+                    Le suivi des performances et le dépannage des clients légers et des sessions virtuelles sont assurés avec réactivité.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Des procédures détaillées et des guides utilisateurs sont rédigés pour optimiser la prise en main des outils mis à disposition des collaborateurs.
+                </p>
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- SECTION 4 - PARCOURS -->
+        <section class="resume-section" id="parcours">
+            <div class="resume-section-content">
+                <h2 class="section-title mb-5">mon parcours professionnel</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <!-- esn soften-it -->
+                        <h3 class="mb-5">Créateur d'entreprise de services numériques <span class="span-softenit">SOFTEN-IT</span></h3>
+                        <p class="subheading mb-3">CONCEPTION ET DÉVELOPPEMENT WEB</p>
+                        <p class="lead catchphrase mb-5">
+                            Conception et développement front-end et back-end de sites Internet et de CMS.
+                            Maintenance et refonte de sites existants. Optimisation du référencement naturel (SEO) et analyse des performances avec Google Analytics 4.
+                            Création et gestion des pages Google My Business.
+                            Mise en place de stratégies de marketing digital adaptées aux besoins des projets.
+                        </p>
+                        <p class="subheading mb-3">GESTION ADMINISTRATIVE ET FINANCIÈRE</p>
+                        <p class="lead catchphrase mb-5">
+                            Élaboration et suivi des devis et factures.
+                            Gestion de la relation client avec un suivi structuré et réactif.
+                            Prospection commerciale et développement du portefeuille client. Gestion comptable, suivi des charges et respect des obligations fiscales.
+                            Administration des contrats, des documents légaux et des ressources nécessaires au bon fonctionnement de l’activité.
+                            Planification et gestion efficace des projets pour assurer leur viabilité et leur réussite.
+                        </p>
+                        <p class="subheading mb-3">DÉVELOPPEMENT COMMERCIAL ET STRATÉGIE</p>
+                        <p class="lead catchphrase mb-5">
+                            Développement et entretien du réseau professionnel.
+                            Gestion des relations clients avec une approche orientée fidélisation.
+                            Analyse de la concurrence et détection des opportunités de marché.
+                            Optimisation de la présence en ligne et du personal branding.
+                            Prospection active et création de relations commerciales solides.
+                        </p>
+                        <p class="subheading mb-3">FORMATION ET DÉVELOPPEMENT PERSONNEL</p>
+                        <p class="lead catchphrase mb-5">
+                            Acquisition continue de nouvelles compétences pour s’adapter aux évolutions du secteur.
+                            Veille technologique et montée en compétence sur les outils et pratiques émergents.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Juillet 2019 - Juillet 2023</span></div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <!-- cd32 -->
+                        <h3 class="mb-5">Technicien support & intégration au Conseil Départemental du Gers</h3>
+                        <p class="subheading mb-3">SUPPORT UTILISATEUR ET ASSISTANCE TECHNIQUE</p>
+                        <p class="lead catchphrase mb-5">
+                            Assistance aux utilisateurs en centre de services en tant que technicien helpdesk et technicien de proximité au sein du Pôle Utilisateurs.
+                            Support par téléphone, messagerie électronique et en kiosque avec une gestion rigoureuse du ticketing.
+                            Réception, installation et déploiement du matériel neuf, avec configuration du système d’exploitation via PXE.
+                            Déplacements et interventions sur site pour le dépannage des équipements informatiques, des copieurs et des imprimantes.
+                            Gestion et maintenance de la téléphonie mobile et fixe. Supervision et suivi des infrastructures utilisateurs.
+                        </p>
+                        <p class="subheading mb-3">INTÉGRATION DE SOLUTIONS ET DOCUMENTATION</p>
+                        <p class="lead catchphrase mb-5">
+                            Intégration de solutions logicielles au sein du Pôle Documentaire.
+                            Rédaction de documentations et de procédures adaptées aux utilisateurs et aux équipes techniques.
+                            Création et gestion de sites Internet en fonction des besoins des projets.
+                        </p>
+                        <div class="mb-5 linker"><a href="https://www.gers.fr/" class="hvr-underline-from-left" target="_blank">département du gers</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">1er août 2019 - 31 mai 2020</span></div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <!-- technicien méthodes -->
+                        <h3 class="mb-5">Technicien méthodes - EDT groupe Sogeclair</h3>
+                        <p class="subheading mb-3">CONTRÔLE ET VALIDATION DES HARNAIS ÉLECTRIQUES</p>
+                        <p class="lead catchphrase mb-5">
+                            Contrôle des harnais électriques de l’Airbus A380 sur plans en collaboration directe avec les dessinateurs et les bureaux d’études d'Airbus.
+                            Vérification et ajustement des supports de fixation (brackets) sous CADDS5 en respectant les contraintes mécaniques et les normes aéronautiques.
+                            Détection, analyse et résolution des conflits d’implantation des harnais électriques au sein de la maquette numérique (Digital Mock-Up) sous ENOVIA, dans un contexte de co-développement international impliquant plusieurs sites de production.
+                            Coordination avec les équipes de conception et d’industrialisation pour assurer l’intégration conforme des faisceaux dans la structure de l’aéronef.
+                        </p>
+                        <p class="subheading mb-3">GESTION DOCUMENTAIRE ET FORMATION</p>
+                        <p class="lead catchphrase mb-5">
+                            Gestion et mise à jour de la documentation technique sous SAP, avec traçabilité des modifications et respect des processus qualité.
+                            Suivi et reporting des contrôles effectués, avec remontée des écarts et proposition d’actions correctives.
+                            Rédaction de procédures et de guides techniques pour standardiser les méthodes de contrôle et optimiser l’efficacité des équipes.
+                            Formation des techniciens et des ingénieurs à l’utilisation des outils de conception et de validation, ainsi qu’aux bonnes pratiques de contrôle des harnais électriques en environnement aéronautique.
+                        </p>
+                        <div class="mb-5 linker"><a href="https://sogeclair.com/fr" class="hvr-underline-from-left" target="_blank">sogeclair</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">06 février 2006 - 13 octobre 2006</span></div>
+                </div>
+
+                <h2 class="mb-5">Mes certifications</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <!-- certificat voltaire-->
+                        <h3 class="mb-5">Le Certificat Voltaire</h3>
+                        <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
+                        <p class="subheading mb-3">QU'EST-CE QUE LE CERTIFICAT VOLTAIRE ?</p>
+                        <p class="lead catchphrase mb-5">
+                            Le Certificat Voltaire est une certification de référence en langue française, qui valide les compétences en orthographe, grammaire, syntaxe et expression écrite.
+                            Elle mesure de façon objective le niveau du candidat grâce à un examen — en centre ou en ligne — avec vérification d’identité.
+                            Le résultat est attesté par un score qui reflète la maîtrise réelle de la langue.
+                        </p>
+                        <p class="subheading mb-3">PRÉPARATION ET OUTILS PÉDAGOGIQUES (PROJET VOLTAIRE)</p>
+                        <p class="lead catchphrase mb-5">
+                            Le Projet Voltaire met à disposition des outils pour se préparer : modules personnalisés, entraînements en ligne, fiches, quiz, avec l’Ancrage Mémoriel®, méthode garantissant durablement les progrès.
+                            Adaptés aux niveaux variés (étudiants, professionnels), ces parcours sont éligibles au CPF, avec un accompagnement possible par un formateur.
+                        </p>
+                        <p class="subheading mb-3">VALORISATION PROFESSIONNELLE ET ACADÉMIQUE</p>
+                        <p class="lead catchphrase mb-5">
+                            Posséder le Certificat Voltaire apporte un atout sérieux : sur un CV, une candidature, ou Parcoursup, il témoigne d’une maîtrise de la langue écrite — critère très prisé par les employeurs.
+                            92 % estiment que les fautes nuisent à l’image de l’entreprise.
+                            Il permet de se distinguer, d’être crédible, de renforcer la confiance et l’efficacité dans les écrits professionnels.
+                        </p>
+                        <p class="subheading mb-3">ACCESSIBILITÉ, RECONNAISSANCE ET FINANCEMENT</p>
+                        <p class="lead catchphrase mb-5">
+                            Le certificat est accessible à tous : de nombreux centres d’examen, des dispositions spéciales pour les personnes en situation de handicap, des modalités adaptées pour les troubles (dys, non voyants, etc.).
+                            De plus, l’examen et sa préparation peuvent être financés via le CPF pour salariés ou demandeurs d’emploi, ce qui le rend abordable et reconnu.
+                        </p>
+                        <h5 class="mb-5">Les atouts du Certificat Voltaire en informatique</h5>
+                        <p class="subheading mb-3">DOCUMENTATION TECHNIQUE FIABLE</p>
+                        <p class="lead catchphrase mb-5">
+                            Dans les métiers systèmes et réseaux, rédiger des procédures claires (installation, sauvegarde, PRA, configuration réseau) est essentiel.
+                            Une faute ou une ambiguïté peut entraîner une mauvaise interprétation et provoquer des incidents.
+                            Le Certificat Voltaire garantit la précision de l’expression, sécurisant ainsi la transmission des informations techniques.
+                        </p>
+                        <p class="subheading mb-3">COMMUNICATION AVEC LES CLIENTS ET LA DIRECTION</p>
+                        <p class="lead catchphrase mb-5">
+                            Un administrateur ou technicien doit souvent produire des rapports clairs et synthétiques pour la hiérarchie, les clients ou les partenaires.
+                            Un français irréprochable crédibilise le discours, montre le sérieux et rassure sur la rigueur professionnelle.
+                            Le certificat devient un gage de fiabilité et de professionnalisme auprès des décideurs.
+                        </p>
+                        <p class="subheading mb-3">GESTION DES TICKETS ET SUPPORT UTILISATEUR</p>
+                        <p class="lead catchphrase mb-5">
+                            Dans la gestion de parc ou le support, la qualité rédactionnelle est primordiale.
+                            Les réponses écrites dans GLPI, Intune, ou par mail doivent être compréhensibles et pédagogiques.
+                            Le Certificat Voltaire renforce les compétences de vulgarisation technique, rendant l’assistance plus efficace et améliorant la satisfaction des utilisateurs.
+                        </p>
+                        <p class="subheading mb-3">ÉVOLUTION ET MANAGEMENT</p>
+                        <p class="lead catchphrase mb-5">
+                            Pour un futur rôle d’Administrateur d’Infrastructures Sécurisées (AIS) ou de responsable d’équipe, la communication écrite devient stratégique : cahiers des charges, comptes rendus de réunions, procédures de sécurité.
+                            Détenir le Certificat Voltaire atteste d’un haut niveau de rédactionnel professionnel, ouvrant des perspectives vers des postes à responsabilités.
+                        </p>
+                        <div class="mb-3 linker"><a href="https://www.certificat-voltaire.fr/" class="hvr-underline-from-left" target="_blank">certificat voltaire</a></div>
+                        <div class="mb-5 linker"><a href="https://www.projet-voltaire.fr/" class="hvr-underline-from-left" target="_blank">projet voltaire</a></div>
+                    </div>
+                    <div class="flex-shrink-0 mb-5"><span class="custom-text">05 septembre 2025 - 04 janvier 2026</span></div>
+                </div>
+                <!-- certification cisco ccna 200-301 -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">La certification Cisco CCNA 200-301</h3>
+                        <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
+                        <p class="subheading mb-3">QU’EST-CE QUE LA CERTIFICATION CCNA ?</p>
+                        <p class="lead catchphrase mb-5">
+                            Le CCNA atteste de compétences pratiques : configuration d’équipements Cisco, mise en œuvre de protocoles de routage (RIP, OSPF), création et gestion de VLANs, sécurisation des accès, diagnostic d’incidents.
+                            Il aborde aussi l’automatisation, le cloud et les principes de cybersécurité.
+                            Cette certification prépare aux environnements hybrides actuels et garantit une vision complète des réseaux.
+                        </p>
+                        <p class="subheading mb-3">CONTENU ET COMPÉTENCES VALIDÉES</p>
+                        <p class="lead catchphrase mb-5">
+                            Intégration de solutions logicielles au sein du Pôle Documentaire.
+                            Rédaction de documentations et de procédures adaptées aux utilisateurs et aux équipes techniques.
+                            Création et gestion de sites Internet en fonction des besoins des projets.
+                        </p>
+                        <p class="subheading mb-3">RECONNAISSANCE ET VALEUR PROFESSIONNELLE</p>
+                        <p class="lead catchphrase mb-5">
+                            Très recherché par les recruteurs, le CCNA est reconnu comme un gage de compétences techniques et de rigueur.
+                            Il valorise le CV, facilite l’accès aux postes en administration systèmes et réseaux, et ouvre la voie vers des spécialisations (CCNP, sécurité, automatisation).
+                            Les employeurs y voient la preuve d’une formation structurée, validée par un leader du secteur.
+                        </p>
+                        <p class="subheading mb-3">ACCESSIBILITÉ ET PRÉPARATION</p>
+                        <p class="lead catchphrase mb-5">
+                            Le CCNA est accessible aux étudiants comme aux professionnels.
+                            Cisco propose des formations en ligne (NetAcad), complétées par des labos pratiques avec Packet Tracer ou GNS3.
+                            Les centres agréés organisent l’examen, disponible mondialement.
+                            Le contenu est mis à jour pour refléter les besoins du marché, garantissant une certification pertinente et actuelle.
+                        </p>
+                        <h5 class="mb-5">Les apports du CCNA dans les métiers IT</h5>
+                        <p class="subheading mb-3">DÉPLOIEMENT ET MAINTENANCE DE RÉSEAUX</p>
+                        <p class="lead catchphrase mb-5">
+                            Dans un rôle de technicien systèmes et réseaux, le CCNA permet d’installer et configurer des routeurs, switches et VLANs en respectant les bonnes pratiques.
+                            Cette expertise réduit les erreurs, améliore la performance et sécurise l’infrastructure.
+                            C’est un atout concret pour les entreprises recherchant une mise en place fiable et évolutive de leurs environnements.
+                        </p>
+                        <p class="subheading mb-3">DIAGNOSTIC ET RÉSOLUTION D’INCIDENTS</p>
+                        <p class="lead catchphrase mb-5">
+                            Un professionnel certifié CCNA maîtrise les outils et méthodes de troubleshooting réseau.
+                            En entreprise, cela signifie une résolution rapide des pannes, minimisant l’impact sur la production.
+                            Le diagnostic précis des problèmes (adressage, routage, sécurité) renforce la stabilité des services et démontre une compétence immédiatement opérationnelle sur le terrain.
+                        </p>
+                        <p class="subheading mb-3">COMMUNICATION AVEC LES ÉQUIPES ET CLIENTS</p>
+                        <p class="lead catchphrase mb-5">
+                            Le CCNA ne se limite pas à la technique : il développe aussi une capacité à communiquer clairement sur la structure et le fonctionnement d’un réseau.
+                            Cette compétence facilite la rédaction de procédures, de schémas ou de rapports, et renforce la crédibilité du technicien auprès des clients, des managers et des équipes pluridisciplinaires.
+                        </p>
+                        <p class="subheading mb-3">ÉVOLUTION DE CARRIÈRE ET SPÉCIALISATIONS</p>
+                        <p class="lead catchphrase mb-5">
+                            Le CCNA ouvre la voie vers des certifications plus avancées comme le CCNP, ou vers des spécialisations en cybersécurité, cloud et automatisation.
+                            Pour un futur administrateur d’infrastructures sécurisées (AIS), c’est une étape incontournable, attestant d’un socle solide et reconnu, indispensable pour évoluer vers des responsabilités techniques ou managériales.
+                        </p>
+                        <div class="mb-5 linker"><a href="https://www.formademia.fr/" class="hvr-underline-from-left" target="_blank">formademia</a></div>
+                    </div>
+                <div class="flex-shrink-0 mb-5"><span class="custom-text">Juin 2025</span></div>
+            </div>
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <!-- certification opquast -->
+                    <h3 class="mb-5">La Certification Opquast</h3>
+                    <h6 class="text-center expired mb-5">Certification expirée</h6>
+                    <p class="subheading mb-3">QU’EST-CE QUE LA CERTIFICATION OPQUAST ?</p>
+                    <p class="lead catchphrase mb-5">
+                        La certification Opquast est une référence internationale de la qualité web.
+                        Elle atteste de la maîtrise des bonnes pratiques garantissant accessibilité, performance, sécurité et expérience utilisateur.
+                        Basée sur un référentiel de 240 règles, elle est reconnue dans l’ensemble de l’écosystème numérique et constitue un standard pour concevoir des sites fiables et inclusifs.
+                    </p>
+                    <p class="subheading mb-3">CONTENU ET COMPÉTENCES VALIDÉES</p>
+                    <p class="lead catchphrase mb-5">
+                        Opquast valide des compétences transverses : conception ergonomique, compatibilité multi-supports, respect des standards, accessibilité pour les personnes en situation de handicap, et prise en compte de la cybersécurité.
+                        Les candidats acquièrent une culture qualité web solide, applicable aussi bien au développement, à l’intégration qu’à la gestion de projets numériques complexes.
+                    </p>
+                    <p class="subheading mb-3">RECONNAISSANCE ET VALEUR PROFESSIONNELLE</p>
+                    <p class="lead catchphrase mb-5">
+                        La certification Opquast est un gage de sérieux et de professionnalisme.
+                        Elle figure dans les critères recherchés par les agences, ESN, services numériques et collectivités.
+                        Elle améliore l’employabilité en démontrant une attention particulière à la conformité, à l’accessibilité et à la satisfaction des utilisateurs.
+                        Elle valorise le CV et crédibilise les compétences numériques.
+                    </p>
+                    <p class="subheading mb-3">ACCESSIBILITÉ ET PRÉPARATION</p>
+                    <p class="lead catchphrase mb-5">
+                        La certification est accessible en ligne, avec une préparation via des modules e-learning, des quiz et des cas pratiques.
+                        Les contenus sont régulièrement mis à jour pour suivre les évolutions technologiques et légales.
+                        L’examen est ouvert aux étudiants, professionnels et demandeurs d’emploi, garantissant un socle de compétences pérennes et certifiées en qualité web.
+                    </p>
+                    <h5 class="mb-5">Les apports de la Certification Opquast dans les métiers IT</h5>
+                    <p class="subheading mb-3">AMÉLIORATION DE L’EXPÉRIENCE UTILISATEUR</p>
+                    <p class="lead catchphrase mb-5">
+                        Grâce à Opquast, un professionnel sait appliquer les règles garantissant un site simple, rapide et accessible.
+                        Dans une DSI ou un service web, cela réduit les erreurs d’ergonomie, améliore la satisfaction des usagers et optimise le référencement naturel (SEO).
+                        L’impact direct est une meilleure image numérique de l’entreprise et une augmentation de la confiance des clients.
+                    </p>
+                    <p class="subheading mb-3">RÉDUCTION DES RISQUES JURIDIQUES ET TECHNIQUES</p>
+                    <p class="lead catchphrase mb-5">
+                        Opquast aide à anticiper les problèmes liés aux standards, à l’accessibilité et aux obligations légales.
+                        Pour une entreprise, c’est une protection contre les risques de non-conformité.
+                        Dans un projet web, un certifié Opquast identifie rapidement les incohérences et applique les solutions adaptées, renforçant la sécurité et la robustesse des plateformes numériques.
+                    </p>
+                    <p class="subheading mb-3">COLLABORATION INTER-ÉQUIPES FACILITÉE</p>
+                    <p class="lead catchphrase mb-5">
+                        La certification apporte un vocabulaire commun et une culture partagée de la qualité web.
+                        Développeurs, designers, administrateurs réseaux et chefs de projets gagnent en efficacité car ils parlent le même langage autour de la performance et de l’accessibilité.
+                        Cette transversalité rend les projets plus fluides et limite les frictions entre métiers.
+                    </p>
+                    <p class="subheading mb-3">ÉVOLUTION PROFESSIONNELLE ET DIFFÉRENCIATION</p>
+                    <p class="lead catchphrase mb-5">
+                        Opquast valorise un profil en lui donnant une dimension supplémentaire : celle de la qualité numérique.
+                        Elle ouvre des portes dans la gestion de projets, l’UX design, la conformité ou la cybersécurité.
+                        Dans un CV, elle distingue un candidat en prouvant son engagement à produire des services numériques fiables, inclusifs et orientés utilisateurs.
+                    </p>
+                    <div class="mb-3 linker mb-5"><a href="https://www.opquast.com/" class="hvr-underline-from-left" target="_blank">opquast</a></div>
+                </div>
+                <div class="flex-shrink-0 mb-5"><span class="custom-text">Janvier 2019</span></div>
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- SECTION 5 - FORMATION -->
+        <section class="resume-section" id="formation">
+            <div class="resume-section-content">
+                <h2 class="section-title mb-5">formation</h2>
+                <!-- formation tssr -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Technicien Supérieur des Systèmes et Réseaux</h3>
+                        <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
+                        <div class="mb-5">Châtellerault, 86100</div>
+                        <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">09 septembre 2024 - 13 juin 2025</span></div>
+                </div>
+                <!-- formation licence -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Licence première année d'études japonaises</h3>
+                        <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
+                        <div class="mb-5">Toulouse, 31000</div>
+                        <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left" target="_blank">université jean-jaurès</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Septembre 2023</span></div>
+                </div>
+                <!-- formation wordpress -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Wordpress 5 - perfectionnement</h3>
+                        <div class="subheading mb-3">Openska</div>
+                        <div class="mb-5">En ligne</div>
+                        <div class="mb-5 linker"><a href="https://www.openska.com/" class="hvr-underline-from-left" target="_blank">openska</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">19 juillet 2022 - 22 juillet 2022</span></div>
+                </div>
+                <!-- formation catia v5 -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">CATIA v5 - perfectionnement</h3>
+                        <div class="subheading mb-3">3DIS</div>
+                        <div class="mb-5">En ligne</div>
+                        <div class="mb-5 linker"><a href="https://www.3dis-formation.fr/" class="hvr-underline-from-left" target="_blank">3dis</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">13 septembre 2021 - 17 septembre 2021</span></div>
+                </div>
+                <!-- caces -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">CACES R489 1A, 3, 5</h3>
+                        <div class="subheading mb-3">Icone Formation</div>
+                        <div class="mb-5">Auch, 32000</div>
+                        <div class="mb-5 linker"><a href="https://icone-formation.fr/" class="hvr-underline-from-left" target="_blank">icone</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Juin 2020</span></div>
+                </div>
+                <!-- php -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">PHP - perfectionnement</h3>
+                        <div class="subheading mb-3">Weecast</div>
+                        <div class="mb-5">En ligne</div>
+                        <div class="mb-5 linker"><a href="https://fr.tuto.com/" class="hvr-underline-from-left" target="_blank">tuto</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">02 septembre 2019 - 10 janvier 2020</span></div>
+                </div>
+                <!-- opquast -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Opquast</h3>
+                        <div class="subheading mb-3">Opquast</div>
+                        <div class="mb-5">En ligne</div>
+                        <div class="mb-5 linker"><a href="https://www.opquast.com/" class="hvr-underline-from-left" target="_blank">opquast</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Janvier 2019</span></div>
+                </div>
+                <!-- développement web -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Développeur Web et Web Mobile</h3>
+                        <div class="subheading mb-3">Simplon</div>
+                        <div class="mb-5">Auch, 32000</div>
+                        <div class="mb-5 linker"><a href="https://www.simplon.co/" class="hvr-underline-from-left" target="_blank">simplon</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Mai 2018</span></div>
+                </div>
+                <!-- daeu-a -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Diplôme d'Accès aux Études Universitaires</h3>
+                        <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
+                        <div class="mb-5">Toulouse, 31000</div>
+                        <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left" target="_blank">université jean-jaurès</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Septembre 2017</span></div>
+                </div>
+                <!-- bilan de compétence 2 -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Bilan de compétences</h3>
+                        <div class="subheading mb-3">Cabinet Conseil Dac</div>
+                        <div class="mb-5">Auch, 32000</div>
+                        <div class="mb-5 linker"><a href="https://cabinetdac.com/" class="hvr-underline-from-left" target="_blank">cabinet dac</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">15 décembre 2016 - 1er mars 2017</span></div>
+                </div>
+                <!-- tsci-sm -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Technicien Supérieur en Conception Industrielle de Systèmes Mécaniques</h3>
+                        <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
+                        <div class="mb-5">Limoges, 87000</div>
+                        <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Décembre 2011</span></div>
+                </div>
+                <!-- cadds 5 -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">CADDS v5 - perfectionnement</h3>
+                        <div class="subheading mb-3">Ajilon</div>
+                        <div class="mb-5">Blagnac, 31700</div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">21 avril 2006 - 28 avril 2006</span></div>
+                </div>
+                <!-- tmp-mg -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Technicien Méthodes et Préparation en Mécanique Générale</h3>
+                        <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
+                        <div class="mb-5">Belfort, 90000</div>
+                        <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Avril 2005</span></div>
+                </div>
+                <!-- bilan de compétence 1 -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Bilan de compétences</h3>
+                        <div class="subheading mb-3">Centre Interinstitutionnel de Bilans de Compétences</div>
+                        <div class="mb-5">Auch, 32000</div>
+                        <div class="mb-5 linker"><a href="https://www.cibcoccitanie.com/" class="hvr-underline-from-left" target="_blank">cibc</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">08 décembre 2004 - 18 janvier 2005</span></div>
+                </div>
+                <!-- catia v5, solidworks -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">CATIA v5, Solidworks</h3>
+                        <div class="subheading mb-3">Greta</div>
+                        <div class="mb-5">Bagnères-de-Bigorre, 65200</div>
+                        <div class="mb-5 linker"><a href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest" class="hvr-underline-from-left" target="_blank">greta</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">16 décembre 2002 - 10 janvier 2003</span></div>
+                </div>
+                <!-- ajusteur cellule avion -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Ajusteur-monteur de structures aéronefs</h3>
+                        <div class="subheading mb-3">Greta</div>
+                        <div class="mb-5">Tarbes, 65000</div>
+                        <div class="mb-5 linker"><a href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest" class="hvr-underline-from-left" target="_blank">greta</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">15 septembre 2002 - 13 février 2003</span></div>
+                </div>
+                <!-- mocn -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Tourneur sur machine-outil à commande numérique</h3>
+                        <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
+                        <div class="mb-5">Toulouse, 31000</div>
+                        <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Septembre 1993</span></div>
+                </div>
+                <!-- ajustage mécanique -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Ajusteur mécanicien</h3>
+                        <div class="subheading mb-3">Agence nationale pour la Formation Professionnelle des Adultes</div>
+                        <div class="mb-5">Toulouse, 31000</div>
+                        <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left" target="_blank">afpa</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Septembre 1992</span></div>
+                </div>
+                <!-- cuisine -->
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-5">Cuisinier</h3>
+                        <div class="subheading mb-3">Lycée Hôtelier Pardailhan</div>
+                        <div class="mb-5">Auch, 32000</div>
+                        <div class="mb-5 linker"><a href="https://pardailhan.mon-ent-occitanie.fr/espace-pedagogique/pole-professionnel/hotellerie-restauration/" class="hvr-underline-from-left" target="_blank">lycée hôtellier pardailhan</a></div>
+                    </div>
+                    <div class="flex-shrink-0"><span class="custom-text">Septembre 1985 - Juin 1987</span></div>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+
+        <!-- SECTION 6 - PROFIL -->
+        <section class="resume-section" id="profil">
+            <div class="resume-section-content">
+                <h2 class="section-title mb-5">profil</h2>
+                <h5 class="mb-5">Qualités</h5>
+                <div class="subheading mb-3">Il n'y a pas de résultats sans travail et pas de travail sans effort.</div>
+                <footer class="blockquote-footer mb-5">Alain Leblay</footer>
+                <p class="lead catchphrase">
+                    Fort de mes compétences techniques et de mes qualités personnelles, je m'engage pleinement dans le domaine de l'informatique. Rigueur, autonomie, créativité et sens de l'organisation sont au cœur de mon approche professionnelle.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Passionné par la technologie, je relève avec enthousiasme les défis de ce secteur tout en cultivant une sensibilité particulière pour l'art, la musique et les spectacles vivants.
+                    Ces influences nourrissent ma vision du travail, apportant à la fois créativité et humanité dans chaque projet que j’entreprends
+                </p>
+                <h5 class="mb-5">Passions</h5>
+                <div class="subheading blockquote mb-3">
+                    "choisis un travail que tu aimes et tu n'auras pas à travailler un seul jour de ta vie."
+                </div>
+                <footer class="blockquote-footer mb-5">Confucius</footer>
+                <p class="lead catchphrase">
+                    L'informatique n'est pas seulement un métier, c'est une passion qui m'ouvre les portes des nouvelles technologies, toujours fascinantes et pleines de défis, qui émerveillent autant qu'elles questionnent.
+                </p>
+                <p class="lead catchphrase">
+                    En tant que musicien amateur, je trouve dans la musique et le spectacle vivant une source d'inspiration et une façon d'enrichir mon quotidien.
+                </p>
+                <p class="lead catchphrase">
+                    Cinéphile curieux, j'explore les salles obscures à la recherche d'émotions fortes, tandis que l'Histoire me permet de mieux comprendre le monde qui m'entoure.
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Enfin, l'aviation nourrit un rêve d'enfant et la mécanique dans laquelle j'ai grandi, reste une activité qui m'anime.
+                </p>
+                <h5 class="mb-5">Langues</h5>
+                <div class="subheading mb-5">je maîtrise le français - I understand English more than I speak it - <span data-bs-toggle="tooltip" title="J'étudie le japonais">日本語を勉強しています</span></div>
+                <p class="lead catchphrase">
+                    Le français, ma langue maternelle, coule naturellement dans ma plume comme dans mes paroles, empreint d’une maîtrise assurée.
+                </p>
+                <p class="lead catchphrase">
+                    En anglais, je navigue avec aisance à un niveau intermédiaire (B1), tandis que l’anglais technique, outil précieux dans le cadre professionnel me permet d’évoluer avec une expertise reconnue (B2).
+                </p>
+                <p class="lead catchphrase mb-5">
+                    Enfin, le japonais dont je découvre les subtilités, marque le début d’un voyage linguistique prometteur à un niveau élémentaire (A1).
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ================================
+         BOUTON SCROLL UP
+         ================================ -->
+    <button id="scrollUp" class="scroll-up" title="Scroll up !" aria-label="Remonter en haut">
+        ↾
+    </button>
+
+    <!-- ================================
+        JAVASCRIPT INTERNAL LINK
+        ================================ -->
+    <script src="./ASSET/scripts.js"></script>
+
+    <!-- ================================
+    EXTERNAL LIBRARIES
+    ================================ -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</body>
 </html>
