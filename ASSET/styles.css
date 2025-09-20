@@ -829,3 +829,46 @@ white-space: nowrap;
         display: none;
     }
 }
+
+/* Animation lien avec la bibliothèque hover.css */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  border: 1px solid #800000;
+  border-radius: 0.1rem;
+  border-bottom: 1px solid transparent;
+  text-decoration: none !important; /* Supprime le soulignement classique */
+}
+
+/* Remplace le pseudo-élément par un border-bottom animé */
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: -1px; /* Position sur le border-bottom */
+  background: #800000; /* Votre couleur rouge */
+  height: 2px; /* Épaisseur normale */
+  transition-property: right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.hvr-underline-from-left:hover:before,
+.hvr-underline-from-left:focus:before,
+.hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+/* Supprime tout soulignement par défaut */
+.hvr-underline-from-left:hover,
+.hvr-underline-from-left:focus,
+.hvr-underline-from-left:active {
+  text-decoration: none !important;
+}
