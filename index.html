@@ -37,6 +37,8 @@
 </head>
 
 <body id="page-top">
+    <div class="reading-progress" id="progressBar"></div>
+
     <!-- ================================
          HEADER À DEUX NIVEAUX
          ================================ -->
@@ -78,10 +80,20 @@
         <!-- NIVEAU 2 - Navigation principale -->
         <div class="header-bottom">
             <div class="header-bottom-content">
-                <!-- Logo MARC LUPI -->
-                <a href="#page-top" class="logo js-scroll-trigger">
-                    Marc <span class="accent">Lupi</span>
-                </a>
+                <!-- Container Logo + QR -->
+                <div class="logo-container">
+                    <!-- Logo MARC LUPI -->
+                    <a href="#page-top" class="logo js-scroll-trigger">
+                        Marc <span class="accent">Lupi</span>
+                    </a>
+                    
+                    <!-- Bouton QR à droite du logo (mobile uniquement) -->
+                    <div class="qr-floating-btn" id="qrFloatingBtn">
+                        <div class="qr-btn-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Navigation desktop -->
                 <nav class="main-navigation">
@@ -96,11 +108,22 @@
 
                 <!-- Bouton CTA -->
                 <a href="mailto:marc.lupi@protonmail.com" class="header-cta">Me contacter</a>
-
+                        
                 <!-- Bouton hamburger mobile -->
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">
                     <i class="fas fa-bars"></i>
                 </button>
+            </div>
+        </div>
+
+        <!-- Modal QR (reste identique) -->
+        <div class="qr-modal" id="qrModal">
+            <div class="qr-modal-content">
+                <button class="qr-close" id="qrClose">&times;</button>
+                <h4>📱 Ajoutez-moi à vos contacts</h4>
+                <canvas id="qr-canvas-floating"></canvas>
+                <p>Scannez avec votre téléphone</p>
+                <small>💡 Si le contact existe déjà, votre téléphone proposera de le mettre à jour</small>
             </div>
         </div>
     </header>
@@ -207,7 +230,7 @@
         <!-- SECTION 3 - COMPÉTENCES -->
         <section class="resume-section" id="competences">
             <div class="resume-section-content">
-                <h2 class="section-title mb-5">mes compétences en systèmes et réseaux</h2>
+                <h2 class="section-title mb-5">mes compétences dans les systèmes et réseaux</h2>
                 <div class="subheading mb-3">assurer le support utilisateur en centre de services</div>
                 <p class="lead catchphrase mb3">
                     J’assure la gestion des parcs informatiques et le suivi des incidents avec GLPI, en appliquant les SLA et en garantissant une résolution rapide et efficace.
@@ -856,6 +879,15 @@
                 </p>
             </div>
         </section>
+        <div class="footer-text" id="footerText"></div>
+    </div>
+
+    <!-- ================================
+         TOAST NOTIFICATION
+         ================================ -->
+    <div class="toast-notification" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Email copié dans le presse-papier !</span>
     </div>
 
     <!-- ================================
@@ -866,13 +898,14 @@
     </button>
 
     <!-- ================================
-        JAVASCRIPT INTERNAL LINK
-        ================================ -->
-    <script src="./ASSET/scripts.js"></script>
-
-    <!-- ================================
     EXTERNAL LIBRARIES
     ================================ -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    
+    <!-- ================================
+        JAVASCRIPT INTERNAL LINK
+        ================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="./ASSET/scripts.js"></script>
 </body>
 </html>

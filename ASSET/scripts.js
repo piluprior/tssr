@@ -271,6 +271,23 @@ function init() {
     handleScrollUpButton();
     
     console.log('✅ Site initialisé avec succès');
+
+    function initDynamicFooter() {
+        const footer = document.getElementById('footerText');
+        const currentYear = new Date().getFullYear();
+        const lastUpdate = new Date().toLocaleDateString('fr-FR', {
+            year: 'numeric',
+            month: 'long'
+        });
+        
+        footer.innerHTML = `
+            © ${currentYear} Marc Lupi - Technicien Supérieur des Systèmes et Réseaux<br>
+            Dernière mise à jour : ${lastUpdate} - Auch, Gers (32)
+        `;
+    }
+    
+    // Dans votre fonction init(), ajoutez :
+    initDynamicFooter();
 }
 
 // ================================
@@ -378,3 +395,117 @@ window.addEventListener('unhandledrejection', function(e) {
 
 // Si vous utilisez ce script comme module ES6, décommentez les lignes suivantes :
 // export { toggleMobileMenu, closeMobileMenu, initScrollSpy, scrollToTop };
+
+// ================================
+// BARRE DE PROGRESSION DE LECTURE
+// ================================
+function updateProgressBar() {
+    const progressBar = document.getElementById('progressBar');
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    progressBar.style.width = progress + '%';
+}
+
+window.addEventListener('scroll', updateProgressBar);
+
+// ================================
+// ANIMATIONS DU SCROLL
+// ================================
+
+// Animation bidirectionnelle au scroll
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('.resume-section-content');
+    
+    function checkVisibility() {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+            
+            if (isVisible) {
+                // Élément visible → animer vers l'intérieur
+                section.classList.add('animate-in');
+            } else {
+                // Élément hors de vue → animer vers l'extérieur
+                section.classList.remove('animate-in');
+            }
+        });
+    }
+    
+    // Vérifier au scroll et au chargement
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Immédiat
+}
+
+// Lancer dès que possible
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+} else {
+    initScrollAnimations();
+}
+
+// Copie email au clic
+function initEmailCopy() {
+    const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+    const toast = document.getElementById('toast');
+    
+    emailLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Extraire l'email du href
+            const email = this.href.replace('mailto:', '');
+            
+            // Copier dans le presse-papier
+            navigator.clipboard.writeText(email).then(() => {
+                // Afficher le toast
+                toast.classList.add('show');
+                
+                // Masquer après 3 secondes
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }).catch(() => {
+                // Fallback si clipboard API ne fonctionne pas
+                alert('Email: ' + email);
+            });
+        });
+    });
+}
+
+// Initialiser
+document.addEventListener('DOMContentLoaded', initEmailCopy);
+
+// QR Code Modal (mobile uniquement)
+function initFloatingQR() {
+    const btn = document.getElementById('qrFloatingBtn');
+    const modal = document.getElementById('qrModal');
+    const closeBtn = document.getElementById('qrClose');
+    const canvas = document.getElementById('qr-canvas-floating');
+    
+    if (!btn || !modal || !canvas) return;
+
+    // vCard correctement formatée (SANS retours à la ligne)
+    const vCard = 'BEGIN:VCARD\nVERSION:3.0\nFN:Marc Lupi\nTITLE:Technicien Supérieur des Systèmes et Réseaux\nTEL:+33782108037\nEMAIL:marc.lupi@protonmail.com\nADR:;;Auch;;32000;;France\nURL:https://piluprior.github.io/tssr/\nNOTE:Contact professionnel - TSSR\nEND:VCARD';
+
+    // Générer le QR Code
+    QRCode.toCanvas(canvas, vCard, {
+        width: 200,
+        height: 200,
+        margin: 2,
+        color: {
+            dark: '#800000',
+            light: '#FFFFFF'
+        }
+    });
+
+    // Événements
+    btn.addEventListener('click', () => modal.classList.add('show'));
+    closeBtn.addEventListener('click', () => modal.classList.remove('show'));
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('show');
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('show');
+    });
+}
+
