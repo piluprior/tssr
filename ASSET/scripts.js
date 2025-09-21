@@ -231,12 +231,16 @@ function updateProgressBar() {
 // ================================
 function initScrollAnimations() {
     const sections = document.querySelectorAll('.resume-section-content');
-    
     function checkVisibility() {
         sections.forEach(section => {
+            // Exception pour Parcours sur mobile
+            if (section.closest('#parcours') && window.innerWidth <= 404) {
+                section.classList.add('animate-in');
+                return;
+            }
+            
             const rect = section.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
-            
             if (isVisible) {
                 section.classList.add('animate-in');
             } else {
@@ -244,7 +248,6 @@ function initScrollAnimations() {
             }
         });
     }
-
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Vérification immédiate
 }
@@ -282,100 +285,6 @@ function initEmailCopy() {
                 prompt('Copiez cet email:', email);
             }
         });
-    });
-}
-
-// ================================
-// QR CODE MODAL - VERSION CORRIGÉE
-// ================================
-function initFloatingQR() {
-    const btn = document.getElementById('qrFloatingBtn');
-    const modal = document.getElementById('qrModal');
-    const closeBtn = document.getElementById('qrClose');
-    const canvas = document.getElementById('qr-canvas-floating');
-    
-    if (!btn || !modal || !canvas) {
-        console.warn('Éléments QR manquants');
-        return;
-    }
-
-    // Vérifier si QRCode est disponible
-    if (typeof QRCode === 'undefined') {
-        console.error('QRCode.js non chargé');
-        return;
-    }
-
-    // vCard correctement formatée
-    const vCard = [
-        'BEGIN:VCARD',
-        'VERSION:3.0',
-        'FN:Marc Lupi',
-        'TITLE:Technicien Supérieur des Systèmes et Réseaux',
-        'TEL:+33782108037',
-        'EMAIL:marc.lupi@protonmail.com',
-        'ADR:;;Auch;;32000;;France',
-        'URL:https://piluprior.github.io/tssr/',
-        'NOTE:Contact professionnel - TSSR',
-        'END:VCARD'
-    ].join('\n');
-
-    try {
-        // Générer le QR Code avec gestion d'erreur
-        QRCode.toCanvas(canvas, vCard, {
-            width: 200,
-            height: 200,
-            margin: 2,
-            color: {
-                dark: '#800000',
-                light: '#FFFFFF'
-            },
-            errorCorrectionLevel: 'M'
-        }, function(error) {
-            if (error) {
-                console.error('Erreur génération QR:', error);
-                // Masquer le canvas et afficher un message d'erreur
-                canvas.style.display = 'none';
-                const errorMsg = document.createElement('p');
-                errorMsg.textContent = 'Erreur lors de la génération du QR code';
-                errorMsg.style.color = '#800000';
-                errorMsg.style.fontSize = '0.9rem';
-                canvas.parentNode.insertBefore(errorMsg, canvas.nextSibling);
-            } else {
-                console.log('QR Code généré avec succès');
-            }
-        });
-    } catch (e) {
-        console.error('Erreur QRCode.js:', e);
-        canvas.style.display = 'none';
-        const errorMsg = document.createElement('p');
-        errorMsg.textContent = 'QR Code non disponible';
-        errorMsg.style.color = '#800000';
-        canvas.parentNode.insertBefore(errorMsg, canvas.nextSibling);
-    }
-
-    // Événements du modal
-    btn.addEventListener('click', () => {
-        modal.classList.add('show');
-        console.log('Modal QR ouvert');
-    });
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('show');
-        });
-    }
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('show');
-        }
-    });
-
-    // Fermeture avec Échap
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            modal.classList.remove('show');
-        }
     });
 }
 
@@ -517,12 +426,6 @@ function init() {
 
     // Initialisation de la copie d'email
     initEmailCopy();
-
-    // Initialisation du QR Code flottant
-    initFloatingQR();
-
-    // Fix spécifique pour le lien Parcours sur mobile
-    initParcoursFixMobile();
 
     // Initialisation du footer dynamique
     initDynamicFooter();
