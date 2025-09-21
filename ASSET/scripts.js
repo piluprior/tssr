@@ -435,6 +435,9 @@ function init() {
     handleScrollUpButton();
     updateProgressBar();
 
+    // Mini-dots navigation
+    initMiniDotsNavigation();
+
     console.log('✅ Site initialisé avec succès');
 }
 
@@ -508,3 +511,62 @@ window.addEventListener('unhandledrejection', function(e) {
 // ================================
 // Si vous utilisez ce script comme module ES6, décommentez les lignes suivantes :
 // export { toggleMobileMenu, closeMobileMenu, initScrollSpy, scrollToTop };
+
+// ================================
+// MINI-DOTS NAVIGATION SYSTEM
+// ================================
+function initMiniDotsNavigation() {
+    const dots = document.querySelectorAll('.mini-dot');
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Event listeners pour les clics sur les dots
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-section');
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Fonction pour mettre à jour l'état actif des dots
+    function updateActiveDot() {
+        const scrollPosition = window.scrollY + 200;
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.id;
+            }
+        });
+
+        dots.forEach(dot => {
+            const dotSection = dot.getAttribute('data-section');
+            if (dotSection === currentSection) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(updateActiveDot, 10);
+    }, { passive: true });
+
+    updateActiveDot();
+    console.log('✅ Mini-dots navigation initialisée');
+}

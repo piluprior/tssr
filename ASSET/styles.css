@@ -1056,3 +1056,93 @@ FIX DEFINITIF PARCOURS - PETITES RÉSOLUTIONS
     }
 }
 
+/* ================================
+MINI-DOTS NAVIGATION - VERSION ÉPURÉE
+================================ */
+.mini-dots-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mini-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(128, 0, 0, 0.4);  /* RGBA au lieu d'opacity */
+    opacity: 1;  /* Gardez opacity 1 pour ne pas affecter le tooltip */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.mini-dot.active {
+    background-color: #800000;  /* Couleur pleine pour l'actif */
+    transform: translateX(0) scale(1.6);
+}
+
+.mini-dot:hover {
+    background-color: rgba(128, 0, 0, 0.7);  /* RGBA pour le hover */
+    transform: translateX(0) scale(1.1);
+}
+
+.mini-dot[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #212529;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-family: var(--main-font);
+    font-weight: 500;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mini-dot:hover[data-tooltip]::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .mini-dots-nav {
+        display: none;
+    }
+}
+
+.mini-dot {
+    animation: slideInDots 0.5s ease forwards;
+}
+
+.mini-dot:nth-child(1) { animation-delay: 0.1s; }
+.mini-dot:nth-child(2) { animation-delay: 0.2s; }
+.mini-dot:nth-child(3) { animation-delay: 0.3s; }
+.mini-dot:nth-child(4) { animation-delay: 0.4s; }
+.mini-dot:nth-child(5) { animation-delay: 0.5s; }
+.mini-dot:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInDots {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
