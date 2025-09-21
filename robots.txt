@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Sitemap principal
+Sitemap: https://marc-lupi.fr/sitemap.xml
+
+# AUTORISATIONS EXPLICITES (contenu à indexer)
+Allow: /index.html
+Allow: /IMG/
+Allow: /ASSET/styles.css
+Allow: /ASSET/scripts.js
+
+# BLOCAGES (fichiers techniques/privés)
+Disallow: /ASSET/fonts/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /.gitignore
+Disallow: /package.json
+Disallow: /node_modules/
+
+# Performance
+Crawl-delay: 1
+
+# Moteurs spécifiques (optionnel)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
