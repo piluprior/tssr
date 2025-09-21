@@ -947,7 +947,7 @@ section[id] {
 /* Popup en bas d'écran pour copie email */
 a[href^="mailto:"]:hover::before,
 .header-cta[href^="mailto:"]:hover::before {
-    content: "💡 Cliquez pour copier l'email";
+    content: "💡 Cliquez pour copier l'e-mail";
     position: fixed;
     bottom: 120px;
     left: 50%;
