@@ -935,8 +935,8 @@ a[href^="mailto:"]:hover::before,
 @media (max-width: 404px) {
     #parcours {
         min-height: auto !important;
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
         scroll-margin-top: 60px !important;
         display: block !important;
         align-items: flex-start !important;
@@ -951,8 +951,8 @@ a[href^="mailto:"]:hover::before,
 
     #parcours .resume-section-content {
         opacity: 0;
-        transform: translateY(30px) scale(0.98);
-        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform: translateY(20px) scale(0.99);
+        transition: all 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     #parcours .resume-section-content.animate-in {
