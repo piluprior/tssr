@@ -1,6 +1,6 @@
 # Hover.css
 
-<a href="https://www.buymeacoffee.com/ianlunn" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/lato-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" width="217" height="51" ></a>
+<a href="https://www.buymeacoffee.com/ianlunn" target="_blank" rel="noopener"><img src="https://cdn.buymeacoffee.com/buttons/lato-blue.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" width="217" height="51" ></a>
 
 A collection of CSS3 powered hover effects to be applied to links, buttons, logos, SVG, featured images and so on. Easily apply to your own elements, modify or just use for inspiration. Available in CSS, Sass, and LESS.
 
@@ -8,27 +8,33 @@ A collection of CSS3 powered hover effects to be applied to links, buttons, logo
 [Tutorial](http://ianlunn.co.uk/articles/hover-css-tutorial-introduction/)
 
 ## Contents
-- [Download/Install](#downloadinstall)
-- [How To Use](#how-to-use)
+- [Hover.css](#hovercss)
+  - [Contents](#contents)
+  - [Download/Install](#downloadinstall)
+  - [How To Use](#how-to-use)
     - [A. Copy and Paste an Effect](#a-copy-and-paste-an-effect)
     - [B. Reference Hover.css](#b-reference-hovercss)
-    - [A Note on the display property](#a-note-on-the-display-property)
+    - [A Note on the `display` Property](#a-note-on-the-display-property)
     - [Using Icon Effects](#using-icon-effects)
-- [What's Included?](#whats-included)
+  - [What's Included?](#whats-included)
     - [css](#css)
     - [scss/less](#scssless)
     - [Other](#other)
-- [Browser Support](#browser-support)
-- [Using Grunt for Development](#using-grunt-for-development)
-- [Using Sass/LESS for Development](#using-sassless-for-development)
-    - [_hacks](#\_hacks)
-    - [_mixins](#\_mixins)
-    - [_options](#\_options)
-- [Contribute to Hover.css](#contribute-to-hovercss)
-- [Licenses](#licenses)
-    - [Commercial License](#commercial-license)
-    - [Open-Source License](#open-source-license)
-- [Hire Ian Lunn](#hire-ian-lunn)
+  - [Browser Support](#browser-support)
+  - [Using Grunt for Development](#using-grunt-for-development)
+  - [Using Sass/LESS for Development](#using-sassless-for-development)
+    - [\_hacks](#_hacks)
+    - [\_mixins](#_mixins)
+    - [\_options](#_options)
+  - [Contribute to Hover.css](#contribute-to-hovercss)
+  - [Licenses](#licenses)
+    - [Personal/Open Source](#personalopen-source)
+    - [Commercial](#commercial)
+      - [Commercial License](#commercial-license)
+      - [Extended Commercial License](#extended-commercial-license)
+      - [OEM Commercial License](#oem-commercial-license)
+    - [MIT License (Pre v2.2.0 / 24th March 2017)](#mit-license-pre-v220--24th-march-2017)
+  - [Hire Ian Lunn](#hire-ian-lunn)
 
 ## Download/Install
 

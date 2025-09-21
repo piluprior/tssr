@@ -8,10 +8,89 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="version" content="2.0">
-        <meta name="description"
-            content="Marc Lupi - Technicien Supérieur des Systèmes et Réseaux. CV en ligne avec compétences, parcours et formation.">
+        <meta name="description" content="Marc Lupi, TSSR expert en administration systèmes Windows/Linux, réseaux et virtualisation. Disponible pour missions IT dans le Gers, la Haute-Garonne, la Gironde, la Vienne et partout ailleurs.">
+        <meta name="keywords" content="TSSR, technicien systèmes réseaux, administration Windows Linux, virtualisation, IT Gers, Marc Lupi">
+        <meta name="geo.region" content="FR-32">
+        <meta name="geo.placename" content="Auch, Gers">
+        <meta name="geo.position" content="43.646376;0.585092">
         <meta name="author" content="Marc Lupi">
-        <!-- Google tag (gtag.js) -->
+        <title>Marc Lupi - Technicien Supérieur Systèmes et Réseaux | TSSR Gers</title>
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="Marc Lupi - Technicien Supérieur Systèmes et Réseaux">
+        <meta property="og:description" content="Expert TSSR spécialisé en administration systèmes, réseaux et virtualisation. Portfolio professionnel et compétences IT.">
+        <meta property="og:image" content="https://piluprior.github.io/tssr/IMG/marc-lupi-og.jpg">
+        <meta property="og:url" content="https://piluprior.github.io/tssr/">
+        <meta property="og:type" content="profile">
+        <meta property="og:locale" content="fr_FR">
+        <!-- TWITTER CARD -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Marc Lupi - TSSR Expert">
+        <meta name="twitter:description" content="Technicien Supérieur Systèmes et Réseaux disponible pour missions IT">
+        <!-- MOBILE OPTIMIZATION -->
+        <meta name="theme-color" content="#800000">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <meta name="apple-mobile-web-app-title" content="Marc Lupi TSSR">
+
+        <!-- CANONICAL URL -->
+        <link rel="canonical" href="https://piluprior.github.io/tssr/">
+
+        <!-- PRECONNECT POUR PERFORMANCES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <!-- SCHEMA MARKUP -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Marc Lupi",
+              "jobTitle": "Technicien Supérieur des Systèmes et Réseaux",
+              "description": "Expert en administration systèmes Windows/Linux, réseaux et virtualisation",
+              "url": "https://piluprior.github.io/tssr/",
+              "email": "marc.lupi@protonmail.com",
+              "telephone": "+33782108037",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Auch",
+                "addressRegion": "Gers",
+                "postalCode": "32000",
+                "addressCountry": "FR"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/in/marc-lupi",
+                "https://github.com/piluprior/"
+              ],
+              "knowsAbout": [
+                "Administration Systèmes Windows",
+                "Administration Linux",
+                "Réseaux informatiques",
+                "Virtualisation",
+                "Active Directory",
+                "VMware",
+                "Proxmox"
+              ]
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Marc Lupi - Portfolio TSSR",
+              "description": "CV en ligne et portfolio professionnel de Marc Lupi, Technicien Supérieur Systèmes et Réseaux",
+              "url": "https://piluprior.github.io/tssr/",
+              "author": {
+                "@type": "Person",
+                "name": "Marc Lupi"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://piluprior.github.io/tssr/{search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+        </script> 
+
+        <!-- GOOGLE TAG (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W75W7H7SV"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -19,7 +98,6 @@
             gtag('js', new Date());
             gtag('config', 'G-0W75W7H7SV');
         </script>
-        <title>Marc Lupi | TSSR</title>
         <link rel="icon" type="image/x-icon" href="./IMG/favicon.ico" />
         <!-- ================================
         EXTERNAL LIBRARIES & FONTS
@@ -59,7 +137,7 @@
                     </div>
                     <!-- Social icons à droite -->
                     <div class="header-top-social">
-                        <a href="https://www.linkedin.com/in/marc-lupi" class="header-top-social-icon" target="_blank" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/marc-lupi" class="header-top-social-icon" target="_blank" rel="noopener" title="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="https://github.com/piluprior/" class="header-top-social-icon" target="_blank"title="GitHub">
@@ -137,7 +215,7 @@
                 </div>
                 <!-- Social mobile -->
                 <div class="mobile-social">
-                    <a href="https://www.linkedin.com/in/marc-lupi" class="mobile-social-icon" target="_blank">
+                    <a href="https://www.linkedin.com/in/marc-lupi" class="mobile-social-icon" target="_blank" rel="noopener">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://github.com/piluprior/" class="mobile-social-icon" target="_blank">
@@ -163,7 +241,7 @@
             </section>
             <hr class="m-0" />
             <!-- SECTION 2 - À PROPOS -->
-            <section class="resume-section" id="apropos">
+            <section class="resume-section" id="apropos" itemscope itemtype="https://schema.org/AboutPage">
                 <div class="resume-section-content">
                     <!-- Insérez ici votre contenu À PROPOS -->
                     <h2 class="section-title mb-5">à propos...</h2>
@@ -196,12 +274,12 @@
             </section>
             <hr class="m-0" />
             <!-- SECTION 3 - COMPÉTENCES -->
-            <section class="resume-section" id="competences">
+            <section class="resume-section" id="competences" itemscope itemtype="https://schema.org/SkillSet">
                 <div class="resume-section-content">
                     <h2 class="section-title mb-5">mes compétences dans les systèmes et réseaux</h2>
-                    <div class="subheading mb-3">assurer le support utilisateur en centre de services</div>
-                    <p class="lead catchphrase mb3">
-                        J'assure la gestion des parcs informatiques et le suivi des incidents avec GLPI, en appliquant les
+                    <div class="subheading mb-3" itemprop="skillSet">assurer le support utilisateur en centre de services</div>
+                    <p class="lead catchphrase mb3" itemprop="description">
+                        J'assure la gestion des parcs informatiques et le suivi des incidents avec <span itemprop="softwareApplication">GLPI</span>, en appliquant les
                         SLA et en garantissant une résolution rapide et efficace.
                         Chaque ticket est traité avec rigueur, avec un suivi structuré et des priorités clairement définies.
                     </p>
@@ -390,6 +468,39 @@
             <hr class="m-0" />
             <!-- SECTION 4 - PARCOURS -->
             <section class="resume-section" id="parcours">
+                <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "Person",
+                      "name": "Marc Lupi",
+                      "hasOccupation": [
+                        {
+                          "@type": "Occupation",
+                          "name": "Créateur d'entreprise de services numériques",
+                          "occupationLocation": {
+                            "@type": "Place",
+                            "name": "SOFTEN-IT"
+                          },
+                          "estimatedSalary": {
+                            "@type": "MonetaryAmountDistribution",
+                            "name": "Entrepreneur"
+                          },
+                          "description": "Conception et développement web, gestion administrative et financière",
+                          "skills": "Développement web, SEO, Marketing digital, Gestion d'entreprise"
+                        },
+                        {
+                          "@type": "Occupation",
+                          "name": "Technicien support & intégration",
+                          "occupationLocation": {
+                            "@type": "Place",
+                            "name": "Conseil Départemental du Gers"
+                          },
+                          "description": "Support utilisateur, assistance technique, intégration de solutions",
+                          "skills": "Support IT, Déploiement, Documentation technique"
+                        }
+                      ]
+                    }
+                </script>
                 <div class="resume-section-content">
                     <h2 class="section-title mb-5">mon parcours professionnel</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -456,7 +567,7 @@
                                 Création et gestion de sites Internet en fonction des besoins des projets.
                             </p>
                             <div class="mb-5 linker"><a href="https://www.gers.fr/" class="hvr-underline-from-left"
-                                    target="_blank">département du gers</a></div>
+                                    target="_blank" rel="noopener">département du gers</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">1er août 2019 - 31 mai 2020</span></div>
                     </div>
@@ -489,7 +600,7 @@
                                 environnement aéronautique.
                             </p>
                             <div class="mb-5 linker"><a href="https://sogeclair.com/fr" class="hvr-underline-from-left"
-                                    target="_blank">sogeclair</a></div>
+                                    target="_blank" rel="noopener">sogeclair</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">06 février 2006 - 13 octobre 2006</span></div>
                     </div>
@@ -567,9 +678,9 @@
                                 ouvrant des perspectives vers des postes à responsabilités.
                             </p>
                             <div class="mb-3 linker"><a href="https://www.certificat-voltaire.fr/"
-                                    class="hvr-underline-from-left" target="_blank">certificat voltaire</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">certificat voltaire</a></div>
                             <div class="mb-5 linker"><a href="https://www.projet-voltaire.fr/"
-                                    class="hvr-underline-from-left" target="_blank">projet voltaire</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">projet voltaire</a></div>
                         </div>
                         <div class="flex-shrink-0 mb-5"><span class="custom-text">05 septembre 2025 - 04 janvier 2026</span>
                         </div>
@@ -647,7 +758,7 @@
                                 responsabilités techniques ou managériales.
                             </p>
                             <div class="mb-5 linker"><a href="https://www.formademia.fr/" class="hvr-underline-from-left"
-                                    target="_blank">formademia</a></div>
+                                    target="_blank" rel="noopener">formademia</a></div>
                         </div>
                         <div class="flex-shrink-0 mb-5"><span class="custom-text">Juin 2025</span></div>
                     </div>
@@ -725,14 +836,14 @@
                                 numériques fiables, inclusifs et orientés utilisateurs.
                             </p>
                             <div class="mb-3 linker mb-5"><a href="https://www.opquast.com/" class="hvr-underline-from-left"
-                                    target="_blank">opquast</a></div>
+                                    target="_blank" rel="noopener">opquast</a></div>
                         </div>
                         <div class="flex-shrink-0 mb-5"><span class="custom-text">Janvier 2019</span></div>
                     </div>
             </section>
             <hr class="m-0" />
             <!-- SECTION 5 - FORMATION -->
-            <section class="resume-section" id="formation">
+            <section class="resume-section" id="formation" itemscope itemtype="https://schema.org/EducationalOrganization">
                 <div class="resume-section-content">
                     <h2 class="section-title mb-5">formation</h2>
                     <!-- formation tssr -->
@@ -743,7 +854,7 @@
                             </div>
                             <div class="mb-5">Châtellerault, 86100</div>
                             <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left"
-                                    target="_blank">afpa</a></div>
+                                    target="_blank" rel="noopener">afpa</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">09 septembre 2024 - 13 juin 2025</span></div>
                     </div>
@@ -754,7 +865,7 @@
                             <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
                             <div class="mb-5">Toulouse, 31000</div>
                             <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left"
-                                    target="_blank">université jean-jaurès</a></div>
+                                rel="noopener">université jean-jaurès</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Septembre 2023</span></div>
                     </div>
@@ -765,7 +876,7 @@
                             <div class="subheading mb-3">Openska</div>
                             <div class="mb-5">En ligne</div>
                             <div class="mb-5 linker"><a href="https://www.openska.com/" class="hvr-underline-from-left"
-                                    target="_blank">openska</a></div>
+                                    target="_blank" rel="noopener">openska</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">19 juillet 2022 - 22 juillet 2022</span></div>
                     </div>
@@ -776,7 +887,7 @@
                             <div class="subheading mb-3">3DIS</div>
                             <div class="mb-5">En ligne</div>
                             <div class="mb-5 linker"><a href="https://www.3dis-formation.fr/"
-                                    class="hvr-underline-from-left" target="_blank">3dis</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">3dis</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">13 septembre 2021 - 17 septembre 2021</span>
                         </div>
@@ -788,7 +899,7 @@
                             <div class="subheading mb-3">Icone Formation</div>
                             <div class="mb-5">Auch, 32000</div>
                             <div class="mb-5 linker"><a href="https://icone-formation.fr/" class="hvr-underline-from-left"
-                                    target="_blank">icone</a></div>
+                                rel="noopener">icone</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Juin 2020</span></div>
                     </div>
@@ -799,7 +910,7 @@
                             <div class="subheading mb-3">Weecast</div>
                             <div class="mb-5">En ligne</div>
                             <div class="mb-5 linker"><a href="https://fr.tuto.com/" class="hvr-underline-from-left"
-                                    target="_blank">tuto</a></div>
+                                    target="_blank" rel="noopener">tuto</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">02 septembre 2019 - 10 janvier 2020</span>
                         </div>
@@ -811,7 +922,7 @@
                             <div class="subheading mb-3">Opquast</div>
                             <div class="mb-5">En ligne</div>
                             <div class="mb-5 linker"><a href="https://www.opquast.com/" class="hvr-underline-from-left"
-                                    target="_blank">opquast</a></div>
+                                rel="noopener">opquast</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Janvier 2019</span></div>
                     </div>
@@ -822,7 +933,7 @@
                             <div class="subheading mb-3">Simplon</div>
                             <div class="mb-5">Auch, 32000</div>
                             <div class="mb-5 linker"><a href="https://www.simplon.co/" class="hvr-underline-from-left"
-                                    target="_blank">simplon</a></div>
+                                rel="noopener">simplon</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Mai 2018</span></div>
                     </div>
@@ -833,7 +944,7 @@
                             <div class="subheading mb-3">Université Toulouse Jean-Jaurès</div>
                             <div class="mb-5">Toulouse, 31000</div>
                             <div class="mb-5 linker"><a href="https://www.univ-tlse2.fr/" class="hvr-underline-from-left"
-                                    target="_blank">université jean-jaurès</a></div>
+                                    target="_blank" rel="noopener">université jean-jaurès</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Septembre 2017</span></div>
                     </div>
@@ -844,7 +955,7 @@
                             <div class="subheading mb-3">Cabinet Conseil Dac</div>
                             <div class="mb-5">Auch, 32000</div>
                             <div class="mb-5 linker"><a href="https://cabinetdac.com/" class="hvr-underline-from-left"
-                                    target="_blank">cabinet dac</a></div>
+                                    target="_blank" rel="noopener">cabinet dac</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">15 décembre 2016 - 1er mars 2017</span></div>
                     </div>
@@ -856,7 +967,7 @@
                             </div>
                             <div class="mb-5">Limoges, 87000</div>
                             <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left"
-                                    target="_blank">afpa</a></div>
+                                    target="_blank" rel="noopener">afpa</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Décembre 2011</span></div>
                     </div>
@@ -877,7 +988,7 @@
                             </div>
                             <div class="mb-5">Belfort, 90000</div>
                             <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left"
-                                    target="_blank">afpa</a></div>
+                                rel="noopener">afpa</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Avril 2005</span></div>
                     </div>
@@ -888,7 +999,7 @@
                             <div class="subheading mb-3">Centre Interinstitutionnel de Bilans de Compétences</div>
                             <div class="mb-5">Auch, 32000</div>
                             <div class="mb-5 linker"><a href="https://www.cibcoccitanie.com/"
-                                    class="hvr-underline-from-left" target="_blank">cibc</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">cibc</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">08 décembre 2004 - 18 janvier 2005</span></div>
                     </div>
@@ -900,7 +1011,7 @@
                             <div class="mb-5">Bagnères-de-Bigorre, 65200</div>
                             <div class="mb-5 linker"><a
                                     href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest"
-                                    class="hvr-underline-from-left" target="_blank">greta</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">greta</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">16 décembre 2002 - 10 janvier 2003</span></div>
                     </div>
@@ -912,7 +1023,7 @@
                             <div class="mb-5">Tarbes, 65000</div>
                             <div class="mb-5 linker"><a
                                     href="https://maforpro-occitanie.fr/greta-cfa/votre-greta-cfa/greta-cfa-midi-pyrenees-ouest"
-                                    class="hvr-underline-from-left" target="_blank">greta</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">greta</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">15 septembre 2002 - 13 février 2003</span>
                         </div>
@@ -925,7 +1036,7 @@
                             </div>
                             <div class="mb-5">Toulouse, 31000</div>
                             <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left"
-                                    target="_blank">afpa</a></div>
+                                    target="_blank" rel="noopener">afpa</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Septembre 1993</span></div>
                     </div>
@@ -937,7 +1048,7 @@
                             </div>
                             <div class="mb-5">Toulouse, 31000</div>
                             <div class="mb-5 linker"><a href="https://www.afpa.fr/" class="hvr-underline-from-left"
-                                    target="_blank">afpa</a></div>
+                                    target="_blank" rel="noopener">afpa</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Septembre 1992</span></div>
                     </div>
@@ -949,7 +1060,7 @@
                             <div class="mb-5">Auch, 32000</div>
                             <div class="mb-5 linker"><a
                                     href="https://pardailhan.mon-ent-occitanie.fr/espace-pedagogique/pole-professionnel/hotellerie-restauration/"
-                                    class="hvr-underline-from-left" target="_blank">lycée hôtellier pardailhan</a></div>
+                                    class="hvr-underline-from-left" target="_blank" rel="noopener">lycée hôtellier pardailhan</a></div>
                         </div>
                         <div class="flex-shrink-0"><span class="custom-text">Septembre 1985 - Juin 1987</span></div>
                     </div>
@@ -1023,7 +1134,7 @@
         ================================ -->
         <div class="toast-notification" id="toast">
             <i class="fas fa-check-circle"></i>
-            <span>Email copié dans le presse-papier !</span>
+            <span>E-mail copié dans le presse-papier !</span>
         </div>
         <!-- ================================
         BOUTON SCROLL UP
