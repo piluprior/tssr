@@ -1,11 +1,3 @@
-/* ================================
-IMPORT DES POLICES POPPINS + INTER
-================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap');
-
-/* ================================
-CSS VARIABLES & RESET
-================================ */
 :root {
     --primary-color: #800000;
     --dark-color: #212529;
@@ -29,10 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ================================
-HEADER STRUCTURE - NIVEAU 1 & 2
-================================ */
-/* Container principal du header */
 .main-header {
     position: sticky;
     top: 0;
@@ -46,7 +34,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* NIVEAU 1 - Bande fine info (#212529) */
 .header-top {
     background-color: var(--dark-color);
     color: var(--white-color);
@@ -63,7 +50,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     padding: 0 2rem;
 }
 
-/* Contact info à gauche */
 .header-contact {
     display: flex;
     align-items: center;
@@ -93,7 +79,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     color: var(--primary-color);
 }
 
-/* Social icons à droite */
 .header-top-social {
     display: flex;
     align-items: center;
@@ -121,7 +106,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     color: var(--white-color);
 }
 
-/* FIX FONT AWESOME ICONS */
 .header-top-social-icon i,
 .mobile-social-icon i,
 .social-icon i {
@@ -130,7 +114,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     display: inline-block;
 }
 
-/* NIVEAU 2 - Navigation principale (blanc) */
 .header-bottom {
     background-color: var(--white-color);
     padding: 1rem 0;
@@ -146,7 +129,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     padding: 0 2rem;
 }
 
-/* Logo MARC LUPI*/
 .logo {
     color: var(--dark-color);
     font-family: var(--heading-font);
@@ -166,7 +148,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     color: var(--primary-color);
 }
 
-/* Navigation menu */
 .main-nav {
     display: flex;
     align-items: center;
@@ -208,7 +189,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     width: 100%;
 }
 
-/* Bouton CTA "Me contacter" */
 .header-cta {
     padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
@@ -226,10 +206,6 @@ HEADER STRUCTURE - NIVEAU 1 & 2
     color: var(--primary-color);
 }
 
-/* ================================
-MOBILE MENU SYSTEM
-================================ */
-/* Bouton hamburger mobile */
 .mobile-menu-btn {
     display: none;
     background: transparent;
@@ -240,7 +216,6 @@ MOBILE MENU SYSTEM
     cursor: pointer;
 }
 
-/* Menu mobile (sidebar droite) */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -342,7 +317,6 @@ MOBILE MENU SYSTEM
     color: var(--white-color);
 }
 
-/* Overlay mobile */
 .mobile-overlay {
     position: fixed;
     top: 0;
@@ -361,12 +335,7 @@ MOBILE MENU SYSTEM
     visibility: visible;
 }
 
-/* ================================
-RESPONSIVE BREAKPOINTS
-================================ */
 @media (max-width: 991.98px) {
-
-    /* Mobile/tablette : header reste sticky */
     .header-top {
         display: none;
     }
@@ -403,15 +372,10 @@ RESPONSIVE BREAKPOINTS
     }
 }
 
-/* ================================
-CONTENT SECTIONS STRUCTURE
-================================ */
-/* Container principal du contenu */
 .container-fluid {
     padding-left: 0;
 }
 
-/* Structure des sections */
 .resume-section {
     display: flex;
     align-items: center;
@@ -429,7 +393,6 @@ CONTENT SECTIONS STRUCTURE
     width: 100%;
 }
 
-/* Séparateurs entre sections */
 hr.m-0 {
     margin: 0;
     border: 0;
@@ -437,11 +400,6 @@ hr.m-0 {
     background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
 }
 
-/* ================================
-TYPOGRAPHY & ELEMENTS STYLES
-================================ */
-/* APPLICATION DES POLICES */
-/* Tous les titres utilisent Saira */
 h1,
 h2,
 h3,
@@ -489,7 +447,6 @@ h3 {
     }
 }
 
-/* Tous les contenus textuels utilisent Inter */
 p,
 li,
 span,
@@ -498,7 +455,6 @@ a {
     font-family: var(--main-font);
 }
 
-/* Couleurs principales */
 .redder {
     color: var(--primary-color);
 }
@@ -511,7 +467,6 @@ a {
     color: var(--primary-color) !important;
 }
 
-/* Typographie */
 .lead.catchphrase {
     font-family: var(--main-font);
     font-size: 1.25rem;
@@ -531,7 +486,6 @@ a {
     font-size: 1rem;
 }
 
-/* Social icons dans le contenu */
 .social-icons {
     display: flex;
     gap: 1rem;
@@ -557,7 +511,6 @@ a {
     color: var(--white-color);
 }
 
-/* Liens externes */
 .linker a {
     color: var(--primary-color);
     text-decoration: none;
@@ -574,7 +527,6 @@ a {
     text-decoration: underline;
 }
 
-/* Status badges */
 .en-cours-tssr {
     background-color: #FAB400;
     color: #EFEFEF;
@@ -597,7 +549,6 @@ a {
     font-family: var(--main-font);
 }
 
-/* Citations */
 .blockquote-footer {
     font-size: 0.875em;
     color: #6c757d;
@@ -608,9 +559,6 @@ a {
     content: "— ";
 }
 
-/* ================================
-SCROLL UP BUTTON
-================================ */
 .scroll-up {
     position: fixed;
     bottom: 20px;
@@ -633,9 +581,6 @@ SCROLL UP BUTTON
     transform: translateY(-2px);
 }
 
-/* ================================
-CORRECTIONS RESPONSIVE
-================================ */
 @media (max-width: 768px) {
     .resume-section {
         padding-left: 1rem;
@@ -650,10 +595,6 @@ CORRECTIONS RESPONSIVE
     }
 }
 
-/* ================================
-AJUSTEMENTS & PERSONNALISATION
-================================ */
-/* Bootstrap utilities */
 .mb-2 {
     margin-bottom: 0.5rem !important;
 }
@@ -704,7 +645,6 @@ AJUSTEMENTS & PERSONNALISATION
     }
 }
 
-/* Layout pour les sections avec dates */
 .d-flex.flex-column.flex-md-row.justify-content-between {
     position: relative;
     display: block !important;
@@ -736,7 +676,6 @@ AJUSTEMENTS & PERSONNALISATION
     font-weight: 500;
 }
 
-/* Mobile responsive pour les dates */
 @media (max-width: 767.98px) {
     .d-flex.flex-column.flex-md-row.justify-content-between .flex-shrink-0 {
         position: static;
@@ -757,7 +696,6 @@ AJUSTEMENTS & PERSONNALISATION
     }
 }
 
-/* Emphase pour le nom de l'entreprise */
 .span-softenit {
     background-color: #FAB400;
     color: #EFEFEF;
@@ -773,7 +711,6 @@ AJUSTEMENTS & PERSONNALISATION
     font-style: italic;
 }
 
-/* Affichage de dégradés dans la section formation avec des lignes fines */
 #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:last-child) {
     position: relative;
     margin-bottom: 2rem;
@@ -794,12 +731,10 @@ AJUSTEMENTS & PERSONNALISATION
     margin-bottom: 0;
 }
 
-/* Centrage page accueil */
 .hero-text {
     margin-top: -14rem;
 }
 
-/* Animation lien avec la bibliothèque hover.css */
 .hvr-underline-from-left {
     display: inline-block;
     vertical-align: middle;
@@ -840,29 +775,24 @@ AJUSTEMENTS & PERSONNALISATION
     text-decoration: none !important;
 }
 
-/* Forçage minuscules sur citations */
 .citation {
     text-transform: lowercase;
     font-size: 1.25rem;
 }
 
-/* Forçage majuscule sur certaines lettres */
 .majuscule {
     text-transform: uppercase;
     font-size: 1.25rem;
 }
 
-/* Smooth scroll global */
 html {
     scroll-behavior: smooth;
 }
 
-/* Offset pour compenser le header sticky */
 section[id] {
     scroll-margin-top: 120px;
 }
 
-/* Barre de progression de lecture */
 .reading-progress {
     position: fixed;
     top: 0;
@@ -875,7 +805,6 @@ section[id] {
     box-shadow: 0 1px 3px rgba(128, 0, 0, 0.3);
 }
 
-/* Feedback amélioré pour tous les boutons interactifs */
 .header-cta,
 .mobile-menu-btn,
 .scroll-up,
@@ -892,7 +821,6 @@ section[id] {
     box-shadow: 0 4px 12px rgba(128, 0, 0, 0.2);
 }
 
-/* Effet de clic */
 .header-cta:active,
 .mobile-menu-btn:active,
 .scroll-up:active,
@@ -900,7 +828,6 @@ section[id] {
     transform: scale(0.98);
 }
 
-/* Animation fade-in au scroll */
 .resume-section-content {
     opacity: 0;
     transform: translateY(50px) scale(0.95);
@@ -916,7 +843,6 @@ section[id] {
     transition-delay: 0.1s;
 }
 
-/* Toast notification */
 .toast-notification {
     position: fixed;
     top: 20px;
@@ -944,7 +870,6 @@ section[id] {
     color: #4ade80;
 }
 
-/* Popup en bas d'écran pour copie email */
 a[href^="mailto:"]:hover::before,
 .header-cta[href^="mailto:"]:hover::before {
     content: "💡 Cliquez pour copier l'e-mail";
@@ -965,9 +890,6 @@ a[href^="mailto:"]:hover::before,
     white-space: nowrap;
 }
 
-/* ================================
-RESPONSIVE QR BUTTON
-================================ */
 @media (max-width: 991.98px) {
     .qr-floating-btn {
         display: block !important;
@@ -1000,7 +922,6 @@ RESPONSIVE QR BUTTON
     }
 }
 
-/* Footer dynamique */
 .footer-text {
     text-align: center;
     color: #212529;
@@ -1011,11 +932,7 @@ RESPONSIVE QR BUTTON
     line-height: 1.4;
 }
 
-/* ================================
-FIX DEFINITIF PARCOURS - PETITES RÉSOLUTIONS
-================================ */
 @media (max-width: 404px) {
-    /* Section Parcours - Redimensionnement complet */
     #parcours {
         min-height: auto !important;
         padding-top: 1rem !important;
@@ -1024,29 +941,25 @@ FIX DEFINITIF PARCOURS - PETITES RÉSOLUTIONS
         display: block !important;
         align-items: flex-start !important;
     }
-    
+
     #parcours .resume-section-content {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
         min-height: auto !important;
         width: 100% !important;
     }
-    
-    /* Animation spécifique pour Parcours sur mobile */
-    @media (max-width: 404px) {
-        #parcours .resume-section-content {
-            opacity: 0;
-            transform: translateY(30px) scale(0.98);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        
-        #parcours .resume-section-content.animate-in {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+
+    #parcours .resume-section-content {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    
-    /* Forcer l'affichage du contenu */
+
+    #parcours .resume-section-content.animate-in {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
     #parcours h2,
     #parcours .d-flex,
     #parcours p,
@@ -1056,9 +969,6 @@ FIX DEFINITIF PARCOURS - PETITES RÉSOLUTIONS
     }
 }
 
-/* ================================
-MINI-DOTS NAVIGATION - VERSION ÉPURÉE
-================================ */
 .mini-dots-nav {
     position: fixed;
     right: 2rem;
@@ -1074,20 +984,20 @@ MINI-DOTS NAVIGATION - VERSION ÉPURÉE
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(128, 0, 0, 0.4);  /* RGBA au lieu d'opacity */
-    opacity: 1;  /* Gardez opacity 1 pour ne pas affecter le tooltip */
+    background-color: rgba(128, 0, 0, 0.4);
+    opacity: 1;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .mini-dot.active {
-    background-color: #800000;  /* Couleur pleine pour l'actif */
+    background-color: #800000;
     transform: translateX(0) scale(1.6);
 }
 
 .mini-dot:hover {
-    background-color: rgba(128, 0, 0, 0.7);  /* RGBA pour le hover */
+    background-color: rgba(128, 0, 0, 0.7);
     transform: translateX(0) scale(1.1);
 }
 
@@ -1129,18 +1039,36 @@ MINI-DOTS NAVIGATION - VERSION ÉPURÉE
     animation: slideInDots 0.5s ease forwards;
 }
 
-.mini-dot:nth-child(1) { animation-delay: 0.1s; }
-.mini-dot:nth-child(2) { animation-delay: 0.2s; }
-.mini-dot:nth-child(3) { animation-delay: 0.3s; }
-.mini-dot:nth-child(4) { animation-delay: 0.4s; }
-.mini-dot:nth-child(5) { animation-delay: 0.5s; }
-.mini-dot:nth-child(6) { animation-delay: 0.6s; }
+.mini-dot:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mini-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mini-dot:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.mini-dot:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.mini-dot:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.mini-dot:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 @keyframes slideInDots {
     from {
         opacity: 0;
         transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0) scale(1);

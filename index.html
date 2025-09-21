@@ -36,7 +36,7 @@
         <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
         
         <!-- CANONICAL URL -->
-        <link rel="canonical" href="https://piluprior.github.io/tssr/">
+        <link rel="canonical" href="https://marc-lupi.fr/">
 
         <!-- PRECONNECT POUR PERFORMANCES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
               "name": "Marc Lupi",
               "jobTitle": "Technicien Supérieur des Systèmes et Réseaux",
               "description": "Expert en administration systèmes Windows/Linux, réseaux et virtualisation",
-              "url": "https://piluprior.github.io/tssr/",
+              "url": "https://marc-lupi.fr/",
               "email": "marc.lupi@protonmail.com",
               "telephone": "+33782108037",
               "address": {
@@ -61,7 +61,7 @@
               },
               "sameAs": [
                 "https://www.linkedin.com/in/marc-lupi",
-                "https://github.com/piluprior/"
+                "https://marc-lupi.fr/"
               ],
               "knowsAbout": [
                 "Administration Systèmes Windows",
@@ -80,14 +80,14 @@
               "@type": "WebSite",
               "name": "Marc Lupi - Portfolio TSSR",
               "description": "CV en ligne et portfolio professionnel de Marc Lupi, Technicien Supérieur Systèmes et Réseaux",
-              "url": "https://piluprior.github.io/tssr/",
+              "url": "https://marc-lupi.fr/",
               "author": {
                 "@type": "Person",
                 "name": "Marc Lupi"
               },
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://piluprior.github.io/tssr/{search_term_string}",
+                "target": "https://marc-lupi.fr/{search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }
@@ -106,124 +106,108 @@
         EXTERNAL LIBRARIES & FONTS
         ================================ -->
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" as="style">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!-- ================================
-        CRITICAL CSS + CSS INTERNAL LINK
+        CSS CRITIQUE INLINE - ABOVE THE FOLD
         ================================ -->
-        <!-- ================================
-    CSS CRITIQUE INLINE - ABOVE THE FOLD
-    ================================ -->
-    <style>
-        :root {
-            --primary-color: #800000;
-            --dark-color: #212529;
-            --white-color: #ffffff;
-            --bg-color: #FBF6E3;
-            --text-color: #212529;
-            --main-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --heading-font: 'Saira', sans-serif;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--main-font);
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            line-height: 1.5;
-            overflow-x: hidden;
-        }
-        
-        .main-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: var(--white-color);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-top {
-            background-color: var(--dark-color);
-            color: var(--white-color);
-            padding: 0.5rem 0;
-            font-size: 0.85rem;
-        }
-        
-        .header-top-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .header-bottom {
-            background-color: var(--white-color);
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(128, 0, 0, 0.1);
-        }
-        
-        .logo {
-            color: var(--dark-color);
-            font-family: var(--heading-font);
-            font-size: 2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-        }
-        
-        .logo .accent {
-            color: var(--primary-color);
-        }
-        
-        .resume-section {
-            display: flex;
-            align-items: center;
-            padding: 6rem 1.5rem;
-            min-height: 95vh;
-        }
-        
-        .hero-text {
-            font-family: var(--heading-font);
-            font-size: 2.75rem;
-            font-weight: 700;
-            margin-top: -14rem;
-        }
-        
-        .redder {
-            color: var(--primary-color);
-        }
-        
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #800000, #a00000);
-            z-index: 9999;
-        }
-        
-        @media (max-width: 991.98px) {
+        <style>
+            :root {
+                --primary-color: #800000;
+                --dark-color: #212529;
+                --white-color: #ffffff;
+                --bg-color: #FBF6E3;
+                --text-color: #212529;
+                --main-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                --heading-font: 'Saira', sans-serif;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: var(--main-font);
+                color: var(--text-color);
+                background-color: var(--bg-color);
+                margin: 0;
+                line-height: 1.5;
+                overflow-x: hidden;
+            }
+            .main-header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background-color: var(--white-color);
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            }
             .header-top {
-                display: none;
+                background-color: var(--dark-color);
+                color: var(--white-color);
+                padding: 0.5rem 0;
+                font-size: 0.85rem;
+            }
+            .header-top-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 2rem;
+            }
+            .header-bottom {
+                background-color: var(--white-color);
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(128, 0, 0, 0.1);
             }
             .logo {
-                font-size: 1.5rem;
+                color: var(--dark-color);
+                font-family: var(--heading-font);
+                font-size: 2rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                text-decoration: none;
+            }
+            .logo .accent {
+                color: var(--primary-color);
+            }
+            .resume-section {
+                display: flex;
+                align-items: center;
+                padding: 6rem 1.5rem;
+                min-height: 95vh;
             }
             .hero-text {
-                font-size: 1.8rem;
+                font-family: var(--heading-font);
+                font-size: 2.75rem;
+                font-weight: 700;
+                margin-top: -14rem;
             }
-        }
+            .redder {
+                color: var(--primary-color);
+            }
+            .reading-progress {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 3px;
+                background: linear-gradient(90deg, #800000, #a00000);
+                z-index: 9999;
+            }
+            @media (max-width: 991.98px) {
+                .header-top {
+                    display: none;
+                }
+                .logo {
+                    font-size: 1.5rem;
+                }
+                .hero-text {
+                    font-size: 1.8rem;
+                }
+            }      
         </style>
-        <link rel="preload" href="./ASSET/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="./ASSET/styles.css"></noscript>
+
+        <link rel="stylesheet" href="./ASSET/styles.css">
     </head>
 
     <body id="page-top">
