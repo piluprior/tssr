@@ -818,6 +818,10 @@ section[id] {
 @media (max-width: 768px) {
     .reading-progress {
         background: #800000;
+        transition: width 0.05s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0 1px 3px rgba(128, 0, 0, 0.3);
+        will-change: width;
+        transform: translateZ(0);
     }
 }
 
