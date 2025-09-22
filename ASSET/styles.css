@@ -1105,3 +1105,25 @@ a[href^="mailto:"]:hover::before,
 .mobile-social-icon:hover {
     background-color: var(--primary-color) !important;
 }
+
+/* CORRECTION SÉPARATIONS FORMATION - DESKTOP */
+@media (min-width: 768px) {
+    #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:last-child) {
+        position: relative;
+        margin-bottom: 2.5rem;
+        padding-bottom: 0.5rem;  /* Plus d'espace sur desktop */
+        min-height: 120px;     /* Hauteur minimum pour dates absolues */
+    }
+    
+    #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:last-child)::after {
+        bottom: -0.5rem;  /* Décaler la ligne plus bas */
+    }
+}
+
+/* FORMATION - ESPACEMENT À PARTIR DU 2ÈME ÉLÉMENT */
+@media (min-width: 768px) {
+    #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:first-child) {
+        margin-top: 4rem;     /* Encore plus d'espace */
+        padding-top: 0.5rem;  /* Padding supplémentaire */
+    }
+}
