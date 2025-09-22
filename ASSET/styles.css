@@ -584,7 +584,7 @@ a {
 @media (max-width: 768px) {
     .resume-section {
         padding-left: 1rem;
-        padding-right: 1rem;
+        padding-right: 1.75rem;
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
@@ -714,7 +714,7 @@ a {
 #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:last-child) {
     position: relative;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
 }
 
 #formation .d-flex.flex-column.flex-md-row.justify-content-between:not(:last-child)::after {
