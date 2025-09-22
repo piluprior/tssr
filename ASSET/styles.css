@@ -476,6 +476,12 @@ a {
 
 .catchphrase {
     text-align: justify;
+    text-justify: inter-character;
+    word-spacing: -0.08em;
+    letter-spacing: 0.01em;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .subheading {
