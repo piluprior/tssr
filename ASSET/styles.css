@@ -1074,3 +1074,28 @@ a[href^="mailto:"]:hover::before,
         transform: translateX(0) scale(1);
     }
 }
+
+/* FORCE AFFICHAGE SOCIAL ICONS MOBILE */
+.mobile-social {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+}
+
+.mobile-social-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: var(--dark-color) !important;
+    color: var(--white-color) !important;
+    border-radius: 50% !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-size: 1.2rem !important;
+}
+
+.mobile-social-icon:hover {
+    background-color: var(--primary-color) !important;
+}
