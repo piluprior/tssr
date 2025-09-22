@@ -207,14 +207,17 @@ function handleResize() {
  */
 let scrollTimeout;
 function handleScroll() {
-    if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
+    let ticking = false;
+    
+    if (!ticking) {
+        requestAnimationFrame(function() {
+            handleHeaderScroll();
+            handleScrollUpButton();
+            updateProgressBar();
+            ticking = false;
+        });
+        ticking = true;
     }
-    scrollTimeout = setTimeout(() => {
-        handleHeaderScroll();
-        handleScrollUpButton();
-        updateProgressBar();
-    }, 10); // Throttling à 10ms pour optimiser les performances
 }
 
 // ================================
@@ -398,6 +401,9 @@ function init() {
 
     // Scroll event listener optimisé
     window.addEventListener('scroll', handleScroll, { passive: true });
+    if ('ontouchstart' in window) {
+        window.addEventListener('touchmove', handleScroll, { passive: true });
+    }
 
     // Resize event listener avec recalcul Parcours
     window.addEventListener('resize', function() {
