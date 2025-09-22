@@ -805,10 +805,12 @@ section[id] {
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, #800000, #a00000);
+    background: linear-gradient(90deg, #800000 0%, #a00000 90%, #212529 100%);
     z-index: 9999;
-    transition: width 0.1s ease;
+    transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     box-shadow: 0 1px 3px rgba(128, 0, 0, 0.3);
+    will-change: width;
+    transform: translateZ(0);
 }
 
 .header-cta,
