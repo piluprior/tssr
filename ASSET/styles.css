@@ -221,12 +221,12 @@ body {
     top: 0;
     right: -100%;
     width: 320px;
-    height: auto;
-    max-height: 100vh;
+    height: 100vh;
+    max-height: none;
     background: var(--white-color);
     z-index: 2000;
     transition: right 0.3s ease;
-    padding: 2rem;
+    padding: 1.5rem;
     overflow-y: auto;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 }
