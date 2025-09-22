@@ -136,11 +136,14 @@ function initSmoothScroll() {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offsetTop = target.offsetTop - 100; // Ajustement pour le header fixe
+                const offsetTop = target.offsetTop - 100;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // NETTOYER L'URL - SUPPRIMER L'ANCRE
+                history.replaceState(null, null, window.location.pathname);
             }
         });
     });
