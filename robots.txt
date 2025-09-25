@@ -1,16 +1,16 @@
 User-agent: *
 Allow: /
 
-# Sitemap principal
+# Sitemap
 Sitemap: https://marc-lupi.fr/sitemap.xml
 
-# AUTORISATIONS EXPLICITES (contenu à indexer)
+# Contenu autorisé explicitement
 Allow: /index.html
 Allow: /IMG/
 Allow: /ASSET/styles.css
 Allow: /ASSET/scripts.js
 
-# BLOCAGES (fichiers techniques/privés)
+# Contenu à bloquer
 Disallow: /ASSET/fonts/
 Disallow: /.git/
 Disallow: /.github/
@@ -23,9 +23,12 @@ Disallow: /node_modules/
 # Performance
 Crawl-delay: 1
 
-# Moteurs spécifiques (optionnel)
+# Bots spécifiques
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
+
+# Spécifie le domaine préféré (utile avec un domaine personnalisé sur GitHub Pages)
+Host: marc-lupi.fr

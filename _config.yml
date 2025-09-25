@@ -1,0 +1,20 @@
+# URL canonique de ton site
+url: "https://marc-lupi.fr"
+
+# Forcer HTTPS sur ton domaine personnalisé
+enforce_ssl: marc-lupi.fr
+
+# Encodage
+encoding: "utf-8"
+
+# Exclure certains fichiers du build (optionnel)
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# Inclure explicitement ton sitemap si tu veux que GitHub Pages le prenne bien en compte
+include:
+  - sitemap.xml
