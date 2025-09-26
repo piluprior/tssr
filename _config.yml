@@ -1,8 +1,8 @@
 # URL canonique de ton site
-url: "https://marc-lupi.fr"
+url: "https://marclupi.fr"
 
 # Forcer HTTPS sur ton domaine personnalisé
-enforce_ssl: marc-lupi.fr
+enforce_ssl: marclupi.fr
 
 # Encodage
 encoding: "utf-8"
@@ -18,3 +18,9 @@ exclude:
 # Inclure explicitement ton sitemap si tu veux que GitHub Pages le prenne bien en compte
 include:
   - sitemap.xml
+
+
+url: "https://marclupi.fr"
+
+enforce_ssl: marclupi.fr
+

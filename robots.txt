@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://marc-lupi.fr/sitemap.xml
+Sitemap: https://marclupi.fr/sitemap.xml
 
 # Contenu autorisé explicitement
 Allow: /index.html
@@ -31,4 +31,6 @@ User-agent: Bingbot
 Allow: /
 
 # Spécifie le domaine préféré (utile avec un domaine personnalisé sur GitHub Pages)
-Host: marc-lupi.fr
+Host: marclupi.fr
+
+
