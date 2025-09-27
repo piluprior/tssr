@@ -79,6 +79,31 @@ body {
     color: var(--primary-color);
 }
 
+/* MOBILE */
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--main-font);
+}
+
+.mobile-contact-item i {
+    font-size: 0.8rem;
+}
+
+.mobile-contact-item a {
+    color: rgba(33,37,41, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: var(--main-font);
+}
+
+.mobile-contact-item a:hover {
+    color: var(--primary-color);
+}
+
 .header-top-social {
     display: flex;
     align-items: center;
@@ -1180,3 +1205,4 @@ a[href^="mailto:"]:hover::before,
 .mobile-social-icon {
     position: relative;
 }
+  
