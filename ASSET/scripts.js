@@ -589,3 +589,23 @@ function initMiniDotsNavigation() {
     console.log('✅ Mini-dots navigation initialisée');
 }
 
+/* JS minimal pour déclencher au bon moment */
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth > 991.98) return;
+    
+    const parcours = document.getElementById('parcours');
+    if (!parcours) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-viewport');
+            }
+        });
+    }, {
+        threshold: 0.5, // Déclenchement à la moitié
+        rootMargin: '0px 0px -50% 0px' // Ajustement pour "moitié de page"
+    });
+    
+    observer.observe(parcours);
+});

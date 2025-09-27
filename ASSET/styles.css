@@ -1227,3 +1227,83 @@ a[href^="mailto:"]:hover::before,
         transform: none !important;
     }
 }
+
+/* ==============================================
+   SECTION PARCOURS - VARIABLES CSS MODIFIABLES
+   ============================================== */
+
+   :root {
+    /* ⏱️ TIMING ET DURÉE */
+    --parcours-duration: 1.2s;              /* Durée animation - MODIFIEZ ICI */
+    --parcours-delay: 0.1s;                 /* Délai avant démarrage - MODIFIEZ ICI */
+    
+    /* 👻 OPACITÉ */
+    --parcours-opacity-start: 0.85;         /* Opacité initiale - MODIFIEZ ICI */
+    --parcours-opacity-end: 1.0;            /* Opacité finale - MODIFIEZ ICI */
+    
+    /* 📏 MOUVEMENT */
+    --parcours-translate-start: 100px;       /* Distance mouvement initial - MODIFIEZ ICI */
+    --parcours-translate-end: 0px;          /* Position finale - MODIFIEZ ICI */
+    
+    /* 🎭 COURBE D'ANIMATION */
+    --parcours-easing: cubic-bezier(0.16, 1, 0.3, 1); /* MODIFIEZ ICI */
+    /* Alternatives prêtes :
+       cubic-bezier(0.16, 1, 0.3, 1)       - Ultra smooth
+       cubic-bezier(0.25, 1, 0.5, 1)       - Bounce léger  
+       ease-out                             - Standard
+       cubic-bezier(0.68, -0.55, 0.265, 1.55) - Bounce back */
+    
+    /* 🎯 DÉCLENCHEMENT */
+    --parcours-trigger-point: 50vh;         /* Point déclenchement (50vh = moitié écran) - MODIFIEZ ICI */
+    --parcours-scroll-offset: -50vh;        /* Offset de scroll - MODIFIEZ ICI */
+}
+
+/* ==============================================
+   ANIMATION PARCOURS - NE PAS MODIFIER
+   ============================================== */
+
+@media (max-width: 991.98px) {
+    #parcours {
+        /* État initial */
+        opacity: var(--parcours-opacity-start);
+        transform: translateY(var(--parcours-translate-start));
+        transition: 
+            opacity var(--parcours-duration) var(--parcours-easing) var(--parcours-delay),
+            transform var(--parcours-duration) var(--parcours-easing) var(--parcours-delay);
+        
+        /* Intersection Observer simulation avec scroll-driven animations */
+        animation-timeline: view(block var(--parcours-scroll-offset));
+        animation-range: entry 0% entry 100%;
+        animation-name: parcours-mobile-entry;
+        animation-duration: var(--parcours-duration);
+        animation-timing-function: var(--parcours-easing);
+        animation-delay: var(--parcours-delay);
+        animation-fill-mode: forwards;
+    }
+    
+    /* Animation au ciblage direct (clic navigation) */
+    #parcours:target {
+        animation: parcours-mobile-entry var(--parcours-duration) var(--parcours-easing) var(--parcours-delay) forwards;
+    }
+    
+    /* Animation quand visible dans viewport */
+    #parcours.in-viewport {
+        opacity: var(--parcours-opacity-end);
+        transform: translateY(var(--parcours-translate-end));
+    }
+}
+
+@keyframes parcours-mobile-entry {
+    0% {
+        opacity: var(--parcours-opacity-start);
+        transform: translateY(var(--parcours-translate-start));
+    }
+    100% {
+        opacity: var(--parcours-opacity-end);
+        transform: translateY(var(--parcours-translate-end));
+    }
+}
+
+/* ==============================================
+   DÉCLENCHEMENT INTERSECTION (JS minimal)
+   ============================================== */
