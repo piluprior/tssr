@@ -259,7 +259,7 @@ function initScrollAnimations() {
 }
 
 // ================================
-// COPIE EMAIL AU CLIC
+// COPIE EMAIL AU CLIC - MOBILE/DESKTOP DIFFÉRENCIÉ
 // ================================
 function initEmailCopy() {
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
@@ -267,12 +267,21 @@ function initEmailCopy() {
     
     emailLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // Détection mobile au moment du clic
+            const isMobile = window.innerWidth <= 991.98 || 'ontouchstart' in window;
+            
+            if (isMobile) {
+                // Mobile : comportement natif (ne pas empêcher le mailto)
+                return; // Laisse le navigateur gérer le mailto normalement
+            }
+            
+            // Desktop : comportement avec toast (code existant)
             e.preventDefault();
             
             // Extraire l'email du href
             const email = this.href.replace('mailto:', '');
             
-            // Copier dans le presse-papiers
+            // Copier dans le presse-papier
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(email).then(() => {
                     // Afficher le toast
