@@ -1228,3 +1228,15 @@ a[href^="mailto:"]:hover::before,
     }
 }
 
+/* FIX - Section Parcours chevauche header sur mobile */
+@media (max-width: 991.98px) {
+    #parcours {
+        scroll-margin-top: 120px !important; /* Ajustez selon hauteur header */
+        padding-top: 3rem !important; /* Espace supplémentaire */
+    }
+    
+    /* Alternative si scroll-margin-top ne suffit pas */
+    #parcours .resume-section-content {
+        padding-top: 2rem !important;
+    }
+}

@@ -588,5 +588,3 @@ function initMiniDotsNavigation() {
     updateActiveDot();
     console.log('✅ Mini-dots navigation initialisée');
 }
-
-
