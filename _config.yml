@@ -20,7 +20,3 @@ include:
   - sitemap.xml
 
 
-url: "https://marclupi.fr"
-
-enforce_ssl: marclupi.fr
-
