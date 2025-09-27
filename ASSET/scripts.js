@@ -272,7 +272,7 @@ function initEmailCopy() {
             // Extraire l'email du href
             const email = this.href.replace('mailto:', '');
             
-            // Copier dans le presse-papier
+            // Copier dans le presse-papiers
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(email).then(() => {
                     // Afficher le toast
