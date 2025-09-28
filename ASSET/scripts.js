@@ -589,33 +589,65 @@ function initMiniDotsNavigation() {
     console.log('✅ Mini-dots navigation initialisée');
 }
 
-// === Tracking GA4 : vue de sections (one-shot) ===
+/// === TRACKING GA4 : vue de sections (one-shot + durée minimale) ===
 
-// On sélectionne toutes les sections qui ont un ID
+// On sélectionne toutes les sections avec un ID
 const sections = document.querySelectorAll("section[id]");
 
 // Tableau pour garder trace des sections déjà envoyées
 const sectionsVues = new Set();
+const timers = {}; // stocke les timers par section
 
 // Création de l'observer
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && !sectionsVues.has(entry.target.id)) {
-      sectionsVues.add(entry.target.id); // on marque la section comme déjà envoyée
+    const id = entry.target.id;
 
-      // Log console pour debug
-      console.log("Section vue (one-shot) :", entry.target.id);
+    if (entry.isIntersecting && !sectionsVues.has(id)) {
+      // La section devient visible → on lance un timer
+      timers[id] = setTimeout(() => {
+        if (!sectionsVues.has(id)) {
+          sectionsVues.add(id);
 
-      // Envoi de l'événement GA4
-      gtag('event', 'view_section', {
-        section_id: entry.target.id
-      });
+          // Log console pour debug
+          console.log("Section vue (après 1s) :", id);
+
+          // Envoi de l'événement GA4
+          gtag('event', 'view_section', {
+            section_id: id,
+            method: 'scroll'
+          });
+        }
+      }, 1000); // 1000 ms = 1 seconde
+    } else {
+      // La section sort de l'écran → on annule le timer si pas encore déclenché
+      if (timers[id]) {
+        clearTimeout(timers[id]);
+        delete timers[id];
+      }
     }
   });
-}, { threshold: 0 }); // 20% visible suffit pour compter comme "vue"
+}, { threshold: 0 });
 
 // On observe chaque section
 sections.forEach(section => observer.observe(section));
+
+
+// === Tracking GA4 : clics du menu ===
+document.querySelectorAll("a[href^='#']").forEach(link => {
+  link.addEventListener("click", () => {
+    const target = link.getAttribute("href").replace("#", "");
+
+    // Log console pour debug
+    console.log("Section atteinte par clic :", target);
+
+    // Envoi de l'événement GA4
+    gtag('event', 'view_section', {
+      section_id: target,
+      method: 'menu_click'
+    });
+  });
+});
 
 
 // Fin JS
