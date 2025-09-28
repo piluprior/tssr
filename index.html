@@ -108,9 +108,11 @@
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'G-0W75W7H7SV');
-            // DEBUG - Ajoutez dans index.html après gtag config
+
+            // Ajoutez debug_mode
             gtag('config', 'G-0W75W7H7SV', {
-                'debug_mode': true
+                'debug_mode': true,
+                'send_page_view': true
             });
         </script>
 
@@ -1273,7 +1275,7 @@
         EMAIL JS
         ================================ -->
         <script>
-            emailjs.init('service_43bxg0a');
+            emailjs.init('IwLwlxOaBJfUfhRqv');
         </script>
 
         <!-- ================================
