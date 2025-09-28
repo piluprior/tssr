@@ -108,15 +108,22 @@
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'G-0W75W7H7SV');
+            // DEBUG - Ajoutez dans index.html après gtag config
+            gtag('config', 'G-0W75W7H7SV', {
+                'debug_mode': true
+            });
         </script>
+
         <link rel="icon" type="image/x-icon" href="https://marclupi.fr/IMG/favicon.ico">
         <link rel="icon" type="image/png" href="https://marclupi.fr/IMG/favicon.png" sizes="96x96">
+
         <!-- ================================
         EXTERNAL LIBRARIES & FONTS
         ================================ -->
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" as="style">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <!-- ================================
         CSS CRITIQUE INLINE - ABOVE THE FOLD
         ================================ -->
@@ -215,7 +222,6 @@
                 }
             }      
         </style>
-
         <link rel="stylesheet" href="./ASSET/styles.css">
     </head>
 
@@ -251,8 +257,9 @@
                         <a href="https://github.com/piluprior/" class="header-top-social-icon" target="_blank" data-tooltip="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://drive.proton.me/urls/MP913ZMZZ0#xLRDL57fkJuK" class="header-top-social-icon" target="_blank" data-tooltip="CV pdf">
-                            <i class="fa fa-file"></i>
+                        <a href="#" onclick="return trackAndDownloadCV('header_desktop')"
+                            class="header-top-social-icon" data-tooltip="CV pdf">
+                                <i class="fa fa-file"></i>
                         </a>
                     </div>
                 </div>
@@ -330,8 +337,9 @@
                     <a href="https://github.com/piluprior/" class="mobile-social-icon" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://drive.proton.me/urls/MP913ZMZZ0#xLRDL57fkJuK" class="mobile-social-icon" target="_blank">
-                        <i class="fa fa-file"></i>
+                    <a href="#" onclick="return trackAndDownloadCV('menu_mobile')"
+                        class="mobile-social-icon">
+                            <i class="fa fa-file"></i>
                     </a>
                 </div>
             </div>
@@ -568,37 +576,31 @@
             <section class="resume-section" id="parcours">
                 <script type="application/ld+json">
                     {
-                        "@context": "https://schema.org",
-                        "@type": "Person",
-                        "name": "Marc Lupi",
-                        "jobTitle": "Technicien Supérieur Systèmes et Réseaux (TSSR)",
-                        "url": "https://marclupi.fr/"
-                        "hasOccupation": [
-                            {
-                            "@type": "Occupation",
-                            "name": "Créateur d'entreprise de services numériques",
-                            "occupationLocation": {
-                                "@type": "Place",
-                                "name": "SOFTEN-IT"
-                            },
-                            "estimatedSalary": {
-                                "@type": "MonetaryAmountDistribution",
-                                "name": "Entrepreneur"
-                            },
-                            "description": "Conception et développement web, gestion administrative et financière",
-                            "skills": "Développement web, SEO, Marketing digital, Gestion d'entreprise"
-                            },
-                            {
-                            "@type": "Occupation",
-                            "name": "Technicien support & technicien d'intégration",
-                            "occupationLocation": {
-                                "@type": "Place",
-                                "name": "Conseil Départemental du Gers"
-                            },
-                            "description": "Support utilisateur, assistance technique, intégration de solutions",
-                            "skills": "Support IT, Déploiement, Documentation technique"
-                            }
-                        ]
+                      "@context": "https://schema.org",
+                      "@type": "Person",
+                      "name": "Marc Lupi",
+                      "jobTitle": "Technicien Supérieur Systèmes et Réseaux (TSSR)",
+                      "url": "https://marclupi.fr/",
+                      "hasOccupation": [
+                        {
+                          "@type": "Occupation",
+                          "name": "Créateur d'entreprise de services numériques",
+                          "description": "Conception et développement web, gestion administrative et financière",
+                          "occupationLocation": {
+                            "@type": "AdministrativeArea",
+                            "name": "SOFTEN-IT"
+                          }
+                        },
+                        {
+                          "@type": "Occupation",
+                          "name": "Technicien support & technicien d'intégration",
+                          "description": "Support utilisateur, assistance technique, intégration de solutions",
+                          "occupationLocation": {
+                            "@type": "AdministrativeArea",
+                            "name": "Conseil Départemental du Gers"
+                          }
+                        }
+                      ]
                     }
                 </script>
                 <div class="resume-section-content">
@@ -1229,6 +1231,7 @@
             </section>
             <div class="footer-text" id="footerText"></div>
         </div>
+
         <!-- ================================
         TOAST NOTIFICATION
         ================================ -->
@@ -1236,12 +1239,14 @@
             <i class="fas fa-check-circle"></i>
             <span>E-mail copié dans le presse-papiers !</span>
         </div>
+
         <!-- ================================
         BOUTON SCROLL UP
         ================================ -->
         <button id="scrollUp" class="scroll-up" title="Scroll up !" aria-label="Remonter en haut">
             ↾
         </button>
+
         <!-- ================================
         MINI-DOTS NAVIGATION
         ================================ -->
@@ -1253,14 +1258,49 @@
             <div class="mini-dot" data-section="formation" data-tooltip="Formation"></div>
             <div class="mini-dot" data-section="profil" data-tooltip="Profil"></div>
         </nav>
+
+        <!-- ================================
+        SUPABASE CLIENT LIBRARY
+        ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <!-- ================================
+        E-MAIL JS
+        ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <!-- ================================
+        EMAIL JS
+        ================================ -->
+        <script>
+            emailjs.init('service_43bxg0a');
+        </script>
+
+        <!-- ================================
+        CONFIGURATION CENTRALISÉE
+        ================================ -->
+        <script>
+            window.CV_TRACKING_CONFIG = {
+                supabase_url: 'https://nrjoklmpfxltizbjhtzl.supabase.co',
+                supabase_anon_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5yam9rbG1wZnhsdGl6YmpodHpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkwMzA3MzksImV4cCI6MjA3NDYwNjczOX0.AkkccSVs7jlQZlEifRjMmm1rw6itlROvFWD7kI59gWs', 
+                cv_url: 'https://drive.proton.me/urls/MP913ZMZZ0#xLRDL57fkJuK',
+                emailjs_service: 'service_43bxg0a',    // Service ID EmailJS
+                emailjs_template: 'template_hadkhv3',  // Template ID EmailJS
+                enable_email_notifications: true,      // Activer les emails
+                enable_tracking: true,
+                debug_mode: true // Mettre true pour voir les logs
+            };
+        </script>
+
         <!-- ================================
         EXTERNAL LIBRARIES
         ================================ -->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" defer></script>
+
         <!-- ================================
         JAVASCRIPT INTERNAL LINK
         ================================ -->
         <script src="./ASSET/scripts.js"></script>
+        <script src="./ASSET/cv_tracking.js"></script>
     </body>
-
 </html>
