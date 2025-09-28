@@ -588,3 +588,34 @@ function initMiniDotsNavigation() {
     updateActiveDot();
     console.log('✅ Mini-dots navigation initialisée');
 }
+
+// === Tracking GA4 : vue de sections (one-shot) ===
+
+// On sélectionne toutes les sections qui ont un ID
+const sections = document.querySelectorAll("section[id]");
+
+// Tableau pour garder trace des sections déjà envoyées
+const sectionsVues = new Set();
+
+// Création de l'observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !sectionsVues.has(entry.target.id)) {
+      sectionsVues.add(entry.target.id); // on marque la section comme déjà envoyée
+
+      // Log console pour debug
+      console.log("Section vue (one-shot) :", entry.target.id);
+
+      // Envoi de l'événement GA4
+      gtag('event', 'view_section', {
+        section_id: entry.target.id
+      });
+    }
+  });
+}, { threshold: 0 }); // 20% visible suffit pour compter comme "vue"
+
+// On observe chaque section
+sections.forEach(section => observer.observe(section));
+
+
+// Fin JS
