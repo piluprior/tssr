@@ -108,7 +108,7 @@ async function trackAndDownloadCV(source) {
             
             await emailjs.send(
                 config.emailjs_service || 'service_43bxg0a',
-                config.emailjs_template || 'template_hadkhv3',
+                config.emailjs_template || 'template_r9omgz8',
                 templateParams
             );
             
