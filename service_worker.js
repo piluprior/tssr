@@ -4,10 +4,11 @@ const OFFLINE_URL = "/offline.html";
 const FILES_TO_CACHE = [
   OFFLINE_URL,
   "/ASSET/offline_styles.css",
+  "/IMG/fond.avif",
   "/IMG/logo.png"
 ];
 
-// Install
+// Installation du SW et pré-cache des fichiers essentiels
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -17,15 +18,32 @@ self.addEventListener("install", event => {
   self.skipWaiting();
 });
 
-// Fetch
+// Activation et nettoyage des anciens caches
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+// Interception des requêtes
 self.addEventListener("fetch", event => {
   event.respondWith(
     fetch(event.request).catch(() => {
+      // Si navigation → on renvoie la page offline
       if (event.request.mode === "navigate") {
         return caches.match(OFFLINE_URL);
-      } else {
-        return caches.match(event.request);
       }
+      // Sinon, on essaie de renvoyer la ressource depuis le cache
+      return caches.match(event.request);
     })
   );
 });

@@ -4,11 +4,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('https://picsum.photos/1600/900?blur=5') no-repeat center center/cover;
+    background: url('/IMG/fond.avif') no-repeat center center/cover;
     font-family: "Trebuchet MS", sans-serif;
     color: #fff;
     text-align: center;
     overflow: hidden;
+    position: relative; /* ✅ important pour que overlay prenne toute la page */
 }
 
 .overlay {
@@ -18,6 +19,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .content {
@@ -27,8 +29,11 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
+/* Titres */
 h1 {
     font-size: 3em;
     margin: 0.2em 0;
@@ -40,6 +45,7 @@ p {
     margin: 0.5em 0 0;
 }
 
+/* Logo */
 .offline-logo {
     width: 150px;
     height: auto;
@@ -52,12 +58,11 @@ p {
 
 /* === Bouton façon Bootstrap Dark === */
 .btn-retry {
-    background-color: #343a40;
-    /* gris foncé bootstrap */
+    background-color: #800000;
     color: #fff;
-    border: 1px solid #1d2124;
+    border: none;
     padding: 12px 28px;
-    border-radius: 6px;
+    border-radius: 0px;
     font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -67,8 +72,7 @@ p {
 
 .btn-retry:hover {
     background-color: #495057;
-    /* éclairci au survol */
-    border-color: #343a40;
+    border-color: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -79,13 +83,10 @@ p {
 
 /* Animation halo (respiration) */
 @keyframes pulse {
-
-    0%,
-    100% {
+    0%, 100% {
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         transform: scale(1);
     }
-
     50% {
         box-shadow: 0 0 35px rgba(255, 255, 255, 0.9);
         transform: scale(1.05);
@@ -94,13 +95,46 @@ p {
 
 /* Animation légère de flottement */
 @keyframes bounce {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-8px);
+    }
+}
+
+/* ✅ Responsivité */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .offline-logo {
+        width: 120px;
+    }
+    .btn-retry {
+        width: 60%;
+        padding: 14px;
+        font-size: 1.1em;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .offline-logo {
+        width: 90px;
+    }
+    .btn-retry {
+        width: 60%;
+        font-size: 1em;
+        padding: 12px;
     }
 }
