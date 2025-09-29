@@ -1340,7 +1340,7 @@
         ================================ -->
         <script>
             if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('./ASSET/service_worker.js')
+              navigator.serviceWorker.register('./service_worker.js')
                 .then(() => console.log("✅ Service Worker enregistré"))
                 .catch(err => console.error("Erreur Service Worker:", err));
             }
