@@ -1,16 +1,6 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://marclupi.fr/sitemap.xml
-
-# Contenu autorisé explicitement
-Allow: /index.html
-Allow: /IMG/
-Allow: /ASSET/styles.css
-Allow: /ASSET/scripts.js
-
-# Contenu à bloquer
+Disallow: /offline.html
 Disallow: /ASSET/fonts/
 Disallow: /.git/
 Disallow: /.github/
@@ -19,6 +9,17 @@ Disallow: /LICENSE
 Disallow: /.gitignore
 Disallow: /package.json
 Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://marclupi.fr/sitemap.xml
+
+# Contenu explicitement autorisé
+Allow: /index.html
+Allow: /IMG/
+Allow: /ASSET/styles.css
+Allow: /ASSET/scripts.js
+Allow: /manifest.json
+Allow: /service_worker.js
 
 # Performance
 Crawl-delay: 1
@@ -30,7 +31,5 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Spécifie le domaine préféré (utile avec un domaine personnalisé sur GitHub Pages)
+# Domaine préféré
 Host: marclupi.fr
-
-
