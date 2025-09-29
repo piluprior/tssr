@@ -38,11 +38,11 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     fetch(event.request).catch(() => {
-      // Si navigation → on renvoie la page offline
       if (event.request.mode === "navigate") {
+        // ✅ Si navigation et offline → page custom
         return caches.match(OFFLINE_URL);
       }
-      // Sinon, on essaie de renvoyer la ressource depuis le cache
+      // ✅ Sinon → on renvoie ce qu’il y a dans le cache
       return caches.match(event.request);
     })
   );
