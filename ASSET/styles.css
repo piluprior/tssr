@@ -1034,6 +1034,40 @@ a[href^="mailto:"]:hover::before,
     }
 }
 
+/* Tooltip spécifique Japan */
+.tooltip-text {
+    position: relative;
+    cursor: help;         /* curseur informatif */
+    color: inherit;       /* garde la couleur du texte */
+}
+
+.tooltip-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;         /* place le tooltip au-dessus */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #212529; /* fond sombre */
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0;
+    font-size: 0.80rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    text-transform: none !important; /* garantit la casse exacte */
+    font-family: inherit;            /* garde la même fonte que le reste */
+}
+
+.tooltip-text:hover::after {
+    opacity: 1;
+}
+
 .mini-dots-nav {
     position: fixed;
     right: 2rem;
@@ -1084,7 +1118,7 @@ a[href^="mailto:"]:hover::before,
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s;
     pointer-events: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
