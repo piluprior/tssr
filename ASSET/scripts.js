@@ -11,7 +11,6 @@ Gestion de la navigation, scroll spy et menu mobile
  */
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('mobileOverlay');
     if (menu.classList.contains('open')) {
         closeMobileMenu();
     } else {
@@ -25,9 +24,15 @@ function toggleMobileMenu() {
 function openMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const overlay = document.getElementById('mobileOverlay');
+    const toggleBtn = document.querySelector('.mobile-menu-btn');
+
     menu.classList.add('open');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // accessibilité
+    menu.setAttribute('aria-hidden', 'false');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
 }
 
 /**
@@ -36,10 +41,17 @@ function openMobileMenu() {
 function closeMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const overlay = document.getElementById('mobileOverlay');
+    const toggleBtn = document.querySelector('.mobile-menu-btn');
+
     menu.classList.remove('open');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+
+    // accessibilité
+    menu.setAttribute('aria-hidden', 'true');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
 }
+
 
 // ================================
 // SCROLLSPY SYSTEM - VERSION CORRIGÉE

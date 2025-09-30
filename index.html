@@ -323,7 +323,7 @@
                     <!-- Bouton CTA -->
                     <a href="mailto:marc.lupi@protonmail.com" class="header-cta">Me contacter</a>
                     <!-- Bouton hamburger mobile -->
-                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">
+                    <button class="mobile-menu-btn" aria-expanded="false" onclick="toggleMobileMenu()" aria-label="Menu mobile">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -336,7 +336,7 @@
         <!-- Overlay mobile -->
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <!-- Sidebar mobile -->
-        <div class="mobile-menu" id="mobileMenu">
+        <div id="mobileMenu" class="mobile-menu" aria-hidden="true" role="navigation" aria-label="Menu mobile">
             <div class="mobile-menu-header">
                 <div><a href="#page-top" onclick="closeMobileMenu()" class="logo" style="font-size: 1.3rem;">Marc <span class="accent">Lupi</span></a></div>
                 <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Fermer menu">
@@ -386,7 +386,7 @@
         <!-- ================================
         CONTENU PRINCIPAL - 6 SECTIONS
         ================================ -->
-        <div class="container-fluid ps-4">
+        <main class="container-fluid ps-4">
             <!-- SECTION 1 - ACCUEIL -->
             <section class="resume-section" id="page-top">
                 <div class="resume-section-content">
@@ -1276,12 +1276,12 @@
                 </div>
             </section>
             <div class="footer-text" id="footerText"></div>
-        </div>
+        </main>
 
         <!-- ================================
         TOAST NOTIFICATION
         ================================ -->
-        <div class="toast-notification" id="toast">
+        <div class="toast-notification" id="toast" role="status" aria-live="polite">
             <i class="fas fa-check-circle"></i>
             <span>E-mail copié dans le presse-papiers !</span>
         </div>
@@ -1296,7 +1296,7 @@
         <!-- ================================
         MINI-DOTS NAVIGATION
         ================================ -->
-        <nav class="mini-dots-nav" id="miniDotsNav">
+        <nav class="mini-dots-nav" id="miniDotsNav" role="navigation" aria-label="Navigation par sections">
             <div class="mini-dot" data-section="page-top" data-tooltip="Accueil"></div>
             <div class="mini-dot" data-section="apropos" data-tooltip="À propos"></div>
             <div class="mini-dot" data-section="competences" data-tooltip="Compétences TSSR"></div>
