@@ -899,8 +899,9 @@ section[id] {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #FAB400;
-    color: white;
+    background: #212529; /* #FAB400 */
+    border-top: 3px solid #800000; /* bleu bootstrap #0d6efd */
+    color: #FFF;
     padding: 1rem 1.5rem;
     border-radius: 8px;
     display: flex;
@@ -1241,5 +1242,14 @@ a[href^="mailto:"]:hover::before,
     }
 }
 
-
-/* STYLE offline.html */
+/* SR only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

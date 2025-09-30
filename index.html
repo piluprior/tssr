@@ -276,15 +276,26 @@
                     </div>
                     <!-- Social icons à droite -->
                     <div class="header-top-social">
-                        <a href="https://www.linkedin.com/in/marclupi" class="header-top-social-icon" target="_blank" rel="noopener" data-tooltip="LinkedIn">
+                        <a href="https://www.linkedin.com/in/marclupi"
+                            class="header-top-social-icon"
+                            target="_blank"
+                            rel="noopener"
+                            data-tooltip="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
+                            <span class="sr-only">Profil LinkedIn</span>
                         </a>
-                        <a href="https://github.com/piluprior/" class="header-top-social-icon" target="_blank" data-tooltip="GitHub">
+                        <a href="https://github.com/piluprior/"
+                            class="header-top-social-icon"
+                            target="_blank"
+                            data-tooltip="GitHub">
                             <i class="fab fa-github"></i>
+                            <span class="sr-only">Profil GitHub</span>
                         </a>
-                        <a href="#" onclick="return trackAndDownloadCV('header_desktop')"
-                            class="header-top-social-icon" data-tooltip="CV pdf">
-                                <i class="fa fa-file"></i>
+                        <a href="#"
+                           onclick="return trackAndDownloadCV('header_desktop')"
+                           class="header-top-social-icon" data-tooltip="CV pdf">
+                           <i class="fa fa-file"></i>
+                           <span class="sr-only">Télécharger mon CV en PDF</span>
                         </a>
                     </div>
                 </div>
@@ -358,13 +369,16 @@
                 <div class="mobile-social">
                     <a href="https://www.linkedin.com/in/marclupi" class="mobile-social-icon" target="_blank" rel="noopener">
                         <i class="fab fa-linkedin-in"></i>
+                        <span class="sr-only">Profil LinkedIn</span>
                     </a>
                     <a href="https://github.com/piluprior/" class="mobile-social-icon" target="_blank">
                         <i class="fab fa-github"></i>
+                        <span class="sr-only">Profil GitHub</span>
                     </a>
                     <a href="#" onclick="return trackAndDownloadCV('menu_mobile')"
                         class="mobile-social-icon">
-                            <i class="fa fa-file"></i>
+                        <i class="fa fa-file"></i>
+                        <span class="sr-only">Télécharger mon CV en PDF</span>
                     </a>
                 </div>
             </div>
@@ -416,7 +430,7 @@
             <section class="resume-section" id="competences" itemscope itemtype="https://schema.org/SkillSet">
                 <div class="resume-section-content">
                     <h2 class="section-title mb-5">mes compétences en tant que tssr – systèmes et réseaux</h2>
-                    <div class="subheading mb-3" itemprop="skillSet">assurer le support utilisateur en centre de services</div>
+                    <h3 class="subheading mb-3" itemprop="skillSet">assurer le support utilisateur en centre de services</h3>
                     <p class="lead catchphrase mb3" itemprop="description">
                         J'assure la gestion des parcs informatiques et le suivi des incidents avec <span itemprop="softwareApplication">GLPI</span>, en appliquant les
                         SLA et en garantissant une résolution rapide et efficace.
@@ -437,7 +451,7 @@
                         L'usage d'outils collaboratifs tels que Microsoft Teams et Slack me permet de fluidifier les
                         échanges et de maximiser l'efficacité en équipe.
                     </p>
-                    <div class="subheading mb-3">exploiter des serveurs windows et un domaine active directory</div>
+                    <h3 class="subheading mb-3">exploiter des serveurs windows et un domaine active directory</h3>
                     <p class="lead catchphrase mb-3">
                         L'installation, la configuration et l'exploitation des serveurs Windows ne posent aucun problème.
                         Je maîtrise les rôles et fonctionnalités intégrées ainsi que l'intégration de solutions tierces
@@ -456,7 +470,7 @@
                         Je gère les mises à jour via WSUS et exploite Hyper-V pour la création et l'administration des
                         machines virtuelles sous Windows.
                     </p>
-                    <div class="subheading mb-3">exploiter des serveurs linux</div>
+                    <h3 class="subheading mb-3">exploiter des serveurs linux</h3>
                     <p class="lead catchphrase mb-3">
                         J'installe, configure et exploite les serveurs Debian ainsi que des services comme GLPI, FOG, XiVO
                         et bien d'autres encore.
@@ -477,7 +491,7 @@
                         Les systèmes de fichiers ext4, ZFS et XFS sont exploités pour garantir un stockage performant et
                         sécurisé.
                     </p>
-                    <div class="subheading mb-3">exploiter un réseau ip</div>
+                    <h3 class="subheading mb-3">exploiter un réseau ip</h3>
                     <p class="lead catchphrase mb-3">
                         La sécurisation du réseau est garantie par l'application des recommandations de l'ANSSI, la gestion
                         des pare-feu et l'administration des VLAN.
@@ -495,7 +509,7 @@
                         Les équipements d'interconnexion sous Cisco IOS sont configurés pour garantir la stabilité et la
                         sécurité du réseau.
                     </p>
-                    <div class="subheading mb-3">maintenir des serveurs dans une infrastructure virtualisée</div>
+                    <h3 class="subheading mb-3">maintenir des serveurs dans une infrastructure virtualisée</h3>
                     <p class="lead catchphrase mb-3">
                         La création et l'exploitation de machines virtuelles sous VMware, Hyper-V et Proxmox sont assurées
                         avec efficacité.
@@ -519,7 +533,7 @@
                         Une surveillance continue des alertes et journaux d'événements permet d'anticiper les incidents et
                         d'assurer la stabilité des services.
                     </p>
-                    <div class="subheading mb-3">automatiser des tâches à l'aide de scripts</div>
+                    <h3 class="subheading mb-3">automatiser des tâches à l'aide de scripts</h3>
                     <p class="lead catchphrase mb-3">
                         J'adapte et déploie des scripts en PowerShell et Bash pour automatiser la gestion des serveurs
                         Windows et Linux.
@@ -535,8 +549,8 @@
                     <p class="lead catchphrase mb-5">
                         Chaque script est testé, corrigé et documenté pour garantir son efficacité et sa pérennité.
                     </p>
-                    <div class="subheading mb-3">maintenir et sécuriser les accès à internet et les interconnexions des
-                        réseaux</div>
+                    <h3 class="subheading mb-3">maintenir et sécuriser les accès à internet et les interconnexions des
+                        réseaux</h3>
                     <p class="lead catchphrase mb-3">
                         L'installation et le déploiement de pare-feu, notamment avec pfSense, permettent un filtrage et un
                         contrôle strict des accès réseau.
@@ -557,8 +571,8 @@
                         La configuration et la surveillance des DMZ garantissent l'isolation et la protection des services
                         exposés sur Internet.
                     </p>
-                    <div class="subheading mb-3">mettre en place, assurer et tester les sauvegardes et les restaurations des
-                        éléments de l'infrastructure</div>
+                    <h3 class="subheading mb-3">mettre en place, assurer et tester les sauvegardes et les restaurations des
+                        éléments de l'infrastructure</h3>
                     <p class="lead catchphrase mb-3">
                         L'exploitation de Veeam Server permet d'assurer une politique de sauvegarde fiable et performante.
                     </p>
@@ -577,8 +591,7 @@
                         Chaque procédure de restauration est documentée et mise à jour pour garantir une intervention rapide
                         en cas d'incident.
                     </p>
-                    <div class="subheading mb-3">exploiter et maintenir les services de déploiement des postes de travail
-                    </div>
+                    <h3 class="subheading mb-3">exploiter et maintenir les services de déploiement des postes de travail</h3>
                     <p class="lead catchphrase mb-3">
                         Le déploiement des postes de travail est assuré via WDS, MDT et FOG.
                     </p>
@@ -744,7 +757,7 @@
                         <div class="flex-grow-1">
                             <!-- certificat voltaire-->
                             <h3 class="mb-5">Le Certificat Voltaire</h3>
-                            <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
+                            <h4 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h4>
                             <p class="subheading mb-3">QU'EST-CE QUE LE CERTIFICAT VOLTAIRE ?</p>
                             <p class="lead catchphrase mb-5">
                                 Le Certificat Voltaire est une certification de référence en langue française, qui valide
@@ -778,7 +791,7 @@
                                 De plus, l'examen et sa préparation peuvent être financés via le CPF pour salariés ou
                                 demandeurs d'emploi, ce qui le rend abordable et reconnu.
                             </p>
-                            <h5 class="mb-5">Les atouts du Certificat Voltaire en informatique</h5>
+                            <h4 class="mb-5">Les atouts du Certificat Voltaire en informatique</h4>
                             <p class="subheading mb-3">DOCUMENTATION TECHNIQUE FIABLE</p>
                             <p class="lead catchphrase mb-5">
                                 Dans les métiers systèmes et réseaux, rédiger des procédures claires (installation,
@@ -824,7 +837,7 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-5">La certification Cisco CCNA 200-301</h3>
-                            <h6 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h6>
+                            <h4 class="text-center en-cours-tssr mb-5">Certification en cours de préparation</h4>
                             <p class="subheading mb-3">QU'EST-CE QUE LA CERTIFICATION CCNA ?</p>
                             <p class="lead catchphrase mb-5">
                                 Le CCNA atteste de compétences pratiques : configuration d'équipements Cisco, mise en œuvre
@@ -859,7 +872,7 @@
                                 Le contenu est mis à jour pour refléter les besoins du marché, garantissant une
                                 certification pertinente et actuelle.
                             </p>
-                            <h5 class="mb-5">Les apports du CCNA dans les métiers IT</h5>
+                            <h4 class="mb-5">Les apports du CCNA dans les métiers IT</h4>
                             <p class="subheading mb-3">DÉPLOIEMENT ET MAINTENANCE DE RÉSEAUX</p>
                             <p class="lead catchphrase mb-5">
                                 Dans un rôle de technicien systèmes et réseaux, le CCNA permet d'installer et configurer des
@@ -901,7 +914,7 @@
                         <div class="flex-grow-1">
                             <!-- certification opquast -->
                             <h3 class="mb-5">La Certification Opquast</h3>
-                            <h6 class="text-center expired mb-5">Certification expirée</h6>
+                            <h4 class="text-center expired mb-5">Certification expirée</h4>
                             <p class="subheading mb-3">QU'EST-CE QUE LA CERTIFICATION OPQUAST ?</p>
                             <p class="lead catchphrase mb-5">
                                 La certification Opquast est une référence internationale de la qualité web.
@@ -936,7 +949,7 @@
                                 L'examen est ouvert aux étudiants, professionnels et demandeurs d'emploi, garantissant un
                                 socle de compétences pérennes et certifiées en qualité web.
                             </p>
-                            <h5 class="mb-5">Les apports de la Certification Opquast dans les métiers IT</h5>
+                            <h4 class="mb-5">Les apports de la Certification Opquast dans les métiers IT</h4>
                             <p class="subheading mb-3">AMÉLIORATION DE L'EXPÉRIENCE UTILISATEUR</p>
                             <p class="lead catchphrase mb-5">
                                 Grâce à Opquast, un professionnel sait appliquer les règles garantissant un site simple,
@@ -1206,7 +1219,7 @@
             <section class="resume-section" id="profil">
                 <div class="resume-section-content">
                     <h2 class="section-title mb-5">profil</h2>
-                    <h5 class="mb-5">Qualités</h5>
+                    <h3 class="mb-5">Qualités</h3>
                     <div class="subheading citation mb-3">"<span class="majuscule">I</span>l n'y a pas de résultats sans
                         travail et pas de travail sans effort."</div>
                     <footer class="blockquote-footer mb-5">Alain Leblay</footer>
@@ -1221,7 +1234,7 @@
                         Ces influences nourrissent ma vision du travail, apportant à la fois créativité et humanité dans
                         chaque projet que j'entreprends
                     </p>
-                    <h5 class="mb-5">Passions</h5>
+                    <h3 class="mb-5">Passions</h3>
                     <div class="subheading blockquote citation mb-3">
                         "<span class="majuscule">C</span>hoisis un travail que tu aimes et tu n'auras pas à travailler un
                         seul jour de ta vie."
@@ -1244,7 +1257,7 @@
                         Enfin, l'aviation nourrit un rêve d'enfant et la mécanique dans laquelle j'ai grandi, reste une
                         activité qui m'anime.
                     </p>
-                    <h5 class="mb-5">Langues</h5>
+                    <h3 class="mb-5">Langues</h3>
                     <div class="subheading citation mb-5">"<span class="majuscule">J</span>e maîtrise le français, <span
                             class="majuscule">I </span>understand English more than <span class="majuscule">I </span> speak
                         it, <span data-bs-toggle="tooltip" title="J'étudie le japonais">日本語を勉強しています"</span></div>
@@ -1342,7 +1355,7 @@
         <script>
             if ('serviceWorker' in navigator) {
               navigator.serviceWorker.register('./service_worker.js')
-                .then(() => console.log("✅ Service Worker enregistré"))
+                .then(() => console.log("Service Worker enregistré"))
                 .catch(err => console.error("Erreur Service Worker:", err));
             }
           </script>
