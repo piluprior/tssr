@@ -23,12 +23,12 @@ body {
 
 main {
     display: block;
-    /* valeur par défaut, mais on fixe explicitement */
     margin: 0;
-    /* supprime les marges héritées par défaut */
     padding: 0;
-    /* évite tout décalage interne */
-}
+    border: 0;
+    min-height: 0;           /* évite les sauts liés au calcul de hauteur */
+    line-height: normal;     /* neutralise les variations héritées */
+  }
 
 .main-header {
     position: sticky;
@@ -888,7 +888,7 @@ section[id] {
     right: 20px;
     background: #212529;
     /* #FAB400 */
-    border-top: 3px solid #800000;
+    border-top: 3px solid #FAB400;
     /* bleu bootstrap #0d6efd */
     color: #FFF;
     padding: 1rem 1.5rem;
