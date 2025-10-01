@@ -264,10 +264,12 @@ main {
     padding: 1.5rem;
     overflow-y: auto;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
 .mobile-menu.open {
     right: 0;
+    display: block;
 }
 
 .mobile-menu-header {

@@ -29,6 +29,9 @@ function openMobileMenu() {
     menu.classList.add('open');
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Réactiver les liens
+    const links = menu.querySelectorAll('a, button');
+    links.forEach(link => link.removeAttribute('tabindex'));
 
     // accessibilité
     menu.setAttribute('aria-hidden', 'false');
@@ -46,6 +49,9 @@ function closeMobileMenu() {
     menu.classList.remove('open');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
+    // Désactiver les liens
+    const links = menu.querySelectorAll('a, button');
+    links.forEach(link => link.setAttribute('tabindex', '-1'));
 
     // accessibilité
     menu.setAttribute('aria-hidden', 'true');
@@ -415,7 +421,14 @@ function initDynamicFooter() {
  * Initialise tous les event listeners et fonctionnalités
  */
 function init() {
-    console.log('🚀 Initialisation du site Marc Lupi TSSR');
+    console.log('Initialisation du site Marc Lupi TSSR');
+
+    // AJOUT : Fix accessibilité menu mobile
+    const menu = document.getElementById('mobileMenu');
+    if (menu) {
+        const links = menu.querySelectorAll('a, button');
+        links.forEach(link => link.setAttribute('tabindex', '-1'));
+    }
 
     // Initialisation du ScrollSpy avec Intersection Observer
     initScrollSpy();
@@ -468,7 +481,7 @@ function init() {
     // Mini-dots navigation
     initMiniDotsNavigation();
 
-    console.log('✅ Site initialisé avec succès');
+    console.log('Site initialisé avec succès');
 }
 
 // ================================
