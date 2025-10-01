@@ -1318,10 +1318,13 @@
         <!-- ================================
         E-MAIL JS
         ================================ -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
-        <script defer>
-            window.addEventListener('DOMContentLoaded', () => {
-                emailjs.init('IwLwlxOaBJfUfhRqv');
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script>
+            // Attendre que EmailJS soit chargé
+            window.addEventListener('load', function() {
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.init('IwLwlxOaBJfUfhRqv');
+                }
             });
         </script>
 
