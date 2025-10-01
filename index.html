@@ -251,7 +251,10 @@
                 }
             }      
         </style>
-        <link rel="stylesheet" href="./ASSET/styles.css">
+        <!-- Précharger le CSS -->
+        <link rel="preload" href="./ASSET/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <!-- Fallback pour les navigateurs sans JS -->
+        <noscript><link rel="stylesheet" href="./ASSET/styles.css"></noscript>
     </head>
 
     <body id="page-top">
