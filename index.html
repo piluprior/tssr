@@ -1313,12 +1313,17 @@
         <!-- ================================
         SUPABASE CLIENT LIBRARY
         ================================ -->
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 
         <!-- ================================
         E-MAIL JS
         ================================ -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+        <script defer>
+            window.addEventListener('DOMContentLoaded', () => {
+                emailjs.init('IwLwlxOaBJfUfhRqv');
+            });
+        </script>
 
         <!-- ================================
         EMAIL JS
@@ -1346,13 +1351,13 @@
         <!-- ================================
         EXTERNAL LIBRARIES
         ================================ -->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" defer></script>
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" async></script>
 
         <!-- ================================
         JAVASCRIPT INTERNAL LINK
         ================================ -->
-        <script src="./ASSET/scripts.js"></script>
-        <script src="./ASSET/cv_tracking.js"></script>
+        <script src="./ASSET/scripts.js" defer></script>
+        <script src="./ASSET/cv_tracking.js" defer></script>
 
         <!-- ================================
         SERVICE WORKER
