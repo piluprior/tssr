@@ -1,6 +1,7 @@
 // ================================
-// SYSTÈME DE TRACKING CV
+// SYSTÈME DE TRACKING CV COMPLET
 // GA4 + Supabase + EmailJS
+// Version enrichie avec TOUTES les données
 // ================================
 
 // Initialisation Supabase
@@ -39,10 +40,10 @@ function initCVTracking() {
 async function trackAndDownloadCV(source) {
     const config = window.CV_TRACKING_CONFIG;
     
-    // Collecter les données
-    const trackingData = collectTrackingData(source);
+    // Collecter les données (maintenant COMPLÈTES avec géolocalisation)
+    const trackingData = await collectTrackingDataComplete(source);
     
-    // 1. Envoyer à GA4 - MODIFIÉ POUR UTILISER UN ÉVÉNEMENT STANDARD
+    // 1. Envoyer à GA4
     if (typeof gtag !== 'undefined') {
         // Événement standard GA4 pour téléchargement de fichier
         gtag('event', 'file_download', {
@@ -69,7 +70,7 @@ async function trackAndDownloadCV(source) {
         }
     }
     
-    // 2. Envoyer à Supabase
+    // 2. Envoyer à Supabase (avec TOUTES les données)
     let supabaseSuccess = false;
     if (supabaseClient) {
         try {
@@ -80,30 +81,69 @@ async function trackAndDownloadCV(source) {
             if (error) throw error;
             
             supabaseSuccess = true;
-            if (config.debug_mode) {
-                console.log('Supabase insert réussi');
-            }
             
+            if (config.debug_mode) {
+                console.log('✅ Supabase insert réussi avec', Object.keys(trackingData).length, 'champs');
+                console.log('Données envoyées:', trackingData);
+            }
         } catch (error) {
-            console.error('Erreur Supabase:', error);
-            // Ne pas bloquer le téléchargement si erreur
+            console.error('❌ Erreur Supabase:', error);
         }
     }
     
-    // 3. EMAILJS - DÉPLACÉ ICI ET CORRIGÉ
+    // 3. EMAILJS - Version COMPLÈTE avec TOUTES les données
     if (config.enable_email_notifications && supabaseSuccess && typeof emailjs !== 'undefined') {
         try {
+            // Formater la date en français lisible
+            const formatDateFrench = (date) => {
+                const jours = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche'];
+                const mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                             'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+                
+                const jour = jours[date.getDay()];
+                const numeroJour = date.getDate();
+                const numeroJourFormate = numeroJour === 1 ? '1er' : numeroJour;
+                const moisNom = mois[date.getMonth()];
+                const annee = date.getFullYear();
+                const heures = date.getHours();
+                const minutes = date.getMinutes().toString().padStart(2, '0');
+                const secondes = date.getSeconds().toString().padStart(2, '0');
+                
+                return `${jour} ${numeroJourFormate} ${moisNom} ${annee} à ${heures} h ${minutes} min ${secondes} sec`;
+            };
+            
+            // Préparer TOUS les paramètres pour le template EmailJS
             const templateParams = {
+                // Navigation
                 source: trackingData.source,
-                device: trackingData.device_type,
-                browser: trackingData.browser,
-                os: trackingData.os,
-                date: new Date().toLocaleDateString('fr-FR'),
-                time: new Date().toLocaleTimeString('fr-FR'),
+                page_title: trackingData.page_title,
+                page_url: trackingData.page_url,
                 referrer: trackingData.referrer || 'Direct',
                 campaign: trackingData.campaign || 'Aucune',
+                
+                // Appareil
+                device_type: trackingData.device_type,
+                browser: trackingData.browser,
+                os: trackingData.os,
+                language: trackingData.language,
+                user_agent: trackingData.user_agent,
+                
+                // Date et heure (format français lisible)
+                created_at: formatDateFrench(new Date()),
+                
+                // Écran et viewport
                 viewport_width: trackingData.viewport_width,
-                viewport_height: trackingData.viewport_height
+                viewport_height: trackingData.viewport_height,
+                screen_width: trackingData.screen_width,
+                screen_height: trackingData.screen_height,
+                pixel_ratio: trackingData.pixel_ratio,
+                
+                // Géolocalisation
+                ip_address: trackingData.ip_address || 'Non disponible',
+                country: trackingData.country || 'Inconnu',
+                city: trackingData.city || 'Inconnue',
+                ip_country: trackingData.ip_country || 'Inconnu',
+                ip_city: trackingData.ip_city || 'Inconnue'
             };
             
             await emailjs.send(
@@ -113,10 +153,10 @@ async function trackAndDownloadCV(source) {
             );
             
             if (config.debug_mode) {
-                console.log('Email notification envoyé');
+                console.log('✅ Email notification envoyé avec', Object.keys(templateParams).length, 'paramètres');
             }
         } catch (error) {
-            console.error('Erreur EmailJS:', error);
+            console.error('❌ Erreur EmailJS:', error);
         }
     }
     
@@ -134,9 +174,10 @@ async function trackAndDownloadCV(source) {
 }
 
 /**
- * Collecter toutes les données de tracking
+ * Collecter TOUTES les données de tracking (VERSION COMPLÈTE)
+ * Récupère maintenant aussi l'IP et la géolocalisation
  */
-function collectTrackingData(source) {
+async function collectTrackingDataComplete(source) {
     // Détection device
     const getDeviceType = () => {
         const width = window.innerWidth;
@@ -172,21 +213,74 @@ function collectTrackingData(source) {
         return { browser, os };
     };
     
+    // Récupérer la géolocalisation via IP (gratuit, pas de clé API nécessaire)
+    const getGeoLocation = async () => {
+        try {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            return {
+                ip_address: data.ip,
+                country: data.country_name,
+                city: data.city,
+                ip_country: data.country_name,
+                ip_city: data.city
+            };
+        } catch (error) {
+            console.warn('Géolocalisation non disponible:', error);
+            return {
+                ip_address: null,
+                country: null,
+                city: null,
+                ip_country: null,
+                ip_city: null
+            };
+        }
+    };
+    
     const { browser, os } = parseUserAgent();
-    
-    // Récupérer UTM params
     const urlParams = new URLSearchParams(window.location.search);
+    const geoData = await getGeoLocation();
     
+    // Date et heure formatées
+    const now = new Date();
+    const timeFormatted = now.toLocaleTimeString('fr-FR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    
+    // Retourner TOUTES les données (23 champs)
     return {
+        // Navigation (5)
         source: source || 'unknown',
         referrer: document.referrer || 'direct',
-        user_agent: navigator.userAgent,
+        page_title: document.title,
+        page_url: window.location.href,
         campaign: urlParams.get('utm_campaign') || null,
-        viewport_width: window.innerWidth,
-        viewport_height: window.innerHeight,
+        
+        // Appareil (5)
+        user_agent: navigator.userAgent,
         device_type: getDeviceType(),
         browser: browser,
-        os: os
+        os: os,
+        language: navigator.language || navigator.userLanguage,
+        
+        // Écran et viewport (5)
+        viewport_width: window.innerWidth,
+        viewport_height: window.innerHeight,
+        screen_width: window.screen.width,
+        screen_height: window.screen.height,
+        pixel_ratio: window.devicePixelRatio || 1,
+        
+        // Temporel (1)
+        time_formatted: timeFormatted,
+        
+        // Géolocalisation (5)
+        ip_address: geoData.ip_address,
+        country: geoData.country,
+        city: geoData.city,
+        ip_country: geoData.ip_country,
+        ip_city: geoData.ip_city
     };
 }
 
@@ -232,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const CV_SOURCES = {
     // Navigation
     'header_desktop': 'Header Desktop',
-    'header_mobile': 'Header Mobile', 
+    'header_mobile': 'Header Mobile',
     'menu_mobile': 'Menu Mobile',
     'menu_hamburger': 'Menu Hamburger',
     
