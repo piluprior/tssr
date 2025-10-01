@@ -21,7 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-
 main {
     display: block;
     /* valeur par défaut, mais on fixe explicitement */
@@ -602,28 +601,6 @@ a {
     content: "— ";
 }
 
-.scroll-up {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    display: none;
-}
-
-.scroll-up:hover {
-    background-color: var(--dark-color);
-    transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
     .resume-section {
         padding-left: 1rem;
@@ -1033,41 +1010,50 @@ a[href^="mailto:"]:hover::before,
         visibility: visible !important;
     }
 }
+/*
+TOOLTIPS
+*/
 
-/* Tooltip spécifique Japan */
-.tooltip-text {
-    position: relative;
-    cursor: help;         /* curseur informatif */
-    color: inherit;       /* garde la couleur du texte */
-}
-
-.tooltip-text::after {
+/* SOCIAL ICONS */
+.header-top-social-icon[data-tooltip]::after,
+.mobile-social-icon[data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 125%;         /* place le tooltip au-dessus */
-    left: 50%;
+    right: 100%;
+    top: 50%;
     transform: translateX(-50%);
-    background-color: #212529; /* fond sombre */
-    color: #fff;
+    margin-right: 1rem;
     padding: 0.5rem 0.75rem;
-    border-radius: 0;
-    font-size: 0.80rem;
+    background-color: #212529;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-family: var(--main-font);
+    font-weight: 500;
+    border-radius: 0rem;
+    border: 1px solid #ffffff;
     white-space: nowrap;
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
     transition: opacity 0.3s;
-    z-index: 1000;
-    border: 1px solid #fff;
+    pointer-events: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-
-    text-transform: none !important; /* garantit la casse exacte */
-    font-family: inherit;            /* garde la même fonte que le reste */
+    z-index: 10000;
 }
 
-.tooltip-text:hover::after {
+.header-top-social-icon:hover[data-tooltip]::after,
+.mobile-social-icon:hover[data-tooltip]::after {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-5px);
+    transition: opacity 0.3s; /* ajoute la même transition progressive */
 }
 
+.header-top-social-icon,
+.mobile-social-icon {
+    position: relative;
+}
+
+/* DOTS */
 .mini-dots-nav {
     position: fixed;
     right: 2rem;
@@ -1105,7 +1091,7 @@ a[href^="mailto:"]:hover::before,
     position: absolute;
     right: 100%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
     margin-right: 1rem;
     padding: 0.5rem 0.75rem;
     background-color: #212529;
@@ -1127,7 +1113,96 @@ a[href^="mailto:"]:hover::before,
     opacity: 1;
     visibility: visible;
     transform: translateY(-50%) translateX(-5px);
+    transition: opacity 0.3s; /* harmonisé */
 }
+
+/* SCROLL UP */
+.scroll-up {
+    /* content: attr(data-tooltip); */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: none;
+}
+
+.scroll-up:hover {
+    background-color: var(--dark-color);
+    /* transform: translateY(-2px); */
+}
+
+/* Applique le même style tooltip que pour le texte japonais */
+#scrollUp[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%; /* place le tooltip au-dessus du bouton */
+    left: 50%;
+    transform: translateX(-100%);
+    background-color: #212529;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0;
+    font-size: 0.80rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scrollUp[data-tooltip]:hover::after {
+    opacity: 1;
+    transition: opacity 0.3s; /* harmonisé */
+}
+
+/* JAPAN TEXT */
+.tooltip-text {
+    position: relative;
+    cursor: help;         /* curseur informatif */
+    color: inherit;       /* garde la couleur du texte */
+    font-weight: 500;
+}
+
+.tooltip-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;         /* place le tooltip au-dessus */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #212529; /* fond sombre */
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0;
+    font-size: 0.80rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-transform: none !important; /* garantit la casse exacte */
+    font-family: inherit;            /* garde la même fonte que le reste */
+}
+
+.tooltip-text:hover::after {
+    opacity: 1;
+}
+
+
+
+/* --------- END OF TOOLTIPS --------- */
 
 @media (max-width: 991.98px) {
     .mini-dots-nav {
@@ -1227,43 +1302,7 @@ a[href^="mailto:"]:hover::before,
     }
 }
 
-/* TOOLTIPS SOCIAL ICONS - MÊME STYLE QUE MINI-DOTS */
-.header-top-social-icon[data-tooltip]::after,
-.mobile-social-icon[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 1rem;
-    padding: 0.5rem 0.75rem;
-    background-color: #212529;
-    color: #ffffff;
-    font-size: 0.8rem;
-    font-family: var(--main-font);
-    font-weight: 500;
-    border-radius: 0rem;
-    border: 1px solid #ffffff;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
-}
 
-.header-top-social-icon:hover[data-tooltip]::after,
-.mobile-social-icon:hover[data-tooltip]::after {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(-5px);
-}
-
-.header-top-social-icon,
-.mobile-social-icon {
-    position: relative;
-}
 
 /* DÉSACTIVER TOOLTIP "Cliquez pour copier" SUR MOBILE UNIQUEMENT */
 @media (max-width: 991.98px) {
