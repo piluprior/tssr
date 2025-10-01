@@ -151,7 +151,9 @@
         ================================ -->
         <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" as="style">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Saira:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
         <!-- ================================
         CSS CRITIQUE INLINE - ABOVE THE FOLD
@@ -251,10 +253,7 @@
                 }
             }      
         </style>
-        <!-- Précharger le CSS -->
-        <link rel="preload" href="./ASSET/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <!-- Fallback pour les navigateurs sans JS -->
-        <noscript><link rel="stylesheet" href="./ASSET/styles.css"></noscript>
+        <link rel="stylesheet" href="./ASSET/styles.css">
     </head>
 
     <body id="page-top">
@@ -1314,24 +1313,6 @@
         </nav>
 
         <!-- ================================
-        SUPABASE CLIENT LIBRARY
-        ================================ -->
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-
-        <!-- ================================
-        E-MAIL JS
-        ================================ -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script>
-            // Attendre que EmailJS soit chargé
-            window.addEventListener('load', function() {
-                if (typeof emailjs !== 'undefined') {
-                    emailjs.init('IwLwlxOaBJfUfhRqv');
-                }
-            });
-        </script>
-
-        <!-- ================================
         EMAIL JS
         ================================ -->
         <script>
@@ -1375,5 +1356,23 @@
                 .catch(err => console.error("Erreur Service Worker:", err));
             }
           </script>
+
+        <!-- ================================
+        SUPABASE CLIENT LIBRARY
+        ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <!-- ================================
+        E-MAIL JS
+        ================================ -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script>
+            // Attendre que EmailJS soit chargé
+            window.addEventListener('load', function() {
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.init('IwLwlxOaBJfUfhRqv');
+                }
+            });
+        </script>
     </body>
 </html>
