@@ -96,7 +96,7 @@ async function trackAndDownloadCV(source) {
         try {
             // Formater la date en français lisible
             const formatDateFrench = (date) => {
-                const jours = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi','dimanche'];
+                const jours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
                 const mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
                              'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
                 
@@ -114,17 +114,17 @@ async function trackAndDownloadCV(source) {
             
             // Préparer TOUS les paramètres pour le template EmailJS
             const templateParams = {
-                // Navigation
-                source: trackingData.source,
+                // Navigation - humanisé
+                source: humanizeForEmail(trackingData.source, 'source'),
                 page_title: trackingData.page_title,
                 page_url: trackingData.page_url,
                 referrer: trackingData.referrer || 'Direct',
                 campaign: trackingData.campaign || 'Aucune',
                 
-                // Appareil
-                device_type: trackingData.device_type,
-                browser: trackingData.browser,
-                os: trackingData.os,
+                // Appareil - humanisé
+                device_type: humanizeForEmail(trackingData.device_type, 'device'),
+                browser: humanizeForEmail(trackingData.browser, 'browser'),
+                os: humanizeForEmail(trackingData.os, 'os'),
                 language: trackingData.language,
                 user_agent: trackingData.user_agent,
                 
@@ -138,7 +138,7 @@ async function trackAndDownloadCV(source) {
                 screen_height: trackingData.screen_height,
                 pixel_ratio: trackingData.pixel_ratio,
                 
-                // Géolocalisation
+                // Géolocalisation - IPv4 uniquement
                 ip_address: trackingData.ip_address || 'Non disponible',
                 country: trackingData.country || 'Inconnu',
                 city: trackingData.city || 'Inconnue',
@@ -185,6 +185,7 @@ async function collectTrackingDataComplete(source) {
         if (width <= 768) return 'mobile';
         if (width <= 1024) return 'tablet';
         if (width <= 1440) return 'desktop';
+        if (width > 1440) return 'desktop_large';
         return 'desktop_large';
     };
     
@@ -213,17 +214,22 @@ async function collectTrackingDataComplete(source) {
         return { browser, os };
     };
     
-    // Récupérer la géolocalisation via IP (gratuit, pas de clé API nécessaire)
     const getGeoLocation = async () => {
         try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
+            // Utiliser ipify qui force IPv4
+            const ipResponse = await fetch('https://api.ipify.org?format=json');
+            const ipData = await ipResponse.json();
+            
+            // Puis récupérer la géolocalisation avec cette IP
+            const geoResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
+            const geoData = await geoResponse.json();
+            
             return {
-                ip_address: data.ip,
-                country: data.country_name,
-                city: data.city,
-                ip_country: data.country_name,
-                ip_city: data.city
+                ip_address: ipData.ip, // Forcé en IPv4
+                country: geoData.country_name,
+                city: geoData.city,
+                ip_country: geoData.country_name,
+                ip_city: geoData.city
             };
         } catch (error) {
             console.warn('Géolocalisation non disponible:', error);
@@ -252,8 +258,8 @@ async function collectTrackingDataComplete(source) {
     // Retourner TOUTES les données (23 champs)
     return {
         // Navigation (5)
-        source: source || 'unknown',
-        referrer: document.referrer || 'direct',
+        source: source || 'Inconnue',
+        referrer: document.referrer || 'Directe',
         page_title: document.title,
         page_url: window.location.href,
         campaign: urlParams.get('utm_campaign') || null,
@@ -331,8 +337,11 @@ const CV_SOURCES = {
     'menu_hamburger': 'Menu Hamburger',
     
     // Sections
+    'section accueil': 'Section Accueil',
     'section_apropos': 'Section À propos',
+    'section_competences': 'Section Compétences TSSR',
     'section_parcours': 'Section Parcours',
+    'section_formation': 'Section Formation',
     'section_profil': 'Section Profil',
     
     // CTA
@@ -346,5 +355,55 @@ const CV_SOURCES = {
     // Autres
     'qr_code': 'QR Code',
     'direct_link': 'Lien direct',
-    'email_signature': 'Signature email'
+    'email_signature': 'Signature e-mail'
 };
+
+// Fonction de traduction des valeurs techniques pour EmailJS
+function humanizeForEmail(value, type) {
+    const mappings = {
+        source: {
+            'header_desktop': 'En-tête desktop',
+            'header_mobile': 'En-tête mobile',
+            'menu_mobile': 'Menu mobile',
+            'menu_hamburger': 'Menu hamburger',
+            'section_accueil': 'Section Accueil',
+            'section_apropos': 'Section À propos',
+            'section_competences': 'Section Compétences TSSR',
+            'section_parcours': 'Section Parcours',
+            'section_formation': 'Section Formation',
+            'section_profil': 'Section Profil',
+            'cta_contact': 'Bouton Contact',
+            'footer_link': '⬇Pied de page',
+            'social_linkedin': 'LinkedIn',
+            'social_github': 'GitHub',
+            'qr_code': 'QR Code',
+            'direct_link': 'Lien direct',
+            'email_signature': 'Signature e-mail'
+        },
+        device: {
+            'mobile_small': 'Très petit mobile',
+            'mobile': 'Mobile',
+            'tablet': 'Tablette',
+            'desktop': 'Ordinateur',
+            'desktop_large': 'Grand écran'
+        },
+        browser: {
+            'Chrome': 'Chrome',
+            'Firefox': 'Firefox',
+            'Safari': 'Safari',
+            'Edge': 'Edge',
+            'Opera': 'Opera'
+        },
+        os: {
+            'Windows 10': 'Windows 10',
+            'Windows 11': 'Windows 11',
+            'Windows': 'Windows',
+            'MacOS': 'macOS',
+            'Linux': 'Linux',
+            'Android': 'Android',
+            'iOS': 'iOS'
+        }
+    };
+    
+    return mappings[type]?.[value] || value;
+}
