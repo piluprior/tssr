@@ -394,6 +394,10 @@ main {
     .logo {
         font-size: 1.5rem;
     }
+
+    .sticky-date {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -407,6 +411,10 @@ main {
 
     .header-contact-item {
         font-size: 0.8rem;
+    }
+
+    .sticky-date {
+        display: none;
     }
 }
 
@@ -1304,8 +1312,6 @@ TOOLTIPS
     }
 }
 
-
-
 /* DÉSACTIVER TOOLTIP "Cliquez pour copier" SUR MOBILE UNIQUEMENT */
 @media (max-width: 991.98px) {
 
@@ -1347,4 +1353,24 @@ TOOLTIPS
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* STICKY date and hour */
+.sticky-date {
+    position: fixed;
+    top: 27%;
+    right: -52px;
+    transform: translateY(-50%) rotate(-90deg);
+    height: fit-content;
+    z-index: 1000;
+    height: -80px !important;
+}
+
+.date-hour {
+    color: rgba(108,117,125,0.33); /* #EEE9D7, #6C757D */
+    font-size: 1rem;
+    padding-bottom: 3.2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }

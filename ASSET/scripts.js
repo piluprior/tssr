@@ -674,5 +674,36 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
   });
 });
 
+// HORLOGE STICKY MAIN PAGE
+(function () {
+    const ID = "horloge";
+
+    function formatDate(frDate) {
+        const options = { weekday: "short", day: "numeric", month: "short" };
+        return frDate.toLocaleDateString("fr-FR", options);
+    }
+
+    function majHorloge() {
+        const now = new Date();
+        const hh = String(now.getHours()).padStart(2, "0");
+        const mm = String(now.getMinutes()).padStart(2, "0");
+        const el = document.getElementById(ID);
+        if (!el) return; // sécurité si l'élément est absent
+        el.textContent = `${hh}:${mm} ${formatDate(now)}`;
+    }
+
+    // Si le DOM n'est pas encore prêt, attendre, sinon démarrer tout de suite
+    function start() {
+        majHorloge();              // affichage immédiat
+        setInterval(majHorloge, 1000); // mise à jour chaque seconde
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+})
+();
 
 // Fin JS
