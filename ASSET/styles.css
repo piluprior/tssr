@@ -1367,7 +1367,7 @@ TOOLTIPS
 }
 
 .date-hour {
-    color: rgba(108,117,125,0.33); /* #EEE9D7, #6C757D */
+    color: #212529; /* rgba(108,117,125,0.33), #EEE9D7, #6C757D */
     font-size: 1rem;
     padding-bottom: 3.2rem;
     font-family: "Poppins", sans-serif;
