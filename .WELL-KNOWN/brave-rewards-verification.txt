@@ -1,1 +1,4 @@
-brave-ledger-verification=3f703c6fdf6a3257df1cb3368fe1628bcc403fa3620c24eca06b608e71ad36f9
+This is a Brave Creators publisher verification file.
+
+Domain: marclupi.fr
+Token: 6900eb124c06854aa189fec239c71b0b5b231fa4922ed844776664f627d03be5
