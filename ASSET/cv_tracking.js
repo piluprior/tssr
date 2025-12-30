@@ -92,7 +92,8 @@ async function trackAndDownloadCV(source) {
     }
     
     // 3. EMAILJS - Version COMPLÈTE avec TOUTES les données
-    if (config.enable_email_notifications && supabaseSuccess && typeof emailjs !== 'undefined') {
+    // CORRECTION: Envoi d'email même si Supabase échoue
+    if (config.enable_email_notifications && typeof emailjs !== 'undefined') {
         try {
             // Formater la date en français lisible
             const formatDateFrench = (date) => {

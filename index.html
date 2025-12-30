@@ -52,6 +52,7 @@
         <!-- PRECONNECT POUR PERFORMANCES -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://use.fontawesome.com">
         <!-- SCHEMA MARKUP -->
         <script type="application/ld+json">
             {
@@ -1371,7 +1372,9 @@
         <!-- ================================
         EXTERNAL LIBRARIES
         ================================ -->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" defer></script>
+        <!-- Font Awesome - Chargement prioritaire pour éviter FOUC (Flash of Unstyled Content) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
         <!-- ================================
         SERVICE WORKER
