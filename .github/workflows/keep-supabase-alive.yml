@@ -1,0 +1,38 @@
+name: Maintenir Supabase actif
+# Ce workflow empêche Supabase de se mettre en veille après 7 jours d'inactivité
+
+on:
+  schedule:
+    # S'exécute le lundi et jeudi à 8h00 UTC (9h00 heure de Paris)
+    - cron: '0 8 * * 1,4'
+
+  workflow_dispatch:
+    # Permet de déclencher manuellement le workflow depuis l'interface GitHub
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Vérifier la connexion Supabase
+        run: |
+          echo "🔄 Ping de Supabase pour maintenir l'activité..."
+
+          # Effectue une simple requête GET sur la table cv_downloads
+          # Limite à 1 ligne pour minimiser les données transférées
+          response=$(curl -s -w "\n%{http_code}" \
+            -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/cv_downloads?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+
+          # Sépare le code HTTP du corps de la réponse
+          http_code=$(echo "$response" | tail -n1)
+
+          # Vérifie si la requête a réussi (code 200)
+          if [ "$http_code" -eq 200 ]; then
+            echo "✅ Supabase est actif (Code HTTP: $http_code)"
+            echo "📅 Date: $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          else
+            echo "❌ Erreur lors de la connexion à Supabase (Code HTTP: $http_code)"
+            exit 1
+          fi
