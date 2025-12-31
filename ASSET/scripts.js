@@ -431,7 +431,8 @@ function init() {
     }
 
     // Initialisation du ScrollSpy avec Intersection Observer
-    initScrollSpy();
+    // Délai pour éviter l'animation visible au chargement
+    setTimeout(() => initScrollSpy(), 500);
 
     // Scroll event listener optimisé
     window.addEventListener('scroll', handleScroll, { passive: true });
