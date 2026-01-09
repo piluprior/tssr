@@ -3,8 +3,8 @@ name: Maintenir Supabase actif
 
 on:
   schedule:
-    # S'exécute le lundi et jeudi à 8h00 UTC (9h00 heure de Paris)
-    - cron: '0 8 * * 1,4'
+    # S'exécute tous les 3 jours à 9h00 UTC (10h00 heure de Paris)
+    - cron: '0 9 */3 * *'
 
   workflow_dispatch:
     # Permet de déclencher manuellement le workflow depuis l'interface GitHub
@@ -14,25 +14,46 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Vérifier la connexion Supabase
+      - name: Maintenir l'activité de la base de données
         run: |
-          echo "🔄 Ping de Supabase pour maintenir l'activité..."
+          echo "🔄 Opération d'activité sur Supabase pour éviter la pause..."
 
-          # Effectue une simple requête GET sur la table cv_downloads
-          # Limite à 1 ligne pour minimiser les données transférées
+          # Vérification que les secrets sont bien définis
+          if [ -z "${{ secrets.SUPABASE_URL }}" ]; then
+            echo "❌ ERREUR: Le secret SUPABASE_URL n'est pas défini"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.SUPABASE_ANON_KEY }}" ]; then
+            echo "❌ ERREUR: Le secret SUPABASE_ANON_KEY n'est pas défini"
+            exit 1
+          fi
+
+          echo "✓ Secrets GitHub détectés"
+          echo "📡 Tentative d'INSERT dans la table heartbeat..."
+
+          # Effectue un INSERT dans la table heartbeat (opération d'écriture réelle)
+          # Cela compte comme une vraie activité de base de données
+          timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
           http_code=$(curl -s -o /dev/null -w "%{http_code}" \
-            -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/cv_downloads?select=id&limit=1" \
+            -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/heartbeat" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Content-Type: application/json" \
+            -H "Prefer: return=minimal" \
+            -d "{\"pinged_at\":\"$timestamp\",\"source\":\"github-actions\"}")
 
           echo "📡 Code HTTP reçu: $http_code"
 
-          # Vérifie si la requête a réussi (code 200)
-          if [ "$http_code" = "200" ]; then
-            echo "✅ Supabase est actif"
-            echo "📅 Date: $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          if [ "$http_code" = "201" ] || [ "$http_code" = "200" ]; then
+            echo "✅ INSERT réussi - Supabase actif"
+            echo "📅 Timestamp: $timestamp"
           else
-            echo "❌ Erreur lors de la connexion à Supabase (Code HTTP: $http_code)"
-            echo "🔍 Vérifiez que le projet Supabase est actif et que les secrets GitHub sont correctement configurés"
+            echo "⚠️ Code HTTP inattendu: $http_code"
+            echo "🔍 Vérifications:"
+            echo "   - Le projet Supabase doit être actif (pas en pause)"
+            echo "   - La table 'heartbeat' doit exister"
+            echo "   - Les permissions d'INSERT doivent être configurées"
             exit 1
           fi
